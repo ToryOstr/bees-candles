@@ -1,0 +1,59 @@
+$background-color: rgba(63, 4, 91, 0.3);
+$main-text-color: rgba(39, 9, 53, 1);
+$accent-color: rgba(255, 210, 51, 1);
+
+$main-font: "Playfair Display", serif;
+$accent-font: 'Irish Grover', cursive;
+$number-font: 'Roboto', sans-serif;
+
+body {
+  background-color: $background-color;
+
+  font-family: $main-font;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color: $main-text-color;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 50px;
+  height: 80px;
+  background-color: $background-color;
+
+  .logo {
+    width: 68px;
+    height: auto;
+    transition: 0.3s;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    ul{
+      width: 645px;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        color: $main-text-color;
+        transition: 0.3s;
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
+  .basket-btn {
+    transition: 0.3s;
+    &:hover {
+      scale: 1.1;
+      cursor: pointer;
+    }
+  }
+}
