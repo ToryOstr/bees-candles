@@ -21,7 +21,7 @@
       <nav>
         <ul>
           <li>
-            <a href="#">Каталог</a>
+            <a href="#catalog">Каталог</a>
           </li>
           <li>
             <a href="#">Контакти</a>
@@ -42,10 +42,61 @@
       <div class="hero">
         <p>Час розсіяти темряву</p>
       </div>
-      <div class="catalog">
-        
+
+      <div class="catalog-wrapp">
+        <p>Каталог</p>
+        <ul id="catalog" class="catalog">
+
+          <li class="product-card">
+            <div class="product-img">
+              <img src="../bees-candles/images/product-img/spruce.jpg" alt="">
+            </div>
+            <p class="name">Свічка Ялинка</p>
+            <div class="about">
+              <div class="inform-element">
+                <img src="../bees-candles/images/icons/ri_scales-3-fill.svg" alt="">
+                <span>60г</span>
+              </div>
+              <div class="inform-element">
+                <img src="../bees-candles/images/icons/Vector.svg" alt="">
+                <span>7-8год</span>
+              </div>
+              <div class="inform-element">
+                <img src="../bees-candles/images/icons/entypo_price-tag.svg" alt="">
+                <span>50₴</span>
+              </div>
+            </div>
+            <p class="select-color">Колір на вибір:</p>
+            <input type="radio" name="color" id="natural-wax">
+            <input type="radio" name="color" id="ivory">
+            <input type="radio" name="color" id="light-green">
+            <input type="radio" name="color" id="green">
+            <input type="radio" name="color" id="broun">
+          </li>
+      </ul>
       </div>
     </main>
+    <footer>
+
+    </footer>
+    <div class="basket-card">
+
+    </div>
   </div>
+
+<!-- Constants and Utils -->
+<script src="../bees-candles/constants/catalog.js"></script>
+<script src="../bees-candles/constants/root.js"></script>
+<script src="../bees-candles/utils/localStorageUtils.js"></script>
+
+  <!-- Component Header-->
+  <script src="../bees-candles/components/Header/Header.js"></script>
+
+  
+  <!-- Component Products-->
+  <script src="../bees-candles/components/Products/Products.js"></script>
+  
+  <!-- Component Bascet-card-->
+  <script src="../bees-candles/components/Basket-card/Bascet-card.js"></script>
 </body>
 </html>

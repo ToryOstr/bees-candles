@@ -1,12 +1,15 @@
 $background-color: rgba(63, 4, 91, 0.3);
 $main-text-color: rgba(39, 9, 53, 1);
-$nav-text-color: #EEEEEE;
+$nav-text-color: #eeeeee;
 $accent-color: rgba(255, 210, 51, 1);
 
 $main-font: "Playfair Display", serif;
 $accent-font: "Irish Grover", cursive;
 $number-font: "Roboto", sans-serif;
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: $background-color;
@@ -75,6 +78,7 @@ header {
   background-size: 100% auto;
   position: relative;
   top: -80px;
+  left: 0;
   z-index: 0;
   padding: 200px 50px;
   p {
@@ -85,10 +89,72 @@ header {
     font-size: 80px;
   }
 }
+.catalog-wrapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: -40px auto;
+
+  & > p {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
 .catalog {
   display: flex;
+  justify-content: center;
   width: 100%;
   height: auto;
   flex-wrap: wrap;
   gap: 20px 20px;
+}
+.product-card {
+  width: 280px;
+  height: 625px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid $main-text-color;
+  background-color: #ffffff;
+}
+.product-img {
+  width: 270px;
+  height: 270px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+.name {
+  font-size: 20px;
+  margin: 15px 0 10px;
+  text-align: center;
+}
+.about {
+  display: flex;
+  justify-content: space-around;
+}
+.inform-element {
+  display: flex;
+  flex-direction: column;
+  & > img {
+    width: auto;
+    height: 32px;
+    margin-bottom: 5px;
+  }
+
+  & > span {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: $main-text-color;
+  }
+}
+.select-color {
+  text-align: center;
+  margin: 15px 0 10px;
 }
