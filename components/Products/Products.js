@@ -2,8 +2,8 @@ class Products {
   render() {
     let htmlCatalog = "";
 
-    CATALOG.forEach(({ img, name, time, weight, price }) => {
-      console.log(img, name, time, weight, price);
+    CATALOG.forEach(({ img, name, time, mass, price }) => {
+      console.log(img, name, time, mass, price);
       htmlCatalog += `
       <li class="product-card">
             <div class="product-img">
@@ -17,7 +17,7 @@ class Products {
               </div>
               <div class="inform-element">
                 <img src="../bees-candles/images/icons/ri_scales-3-fill.svg" alt="">
-                <span>${weight}г</span>
+                <span>${mass}г</span>
               </div>
               <div class="inform-element">
                 <img src="../bees-candles/images/icons/entypo_price-tag.svg" alt="">
