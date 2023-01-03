@@ -54,6 +54,7 @@ header {
         color: $nav-text-color;
         transition: 0.3s;
         &:hover {
+          font-size: 22px;
           color: $accent-color;
         }
       }
@@ -67,6 +68,18 @@ header {
       cursor: pointer;
     }
   }
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 .hero {
   width: 100%;
@@ -89,13 +102,14 @@ header {
     font-size: 80px;
   }
 }
+
 .catalog-wrapp {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: -40px auto;
+  margin: -40px auto 40px;
 
-  & > p {
+  & > h2 {
     font-size: 60px;
     text-align: center;
     margin-bottom: 40px;
@@ -106,24 +120,30 @@ header {
   justify-content: center;
   width: 100%;
   height: auto;
+  padding: 0 50px;
   flex-wrap: wrap;
-  gap: 20px 20px;
+  gap: 40px 40px;
 }
 .product-card {
+  display: flex;
+  flex-direction: column;
   width: 280px;
-  height: 625px;
+  height: 465px;
   padding: 5px;
   border-radius: 10px;
   border: 1px solid $main-text-color;
   background-color: #ffffff;
 }
 .product-img {
-  width: 270px;
-  height: 270px;
+  width: 268px;
+  height: 268px;
   border-radius: 10px;
   overflow: hidden;
+  border: 1px solid $main-text-color;
 
   img {
+    position: relative;
+    right: 25%;
     width: auto;
     height: 100%;
   }
@@ -154,7 +174,20 @@ header {
     color: $main-text-color;
   }
 }
-.select-color {
-  text-align: center;
-  margin: 15px 0 10px;
+.more-about {
+  display: inline-flex;
+  align-self: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px 65px;
+  background-color: $background-color;
+  border: 1px solid $main-text-color;
+  border-radius: 10px;
+  color: $main-text-color;
+  transition: 0.3s;
+  &:hover {
+    background-color: $accent-color;
+    box-shadow: 4px 4px 8px rgba(39, 9, 53, 0.5);
+    
+  }
 }

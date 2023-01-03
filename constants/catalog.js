@@ -5,6 +5,7 @@ const CATALOG = [
     name: "Свічка Ялинка",
     time: "",
     weight: 60,
+    select_color: true,
     price: 30,
   },
   {
@@ -13,6 +14,7 @@ const CATALOG = [
     name: "Свічка Овечка",
     time: "",
     weight: 60,
+    select_color: true,
     price: 0,
   },
   {
@@ -21,6 +23,7 @@ const CATALOG = [
     name: "Свічка Бджілка",
     time: "",
     weight: 60,
+    select_color: true,
     price: 0,
   },
   {
@@ -29,6 +32,7 @@ const CATALOG = [
     name: "Свічка Хатинка",
     time: "",
     weight: 60,
+    select_color: true,
     price: 0,
   },
   {
@@ -37,6 +41,7 @@ const CATALOG = [
     name: "Свічка Пташка",
     time: "",
     weight: 60,
+    select_color: true,
     price: 0,
   },
   {
@@ -45,6 +50,7 @@ const CATALOG = [
     name: "Свічка Сніговик",
     time: "",
     weight: 60,
+    select_color: true,
     price: 0,
   },
 ];
