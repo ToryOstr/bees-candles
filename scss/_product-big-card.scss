@@ -8,7 +8,7 @@
 .card-body {
   display: flex;
   width: 795px;
-  padding: 30px 15px 30px 30px;
+  padding: 30px 15px 10px 30px;
   margin: 0 auto;
   height: auto;
   background-color: #ffffff;
@@ -73,6 +73,48 @@
       max-height: 100%;
       object-fit: cover;
       border-radius: 10px;
+    }
+  }
+}
+.prevention-message {
+  width: 270px;
+  font-size: 14px;
+  color: #930000;
+  p {
+    margin-bottom: 20px;
+  }
+}
+.information-and-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 305px;
+  padding: 0px 10px;
+  margin: 0 20px 0 30px;
+  .product-name {
+    height: 58px;
+    font-size: 24px;
+  }
+}
+.about-product {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  .elem-about {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+    span {
+      margin-top: 5px;
+      font-family: $number-font;
+      font-weight: 700;
+      font-size: 16px;
+      text-align: center;
+
+      color: #000000;
     }
   }
 }

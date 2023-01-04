@@ -1,3 +1,35 @@
+const COLOR_OPTIONS = [
+  {
+    name: "Натуральний віск",
+    color: "#F1A213",
+    select_saturation: false,
+  },
+  {
+    name: "Айворі",
+    color: "#F1A213",
+    select_saturation: true,
+  },
+  {
+    name: "Зелений",
+    color: "#00ff00",
+    select_saturation: true,
+  },
+];
+const SATURATION = [
+  {
+    name: "light",
+    price: 10,
+  },
+  {
+    name: "medium",
+    price: 15,
+  },
+  {
+    name: "hue",
+    price: 20,
+  },
+];
+
 const CATALOG = [
   {
     id: "001",
