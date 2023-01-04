@@ -10,7 +10,6 @@ $number-font: "Roboto", sans-serif;
 html {
   scroll-behavior: smooth;
 }
-
 body {
   background-color: $background-color;
 
@@ -102,7 +101,6 @@ header {
     font-size: 80px;
   }
 }
-
 .catalog-wrapp {
   display: flex;
   flex-direction: column;
@@ -116,6 +114,4 @@ header {
   }
 }
 @import 'products-list';
-
-
 @import 'product-big-card';

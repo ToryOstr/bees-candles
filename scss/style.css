@@ -190,4 +190,83 @@ header .basket-btn:hover {
   display: flex;
   width: 100%;
   justify-content: center;
+  background-color: rgba(63, 4, 91, 0.3);
+  padding: 50px;
+}
+
+.card-body {
+  display: flex;
+  width: 795px;
+  padding: 30px 15px 30px 30px;
+  margin: 0 auto;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgb(39, 9, 53);
+}
+
+.slider-section {
+  display: flex;
+  flex-direction: column;
+  width: 358px;
+  height: auto;
+  align-items: center;
+}
+
+.slider-wrapp {
+  display: flex;
+  width: 358px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-arrow,
+.right-arrow {
+  display: flex;
+  width: 40px;
+  height: 100%;
+  align-items: center;
+}
+.left-arrow img,
+.right-arrow img {
+  display: flex;
+  width: 24px;
+  height: 40px;
+}
+
+.right-arrow {
+  rotate: 180deg;
+}
+
+.slider {
+  width: 268px;
+  height: 268px;
+  border-radius: 10px;
+  border: 1px solid rgb(39, 9, 53);
+  overflow: hidden;
+}
+.slider img {
+  width: auto;
+  height: 100%;
+  position: relative;
+  right: 25%;
+}
+
+.slider-gallery {
+  display: flex;
+  margin: 20px auto;
+  column-gap: 20px;
+}
+.slider-gallery div {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  border: 1px solid rgb(39, 9, 53);
+  overflow: hidden;
+}
+.slider-gallery div img {
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */
