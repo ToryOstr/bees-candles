@@ -1,9 +1,8 @@
-class Products {
+class Products_list {
   render() {
     let htmlCatalog = "";
 
     CATALOG.forEach(({ img, name, time, mass, price }) => {
-      console.log(img, name, time, mass, price);
       htmlCatalog += `
       <li class="product-card">
             <div class="product-img">
@@ -33,5 +32,5 @@ class Products {
   }
 }
 
-const productsPage = new Products();
+const productsPage = new Products_list();
 productsPage.render();

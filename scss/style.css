@@ -119,7 +119,7 @@ header .basket-btn:hover {
   display: flex;
   flex-direction: column;
   width: 280px;
-  height: 465px;
+  height: auto;
   padding: 5px;
   border-radius: 10px;
   border: 1px solid rgb(39, 9, 53);
@@ -141,6 +141,7 @@ header .basket-btn:hover {
 }
 
 .name {
+  height: 48px;
   font-size: 20px;
   margin: 15px 0 10px;
   text-align: center;
@@ -183,4 +184,10 @@ header .basket-btn:hover {
 .more-about:hover {
   background-color: rgb(255, 210, 51);
   box-shadow: 4px 4px 8px rgba(39, 9, 53, 0.5);
+}
+
+.product-big-card {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */
