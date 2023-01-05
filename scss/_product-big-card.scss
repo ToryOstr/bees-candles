@@ -234,3 +234,41 @@
   border-radius: $smoll-radius;
   cursor: pointer;
 }
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 30px 0;
+  font-size: 16px;
+
+  .price-value{
+  font-size: 20px;
+  line-height: 1;
+  padding: 2px 4px;
+  border: $border;
+  border-radius: $smoll-radius;
+  }
+}
+.quantity {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+.counter {
+  padding: 2px;
+  border: $border;
+  border-radius: $smoll-radius;
+  span {
+    padding: 2px 4px;
+
+  }
+  #counter_value {
+    padding: 0 2px;
+    border-left: $border;
+    border-right: $border;
+
+  }
+}
