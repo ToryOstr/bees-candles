@@ -383,4 +383,62 @@ header .basket-btn:hover {
 
 .saturation-name {
   font-size: 14px;
+}
+
+.saturation-item {
+  width: 28px;
+  height: 20px;
+  border: 1px solid rgb(39, 9, 53);
+  border-radius: 5px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 20px;
+}
+
+.packaging-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.packing-label {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.packing-label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 1px solid rgb(39, 9, 53);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.packaging-checkbox:checked + .packing-label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  background-color: rgb(191, 173, 199);
+  border: 1px solid rgb(39, 9, 53);
+  border-radius: 5px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
