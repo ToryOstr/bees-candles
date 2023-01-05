@@ -240,14 +240,14 @@
   align-items: center;
   width: 100%;
   margin: 30px 0;
-  font-size: 16px;
-
-  .price-value{
   font-size: 20px;
-  line-height: 1;
-  padding: 2px 4px;
-  border: $border;
-  border-radius: $smoll-radius;
+
+  .price-value {
+    font-size: 20px;
+    line-height: 1;
+    padding: 2px 4px;
+    border: $border;
+    border-radius: $smoll-radius;
   }
 }
 .quantity {
@@ -258,17 +258,39 @@
   font-size: 16px;
 }
 .counter {
+  display: flex;
+
   padding: 2px;
   border: $border;
   border-radius: $smoll-radius;
-  span {
-    padding: 2px 4px;
 
+  .counter-btn {
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    img {
+      display: block;
+      width: 8px;
+      height: auto;
+    }
+    &:hover {
+      background-color: rgba(63, 4, 91, 0.07);
+      scale: 1.1;
+      cursor: pointer;
+    }
+    &:nth-child(1) {
+      border-radius: 5px 0px 0px 5px;
+    }
+    &:nth-child(3) {
+      border-radius: 0px 5px 5px 0px;
+    }
   }
   #counter_value {
-    padding: 0 2px;
+    display: flex;
+    font-family: $number-font;
+    font-size: 20px;
+    padding: 2px 6px;
     border-left: $border;
     border-right: $border;
-
   }
 }
