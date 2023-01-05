@@ -13,16 +13,16 @@
   width: 280px;
   height: auto;
   padding: 5px;
-  border-radius: 10px;
-  border: 1px solid $main-text-color;
+  border: $border;
+  border-radius: $large-radius;
   background-color: #ffffff;
 }
 .product-img {
   width: 268px;
   height: 268px;
-  border-radius: 10px;
+  border-radius: $large-radius;
   overflow: hidden;
-  border: 1px solid $main-text-color;
+  border: $border;
 
   img {
     position: relative;
@@ -65,8 +65,8 @@
   margin-bottom: 10px;
   padding: 10px 65px;
   background-color: $background-color;
-  border: 1px solid $main-text-color;
-  border-radius: 10px;
+  border: $border;
+  border-radius: $large-radius;
   color: $main-text-color;
   transition: 0.3s;
   &:hover {

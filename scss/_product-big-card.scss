@@ -12,8 +12,8 @@
   margin: 0 auto;
   height: auto;
   background-color: #ffffff;
-  border-radius: 10px;
-  border: 1px solid $main-text-color;
+  border-radius: $large-radius;
+  border: $border;
 }
 .slider-section {
   display: flex;
@@ -48,8 +48,8 @@
 .slider {
   width: 268px;
   height: 268px;
-  border-radius: 10px;
-  border: 1px solid $main-text-color;
+  border: $border;
+  border-radius: $large-radius;
   overflow: hidden;
 
   img {
@@ -66,13 +66,13 @@
   div {
     width: 75px;
     height: 75px;
-    border-radius: 10px;
-    border: 1px solid $main-text-color;
+    border: $border;
+    border-radius: $large-radius;
     overflow: hidden;
     img {
       max-height: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: $large-radius;
     }
   }
 }
@@ -117,4 +117,71 @@
       color: #000000;
     }
   }
+}
+.select-color {
+  width: 100%;
+  margin: 20px 0;
+
+}
+.select-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+  border: $border;
+  border-radius: $smoll-radius;
+  cursor: pointer;
+
+}
+.select-current {
+  font-size: 16px;
+}
+.select-icon img {
+  width: 14px;
+  height: 8px;
+  rotate: -90deg;
+}
+
+.color-options {
+  width: 100%;
+  display: flex;
+  padding: 2px 4px 2px 10px;
+  border: $border;
+  border-radius: $smoll-radius;
+  border-top: none;
+  cursor: pointer;
+  
+  .color-item {
+    width: 28px;
+    height: 20px;
+    border: $border;
+    border-radius: $smoll-radius;
+  }
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .color-name {
+    font-size: 14px;
+  }
+}
+.select-saturation {
+  width: 100%;
+  margin: 20px 0;
+}
+.saturation-options {
+    width: 100%;
+  display: flex;
+  padding: 2px 4px 2px 10px;
+  border: $border;
+  border-radius: $smoll-radius;
+  border-top: none;
+  cursor: pointer;
+  
+}
+.saturation-name{
+  font-size: 14px;
 }

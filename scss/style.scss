@@ -1,11 +1,16 @@
+$main-font: "Playfair Display", serif;
+$accent-font: "Irish Grover", cursive;
+$number-font: "Roboto", sans-serif;
+
 $background-color: rgba(63, 4, 91, 0.3);
 $main-text-color: rgba(39, 9, 53, 1);
 $nav-text-color: #eeeeee;
 $accent-color: rgba(255, 210, 51, 1);
 
-$main-font: "Playfair Display", serif;
-$accent-font: "Irish Grover", cursive;
-$number-font: "Roboto", sans-serif;
+$border: 1px solid $main-text-color;
+$large-radius: 10px;
+$smoll-radius: 5px;
+
 
 html {
   scroll-behavior: smooth;
