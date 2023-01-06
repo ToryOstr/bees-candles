@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="./images/icons/logo.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../bees-candles/images/icons/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./scss/reset.css">
   <link rel="stylesheet" href="./scss/style.css">
   <title>Магазин воскових свічок Bees candles</title>
@@ -45,8 +47,8 @@
       </div>
 
       <div class="catalog-wrapp">
-        <h2>Каталог свічок</h2>
-        <ul id="catalog" class="catalog">
+        <h2 id="catalog">Каталог свічок</h2>
+        <ul  class="catalog">
         </ul>
       </div>
     </main>
@@ -87,6 +89,7 @@
         </div>
       <div class="information-and-price">
         <h3 class="product-name">Свічка з вощини товста</h3>
+        <span class="product-id visually-hidden"></span>
         <div class="about-product">
           <div class="elem-about">
             <img src="../bees-candles/images/icons/ri_scales-3-fill.svg" alt="">
@@ -109,13 +112,38 @@
           <div class="select-header">
             <span class="select-current">Колір</span>
             <div class="select-icon">
-              <img src="../bees-candles/images/icons/arrow.svg" alt="">
+              <img src="../bees-candles/images/icons/arrow.svg" alt="відкрити вибір кольору">
             </div>
           </div>
           <div class="color-options">
             <div class="option">
+              <span class="color-name">Натуральний віск</span>
+              <span class="color-item" style="background-color: rgb(241, 162, 19);"></span>
+            </div>
+
+            <div class="option">
+              <span class="color-name">Айворі</span>
+              <span class="color-item" style="background-color: rgb(255, 242, 204);"></span>
+            </div>
+
+            <div class="option">
+              <span class="color-name">Червоний</span>
+              <span class="color-item" style="background-color: rgb(120, 7, 0);"></span>
+            </div>
+
+            <div class="option">
+              <span class="color-name">Темний шоколад</span>
+              <span class="color-item" style="background-color: rgb(40, 15, 3);"></span>
+            </div>
+
+            <div class="option">
               <span class="color-name">Зелений</span>
               <span class="color-item" style="background-color: rgb(58, 81, 9);"></span>
+            </div>
+
+            <div class="option">
+              <span class="color-name">Хочу інший колір</span>
+              <span class="color-item" style="background-color: rgb(255, 255, 255);"></span>
             </div>
           </div>
 
@@ -131,7 +159,16 @@
           <div class="saturation-options">
             <div class="option">
               <span class="saturation-name">Пастельний</span>
-              <span class="saturation-item" style="background-color: rgb(128, 179, 18);"></span>
+              <span class="saturation-item" style="background-color: rgb(224 242 125);"></span>
+            </div>
+
+            <div class="option">
+              <span class="saturation-name">Середньої яскравості</span>
+              <span class="saturation-item" style="background-color: rgb(133, 160, 26);"></span>
+            </div>
+            <div class="option">
+              <span class="saturation-name">Насичений</span>
+              <span class="saturation-item" style="background-color: rgb(68, 85, 2);"></span>
             </div>
           </div>
 
@@ -160,7 +197,9 @@
               <img src="../bees-candles/images/icons/plus.svg" alt="збільшити кількість">
             </div>
           </div>
-
+        </div>
+        <div class="add-to-cart">
+          <span>До кошика</span>
         </div>
       </div>
       </div>
@@ -174,7 +213,7 @@
 <!-- Constants and Utils -->
 <script src="../bees-candles/constants/catalog.js"></script>
 <script src="../bees-candles/constants/root.js"></script>
-<script src="../bees-candles/utils/localStorageUtils.js"></script>
+<script src="../bees-candles/utils/localStorageUtil.js"></script>
 
   <!-- Component Header-->
   <script src="../bees-candles/components/Header/Header.js"></script>
@@ -184,6 +223,6 @@
   <script src="../bees-candles/components/Products/Product_big_card.js"></script>
   
   <!-- Component Bascet-card-->
-  <script src="../bees-candles/components/Basket-card/Bascet-card.js"></script>
+  <script src="../bees-candles/components/Basket-card/Basket-card.js"></script>
 </body>
 </html>

@@ -1,12 +1,31 @@
+.add-to-cart, .more-about {
+  display: flex;
+  align-self: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px 65px;
+  background-color: rgba(63, 4, 91, 0.3);
+  border: 1px solid rgb(39, 9, 53);
+  border-radius: 10px;
+  font-weight: 700;
+  color: rgb(39, 9, 53);
+  transition: 0.3s;
+}
+.add-to-cart:hover, .more-about:hover {
+  background-color: rgb(255, 210, 51);
+  box-shadow: 4px 4px 8px rgba(39, 9, 53, 0.5);
+  cursor: pointer;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   background-color: rgba(63, 4, 91, 0.3);
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
   color: rgb(39, 9, 53);
 }
@@ -43,6 +62,8 @@ header nav ul {
   justify-content: space-between;
 }
 header nav ul a {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
   color: #eeeeee;
   transition: 0.3s;
 }
@@ -90,7 +111,8 @@ header .basket-btn:hover {
   align-items: center;
   text-align: center;
   width: 520px;
-  font-size: 80px;
+  font-family: "Playfair Display", serif;
+  font-size: 72px;
 }
 
 .catalog-wrapp {
@@ -100,7 +122,8 @@ header .basket-btn:hover {
   margin: -40px auto 40px;
 }
 .catalog-wrapp > h2 {
-  font-size: 60px;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -142,8 +165,10 @@ header .basket-btn:hover {
 
 .name {
   height: 48px;
-  font-size: 20px;
   margin: 15px 0 10px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -169,29 +194,17 @@ header .basket-btn:hover {
   color: rgb(39, 9, 53);
 }
 
-.more-about {
-  display: inline-flex;
-  align-self: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  padding: 10px 65px;
-  background-color: rgba(63, 4, 91, 0.3);
-  border: 1px solid rgb(39, 9, 53);
-  border-radius: 10px;
-  color: rgb(39, 9, 53);
-  transition: 0.3s;
-}
-.more-about:hover {
-  background-color: rgb(255, 210, 51);
-  box-shadow: 4px 4px 8px rgba(39, 9, 53, 0.5);
-}
-
 .product-big-card {
   display: flex;
   width: 100%;
   justify-content: center;
   background-color: rgba(63, 4, 91, 0.3);
   padding: 50px;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .card-body {
@@ -290,7 +303,9 @@ header .basket-btn:hover {
 }
 .information-and-price .product-name {
   height: 58px;
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .about-product {
@@ -300,6 +315,7 @@ header .basket-btn:hover {
 }
 .about-product .elem-about {
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 .about-product .elem-about img {
@@ -331,18 +347,26 @@ header .basket-btn:hover {
 }
 
 .select-current {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
   font-size: 16px;
 }
 
-.select-icon img {
+.select-icon {
+  display: flex;
   width: 14px;
   height: 8px;
+}
+.select-icon img {
+  width: 8px;
+  height: 14px;
   rotate: -90deg;
 }
 
 .color-options {
   width: 100%;
   display: flex;
+  flex-direction: column;
   padding: 2px 4px 2px 10px;
   border: 1px solid rgb(39, 9, 53);
   border-radius: 5px;
@@ -359,6 +383,7 @@ header .basket-btn:hover {
 .option {
   width: 100%;
   display: flex;
+  margin-bottom: 5px;
   align-items: center;
   justify-content: space-between;
 }
@@ -374,6 +399,7 @@ header .basket-btn:hover {
 .saturation-options {
   width: 100%;
   display: flex;
+  flex-direction: column;
   padding: 2px 4px 2px 10px;
   border: 1px solid rgb(39, 9, 53);
   border-radius: 5px;

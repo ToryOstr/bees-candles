@@ -2,13 +2,14 @@ class Products_list {
   render() {
     let htmlCatalog = "";
 
-    CATALOG.forEach(({ img, name, time, mass, price }) => {
+    CATALOG.forEach(({ img, name, id, time, mass, price }) => {
       htmlCatalog += `
       <li class="product-card">
             <div class="product-img">
-              <img src="${img}" alt="">
+              <img src="${img[0]}" alt="">
             </div>
             <p class="name">${name}</p>
+            <span class="product-id visually-hidden">${id}</span>
             <div class="about">
               <div class="inform-element">
                 <img src="../bees-candles/images/icons/Vector.svg" alt="">
