@@ -13,19 +13,10 @@ class LocalStorageUtil {
 
   putProducts(id) {
     let products = this.getProducts();
-    const index = products.indexOf(id);
-    let isPush = false;
-
-    if (index === -1) {
-      products.push(id);
-      isPush = true;
-    } else {
-      products.splice(index, 1);
-    }
 
     localStorage.setItem(this.keyName, JSON.stringify(products));
 
-    return { isPush, products };
+    return { products };
   }
 }
 

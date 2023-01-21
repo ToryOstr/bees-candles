@@ -1,228 +1,84 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="../bees-candles/images/icons/logo.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./scss/reset.css">
-  <link rel="stylesheet" href="./scss/style.css">
-  <title>Магазин воскових свічок Bees candles</title>
-</head>
-<body>
-  <div class="wrapper">
-    <header>
-      <div class="logo">
-        <a href="#">
-          <img src="./images/icons/logo.svg" alt="логотип">
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="#catalog">Каталог</a>
-          </li>
-          <li>
-            <a href="#">Контакти</a>
-          </li>
-          <li>
-            <a href="#">Блог</a>
-          </li>
-          <li>
-            <a href="#">Про нас</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="basket-btn">
-        <img src="./images/icons/basket.svg" alt="зображення корзини">
-      </div>
-    </header>
-    <main>
-      <h1 class="visually-hidden">Магазин авторських свічок із бджолиного воску</h1>
-      <div class="hero">
-        <p>Час розсіяти темряву</p>
-      </div>
-
-      <div class="catalog-wrapp">
-        <h2 id="catalog">Каталог свічок</h2>
-        <ul  class="catalog">
-        </ul>
-      </div>
-    </main>
-    <footer>
-
-    </footer>
-
-    <div class="product-big-card">
-      <div class="card-body">
-        <div class="slider-section">
-          <div class="slider-wrapp">
-            <div class="left-arrow">
-            <img src="../bees-candles/images/icons/arrow.svg" alt="стрілка перелистування галереї">
-            </div>
-            <div class="slider">
-            <img src="../bees-candles/images/product-img/1.jpg" alt="">
-            </div>
-            <div class="right-arrow">
-            <img src="../bees-candles/images/icons/arrow.svg" alt="стрілка перелистування галереї">
-            </div>
-          </div>
-          <div class="slider-gallery">
-            <div>
-              <img src="../bees-candles/images/product-img/1.jpg" alt="">
-            </div>
-            <div>
-              <img src="../bees-candles/images/product-img/1.jpg" alt="">
-            </div>
-            <div>
-              <img src="../bees-candles/images/product-img/1.jpg" alt="">
-            </div>
-
-          </div>
-          <div class="prevention-message">
-            <p>*ціна свічки залежить від насиченості кольору</p>
-            <p>*колір та насиченість виробу можуть відрізнятися від зображених на фото.</p>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../bees-candles/images/icons/logo.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./scss/reset.css" />
+    <link rel="stylesheet" href="./scss/style.css" />
+    <title>Магазин воскових свічок Bees candles</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <a href="#">
+            <img src="./images/icons/logo.svg" alt="логотип" />
+          </a>
         </div>
-      <div class="information-and-price">
-        <h3 class="product-name">Свічка з вощини товста</h3>
-        <span class="product-id visually-hidden"></span>
-        <div class="about-product">
-          <div class="elem-about">
-            <img src="../bees-candles/images/icons/ri_scales-3-fill.svg" alt="">
-            <span class="mass">г</span>
-          </div>
-          <div class="elem-about">
-            <img src="../bees-candles/images/icons/Vector.svg" alt="">
-            <span class="time">год</span>
-          </div>
-          <div class="elem-about">
-            <img src="../bees-candles/images/icons/ruler.svg" alt="">
-            <span class="height">см</span>
-          </div>
-          <div class="elem-about">
-            <img src="../bees-candles/images/icons/diameter_icon.svg" alt="">
-            <span class="diameter">см</span>
-          </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#catalog">Каталог</a>
+            </li>
+            <li>
+              <a href="#">Контакти</a>
+            </li>
+            <li>
+              <a href="#">Блог</a>
+            </li>
+            <li>
+              <a href="#">Про нас</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="basket-btn">
+          <img src="./images/icons/basket.svg" alt="зображення корзини" />
         </div>
-        <div class="select-color">
-          <div class="select-header">
-            <span class="select-current">Колір</span>
-            <div class="select-icon">
-              <img src="../bees-candles/images/icons/arrow.svg" alt="відкрити вибір кольору">
-            </div>
-          </div>
-          <div class="color-options">
-            <div class="option">
-              <span class="color-name">Натуральний віск</span>
-              <span class="color-item" style="background-color: rgb(241, 162, 19);"></span>
-            </div>
-
-            <div class="option">
-              <span class="color-name">Айворі</span>
-              <span class="color-item" style="background-color: rgb(255, 242, 204);"></span>
-            </div>
-
-            <div class="option">
-              <span class="color-name">Червоний</span>
-              <span class="color-item" style="background-color: rgb(120, 7, 0);"></span>
-            </div>
-
-            <div class="option">
-              <span class="color-name">Темний шоколад</span>
-              <span class="color-item" style="background-color: rgb(40, 15, 3);"></span>
-            </div>
-
-            <div class="option">
-              <span class="color-name">Зелений</span>
-              <span class="color-item" style="background-color: rgb(58, 81, 9);"></span>
-            </div>
-
-            <div class="option">
-              <span class="color-name">Хочу інший колір</span>
-              <span class="color-item" style="background-color: rgb(255, 255, 255);"></span>
-            </div>
-          </div>
-
+      </header>
+      <main>
+        <h1 class="visually-hidden">
+          Магазин авторських свічок із бджолиного воску
+        </h1>
+        <div class="hero">
+          <p>Час розсіяти темряву</p>
         </div>
 
-        <div class="select-saturation">
-          <div class="select-header">
-            <span class="select-current">Насиченість</span>
-            <div class="select-icon">
-              <img src="../bees-candles/images/icons/arrow.svg" alt="">
-            </div>
-          </div>
-          <div class="saturation-options">
-            <div class="option">
-              <span class="saturation-name">Пастельний</span>
-              <span class="saturation-item" style="background-color: rgb(224 242 125);"></span>
-            </div>
-
-            <div class="option">
-              <span class="saturation-name">Середньої яскравості</span>
-              <span class="saturation-item" style="background-color: rgb(133, 160, 26);"></span>
-            </div>
-            <div class="option">
-              <span class="saturation-name">Насичений</span>
-              <span class="saturation-item" style="background-color: rgb(68, 85, 2);"></span>
-            </div>
-          </div>
-
+        <div class="catalog-wrapp">
+          <h2 id="catalog">Каталог свічок</h2>
+          <ul class="catalog">
+            
+          </ul>
         </div>
+      </main>
+      <footer></footer>
 
-        <div class="checkbox">
-          <input class="packaging-checkbox" type="checkbox" name="add_packaging" id="add_packaging">
-          <label class="packing-label" for="add_packaging">
-            Подарункове пакування
-          </label>
-        </div>
-
-        <div class="price">
-          <p>Ціна:</p>
-          <span class="price-value">₴</span>
-        </div>
-
-        <div class="quantity">
-          <p>Кількість</p>
-          <div class="counter">
-            <div class="counter-btn" id="minus">
-              <img src="../bees-candles/images/icons/minus.svg" alt="зменшити кількість">
-            </div>
-            <span id="counter_value">1</span>
-            <div class="counter-btn" id="plus">
-              <img src="../bees-candles/images/icons/plus.svg" alt="збільшити кількість">
-            </div>
-          </div>
-        </div>
-        <div class="add-to-cart">
-          <span>До кошика</span>
-        </div>
-      </div>
-      </div>
+      <div class="basket-card"></div>
     </div>
 
-    <div class="basket-card">
-      
-    </div>
-  </div>
+    <!-- Constants and Utils -->
+    <script src="../bees-candles/constants/catalog.js"></script>
+    <script src="../bees-candles/constants/root.js"></script>
+    <script src="../bees-candles/utils/localStorageUtil.js"></script>
 
-<!-- Constants and Utils -->
-<script src="../bees-candles/constants/catalog.js"></script>
-<script src="../bees-candles/constants/root.js"></script>
-<script src="../bees-candles/utils/localStorageUtil.js"></script>
+    <!-- Component Header-->
+    <script src="../bees-candles/components/Header/Header.js"></script>
 
-  <!-- Component Header-->
-  <script src="../bees-candles/components/Header/Header.js"></script>
-  
-  <!-- Component Products-->
-  <script src="../bees-candles/components/Products/Products_list.js"></script>
-  <script src="../bees-candles/components/Products/Product_big_card.js"></script>
-  
-  <!-- Component Bascet-card-->
-  <script src="../bees-candles/components/Basket-card/Basket-card.js"></script>
-</body>
+    <!-- Component Products-->
+    <script src="../bees-candles/components/Products/Products_list.js"></script>
+
+    <!-- Component Bascet-card-->
+    <script src="../bees-candles/components/Basket-card/Basket-card.js"></script>
+  </body>
 </html>

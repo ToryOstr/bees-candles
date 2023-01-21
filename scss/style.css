@@ -3,10 +3,11 @@
   align-self: center;
   margin-top: 20px;
   margin-bottom: 10px;
-  padding: 10px 65px;
+  padding: 10px 60px;
   background-color: rgba(63, 4, 91, 0.3);
   border: 1px solid rgb(39, 9, 53);
   border-radius: 10px;
+  font-family: "Playfair Display", serif;
   font-weight: 700;
   color: rgb(39, 9, 53);
   transition: 0.3s;
@@ -138,37 +139,38 @@ header .basket-btn:hover {
   gap: 40px 40px;
 }
 
-.product-card {
+.product-preview {
   display: flex;
   flex-direction: column;
   width: 280px;
-  height: auto;
-  padding: 5px;
-  border: 1px solid rgb(39, 9, 53);
-  border-radius: 10px;
+  height: 468px;
+  padding: 5px 5px 5px 5px;
   background-color: #ffffff;
+  border: 1px solid rgb(39, 9, 53);
+  border-radius: 5px;
 }
 
-.product-img {
+.product-photo {
   width: 268px;
   height: 268px;
-  border-radius: 10px;
-  overflow: hidden;
   border: 1px solid rgb(39, 9, 53);
+  border-radius: 5px;
+  overflow: hidden;
 }
-.product-img img {
+.product-photo img {
   position: relative;
-  right: 25%;
-  width: auto;
-  height: 100%;
+  right: 0;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .name {
   height: 48px;
-  margin: 15px 0 10px;
+  margin: 15px 0;
   font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 20px;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -179,7 +181,6 @@ header .basket-btn:hover {
 
 .inform-element {
   display: flex;
-  flex-direction: column;
 }
 .inform-element > img {
   width: auto;
@@ -194,25 +195,12 @@ header .basket-btn:hover {
   color: rgb(39, 9, 53);
 }
 
-.product-big-card {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  background-color: rgba(63, 4, 91, 0.3);
-  padding: 50px;
-}
-
-.active {
-  opacity: 1;
-  visibility: visible;
-}
-
 .card-body {
   display: flex;
-  width: 795px;
-  padding: 30px 15px 10px 30px;
-  margin: 0 auto;
+  width: 600px;
   height: auto;
+  padding: 10px;
+  margin: 0 auto;
   background-color: #ffffff;
   border-radius: 10px;
   border: 1px solid rgb(39, 9, 53);
@@ -234,24 +222,6 @@ header .basket-btn:hover {
   align-items: center;
 }
 
-.left-arrow,
-.right-arrow {
-  display: flex;
-  width: 40px;
-  height: 100%;
-  align-items: center;
-}
-.left-arrow img,
-.right-arrow img {
-  display: flex;
-  width: 24px;
-  height: 40px;
-}
-
-.right-arrow {
-  rotate: 180deg;
-}
-
 .slider {
   width: 268px;
   height: 268px;
@@ -263,25 +233,35 @@ header .basket-btn:hover {
   width: auto;
   height: 100%;
   position: relative;
-  right: 25%;
+  right: 0%;
 }
 
-.slider-gallery {
+.photo-gallery {
   display: flex;
   margin: 20px auto;
   column-gap: 20px;
 }
-.slider-gallery div {
+.photo-gallery .slider-images {
   width: 75px;
   height: 75px;
   border: 1px solid rgb(39, 9, 53);
   border-radius: 10px;
   overflow: hidden;
+  transition: 0.3s;
 }
-.slider-gallery div img {
+.photo-gallery .slider-images:hover {
+  box-shadow: 0px 0px 8px rgba(39, 9, 53, 0.5);
+  scale: 1.1;
+  cursor: pointer;
+}
+.photo-gallery .slider-images img {
   max-height: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.activ-img {
+  box-shadow: 0px 0px 8px rgba(39, 9, 53, 0.5);
 }
 
 .prevention-message {
@@ -436,6 +416,7 @@ header .basket-btn:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Playfair Display", serif;
   font-size: 16px;
   cursor: pointer;
 }
@@ -474,10 +455,13 @@ header .basket-btn:hover {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 30px 0;
+  margin: 20px 0 0;
+  font-family: "Playfair Display", serif;
   font-size: 20px;
 }
 .price .price-value {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1;
   padding: 2px 4px;
@@ -490,6 +474,9 @@ header .basket-btn:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
   font-size: 16px;
 }
 
@@ -527,4 +514,26 @@ header .basket-btn:hover {
   padding: 2px 6px;
   border-left: 1px solid rgb(39, 9, 53);
   border-right: 1px solid rgb(39, 9, 53);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: auto;
+  padding: 5px;
+  margin: 0;
+}
+
+.product-img {
+  width: 268px;
+  height: 268px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgb(39, 9, 53);
+}
+
+.modificator {
+  width: 270px;
+  margin: 0 auto;
 }/*# sourceMappingURL=style.css.map */
