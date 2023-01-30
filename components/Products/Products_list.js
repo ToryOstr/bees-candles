@@ -42,5 +42,3 @@ class Products_list {
 
 const productsPage = new Products_list();
 productsPage.render();
-
-
