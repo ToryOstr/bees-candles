@@ -25,8 +25,8 @@
   overflow: hidden;
   img {
     position: relative;
-    right: 0;
     max-width: 100%;
+    bottom: 5%;
     object-fit: cover;
   }
 }
@@ -46,7 +46,6 @@
 }
 .inform-element {
   display: flex;
-  // flex-direction: column;
   & > img {
     width: auto;
     height: 32px;
@@ -54,7 +53,7 @@
   }
 
   & > span {
-    font-family: Roboto, sans-serif;
+    font-family: $number-font;
     font-size: 16px;
     font-weight: 700;
     text-align: center;

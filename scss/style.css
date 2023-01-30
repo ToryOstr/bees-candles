@@ -129,6 +129,37 @@ header .basket-btn:hover {
   margin-bottom: 40px;
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 50px;
+  background: rgba(63, 4, 91, 0.3);
+}
+footer .logo img {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+footer .contact-links {
+  display: flex;
+  flex-direction: column;
+}
+footer .contact-links a {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0;
+  font-family: "Irish Grover", cursive;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgb(39, 9, 53);
+}
+footer .contact-links a[href*="tel:"] {
+  margin-top: 0px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
 .catalog {
   display: flex;
   justify-content: center;
@@ -159,8 +190,8 @@ header .basket-btn:hover {
 }
 .product-photo img {
   position: relative;
-  right: 0;
   max-width: 100%;
+  bottom: 5%;
   object-fit: cover;
 }
 
@@ -188,7 +219,7 @@ header .basket-btn:hover {
   margin-bottom: 5px;
 }
 .inform-element > span {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 700;
   text-align: center;
@@ -197,13 +228,11 @@ header .basket-btn:hover {
 
 .card-body {
   display: flex;
-  width: 600px;
+  width: 100%;
   height: auto;
   padding: 10px;
   margin: 0 auto;
   background-color: #ffffff;
-  border-radius: 10px;
-  border: 1px solid rgb(39, 9, 53);
 }
 
 .slider-section {
