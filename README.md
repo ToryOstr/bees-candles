@@ -1,1 +1,1 @@
-# bees-candles
+# This is my first commercial project. It is currently under development.
