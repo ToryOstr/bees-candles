@@ -42,7 +42,7 @@ const SATURATION = [
 
 const CATALOG = [
   {
-    id: "001",
+    id: "003",
     img: [
       "../bees-candles/images/product-img/christmas-tree-orange.jpg",
       "../bees-candles/images/product-img/christmas-tree-green.jpg",
@@ -74,7 +74,7 @@ const CATALOG = [
     price: 80,
   },
   {
-    id: "003",
+    id: "001",
     img: [
       "../bees-candles/images/product-img/bee-on-honeycombs.jpg",
       "../bees-candles/images/product-img/bee-on-honeycombs.jpg",
@@ -117,7 +117,7 @@ const CATALOG = [
     height: 10,
     diameter: 0,
     select_color: true,
-    price: 0,
+    price: 70,
   },
   {
     id: "006",
@@ -128,12 +128,12 @@ const CATALOG = [
       "../bees-candles/images/product-img/snowman-right-view.jpg",
     ],
     name: "Свічка Сніговик",
-    time: "",
+    time: "~7",
     mass: 60,
     height: 10,
     diameter: 0,
     select_color: true,
-    price: 0,
+    price: 60,
   },
   {
     id: "007",
@@ -179,7 +179,7 @@ const CATALOG = [
     height: 10,
     diameter: 0,
     select_color: true,
-    price: 0,
+    price: 80,
   },
   {
     id: "010",
@@ -189,12 +189,28 @@ const CATALOG = [
       "../bees-candles/images/product-img/chick-bird-back-view.jpg",
       "../bees-candles/images/product-img/chick-bird-right-view.jpg",
     ],
-    name: "Свічка Пташка Чик",
-    time: "",
+    name: "Свічка Пташка Чік",
+    time: "~7",
     mass: 60,
     height: 10,
-    diameter: 0,
+    diameter: 4,
     select_color: true,
-    price: 0,
+    price: 80,
+  },
+  {
+    id: "011",
+    img: [
+      "../bees-candles/images/product-img/owl-natural-wax-front-veiw.jpg",
+      "../bees-candles/images/product-img/owl-natural-wax-left-veiw.jpg",
+      "../bees-candles/images/product-img/owl-natural-wax-back-veiw.jpg",
+      "../bees-candles/images/product-img/owl-natural-wax-right-veiw.jpg",
+    ],
+    name: "Свічка Совушка",
+    time: "~2",
+    mass: 60,
+    height: 4.5,
+    diameter: 4,
+    select_color: true,
+    price: 25,
   },
 ];

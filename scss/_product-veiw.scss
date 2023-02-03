@@ -25,23 +25,36 @@
 }
 
 .slider {
+  position: relative;
   width: 268px;
   height: 268px;
   border: $border;
   border-radius: $large-radius;
   overflow: hidden;
-
-  img {
-    width: auto;
-    height: 100%;
+  transition: 0.3s;
+  &:hover{
     position: relative;
-    right: 0%;
+    top: 0;
+    left: 10px;
+    scale: 1.75;
+    z-index: 4;
+    cursor: pointer;
+  }
+  img {
+    max-width: 100%;
+    position: relative;
+    object-fit: cover;
+    object-position: center;
   }
 }
+
 .photo-gallery {
   display: flex;
-  margin: 20px auto;
+  flex-wrap: wrap;
+  margin: 20px 46px;
   column-gap: 20px;
+  row-gap: 10px;
+  justify-content: flex-start;
   .slider-images {
     width: 75px;
     height: 75px;
@@ -55,8 +68,9 @@
       cursor: pointer;
     }
     img {
-      max-height: 100%;
+      max-width: 100%;
       object-fit: cover;
+
       border-radius: $large-radius;
     }
   }
