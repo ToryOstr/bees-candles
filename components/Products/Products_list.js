@@ -49,7 +49,7 @@ const viewBtns = document.querySelectorAll(".more-about");
 
 function openCard(e) {
   localStorage.setItem("id", JSON.stringify(e.currentTarget.id));
-  window.open("./product-view.html", "_self");
+  window.open("product-view.html", "_self");
 }
 
 viewBtns.forEach((button) => {

@@ -75,16 +75,12 @@ const CATALOG = [
   },
   {
     id: "001",
-    img: [
-      "../bees-candles/images/product-img/bee-on-honeycombs.jpg",
-      "../bees-candles/images/product-img/bee-on-honeycombs.jpg",
-      "../bees-candles/images/product-img/bee-on-honeycombs.jpg",
-    ],
+    img: ["../bees-candles/images/product-img/bee-on-honeycombs.jpg"],
     name: "Свічка Бджілка",
     time: "~3",
     mass: 40,
     height: 2,
-    diameter: 0,
+    diameter: 5,
     select_color: true,
     price: 30,
   },

@@ -1,9 +1,7 @@
 const cardBody = document.querySelector(".card-body");
-
 const currentProductId = [JSON.parse(localStorage.getItem("id"))];
 
 const title = document.querySelector("title");
-
 const currentProduct = CATALOG.find(
   (product) => product.id === currentProductId[currentProductId.length - 1]
 );
@@ -65,7 +63,7 @@ const generatedCardContent = ({
         </div>
       </div>
 
-      <div class="select-color">
+      <div class="select">
         <div class="select-header">
           <span class="select-current">Колір</span>
           <div class="select-icon">
@@ -121,7 +119,7 @@ const generatedCardContent = ({
         </div>
       </div>
 
-      <div class="select-saturation">
+      <div class="select">
         <div class="select-header">
           <span class="select-current">Насиченість</span>
           <div class="select-icon">
@@ -197,8 +195,9 @@ const generatedCardContent = ({
   return cardHtml;
 };
 cardBody.innerHTML = generatedCardContent(currentProduct);
-let gallery = document.querySelector(".photo-gallery");
 
+//Photo gallery
+let gallery = document.querySelector(".photo-gallery");
 let photosHtml = currentProduct.img
   .map((element) => {
     return `
@@ -223,4 +222,29 @@ sliderImgs.forEach((elem) => {
   elem.addEventListener("click", toggleSliderImg);
 });
 
+//Custom HTML selest
+let selectHeaders = document.querySelectorAll(".select-header");
+let selectOptions = document.querySelectorAll(".option");
 
+function selectClassToogle(e) {
+  this.parentElement.classList.toggle("select-is-active");
+}
+
+function selectOption() {
+  let selectedOption = this.innerHTML;
+  let currentOption = this.closest(".select");
+  currentOption.querySelector(".select-header").innerHTML = `${selectedOption}`;
+  currentOption.classList.remove("select-is-active");
+}
+
+selectHeaders.forEach((element) => {
+  element.addEventListener("click", selectClassToogle);
+});
+
+selectOptions.forEach((element) => {
+  element.addEventListener("click", selectOption);
+});
+
+//Button
+const btn = document.querySelector(".add-to-cart");
+btn.addEventListener("click", (e) => {});

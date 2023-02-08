@@ -355,7 +355,8 @@ footer .contact-links a[href*="tel:"] {
   color: #000000;
 }
 
-.select-color {
+.select {
+  position: relative;
   width: 100%;
   margin: 20px 0;
 }
@@ -368,6 +369,12 @@ footer .contact-links a[href*="tel:"] {
   border: 1px solid rgb(39, 9, 53);
   border-radius: 5px;
   cursor: pointer;
+}
+.select-header .color-name,
+.select-header .saturation-name {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .select-current {
@@ -387,17 +394,26 @@ footer .contact-links a[href*="tel:"] {
   rotate: -90deg;
 }
 
+.hidden-img {
+  display: none;
+}
+
 .color-options {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 2px 4px 2px 10px;
+  display: none;
+  padding: 2px 0px 2px 0px;
   border: 1px solid rgb(39, 9, 53);
   border-radius: 5px;
   border-top: none;
+  background-color: #ffffff;
   cursor: pointer;
 }
-.color-options .color-item {
+
+.color-item {
+  display: inline-block;
   width: 28px;
   height: 20px;
   border: 1px solid rgb(39, 9, 53);
@@ -407,27 +423,27 @@ footer .contact-links a[href*="tel:"] {
 .option {
   width: 100%;
   display: flex;
-  margin-bottom: 5px;
+  padding: 2px 4px 2px 10px;
   align-items: center;
   justify-content: space-between;
 }
 .option .color-name {
   font-size: 14px;
 }
-
-.select-saturation {
-  width: 100%;
-  margin: 20px 0;
+.option:hover {
+  cursor: pointer;
+  background-color: rgb(255, 235, 163);
 }
 
 .saturation-options {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 2px 4px 2px 10px;
+  display: none;
+  position: absolute;
+  padding: 2px 0px 2px 0px;
   border: 1px solid rgb(39, 9, 53);
   border-radius: 5px;
   border-top: none;
+  background-color: #ffffff;
   cursor: pointer;
 }
 
@@ -440,6 +456,14 @@ footer .contact-links a[href*="tel:"] {
   height: 20px;
   border: 1px solid rgb(39, 9, 53);
   border-radius: 5px;
+}
+
+.select.select-is-active .color-options,
+.select.select-is-active .saturation-options {
+  display: block;
+  top: 30px;
+  background-color: #ffffff;
+  z-index: 2;
 }
 
 .checkbox {
