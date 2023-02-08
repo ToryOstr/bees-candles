@@ -1,11 +1,14 @@
 const cardBody = document.querySelector(".card-body");
+
 const currentProductId = [JSON.parse(localStorage.getItem("id"))];
+
+const title = document.querySelector("title");
 
 const currentProduct = CATALOG.find(
   (product) => product.id === currentProductId[currentProductId.length - 1]
 );
 
-const generateCardContent = ({
+const generatedCardContent = ({
   img,
   name,
   height,
@@ -15,6 +18,8 @@ const generateCardContent = ({
   mass,
   price,
 }) => {
+  title.innerText = `${name}`;
+
   let cardHtml = `
     <div class="slider-section">
       <div class="slider-wrapp">
@@ -191,7 +196,7 @@ const generateCardContent = ({
   `;
   return cardHtml;
 };
-cardBody.innerHTML = generateCardContent(currentProduct);
+cardBody.innerHTML = generatedCardContent(currentProduct);
 let gallery = document.querySelector(".photo-gallery");
 
 let photosHtml = currentProduct.img
@@ -209,16 +214,6 @@ gallery.innerHTML = photosHtml;
 const slider = document.querySelector(".slider");
 const sliderImgs = document.querySelectorAll(".slider-images");
 
-// function toggleClassImg(e) {
-//   let currentImg = e.currentTarget;
-//   currentImg.classList.toggle("activ-img");
-//   sliderImgs.forEach((elem) => {
-//     if (!currentImg.classList.contains("activ-img")) {
-//       elem.classList.remove("activ-img");
-//     }
-//   });
-// }
-
 function toggleSliderImg(e) {
   let img = e.currentTarget.innerHTML;
   return (slider.innerHTML = img);
@@ -228,5 +223,4 @@ sliderImgs.forEach((elem) => {
   elem.addEventListener("click", toggleSliderImg);
 });
 
-//   console.log(sliderImgs);
-// console.log(slider.innerHTML);
+

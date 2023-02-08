@@ -140,7 +140,6 @@ const CATALOG = [
     img: [
       "../bees-candles/images/product-img/2.jpg",
       "../bees-candles/images/product-img/wax-candle.jpg",
-      "../bees-candles/images/product-img/wax-candle.jpg",
     ],
     name: "Свічка з вощини товста",
     time: "~4",
@@ -152,11 +151,7 @@ const CATALOG = [
   },
   {
     id: "008",
-    img: [
-      "../bees-candles/images/product-img/wax-candle.jpg",
-      "../bees-candles/images/product-img/wax-candle.jpg",
-      "../bees-candles/images/product-img/wax-candle.jpg",
-    ],
+    img: ["../bees-candles/images/product-img/wax-candle.jpg"],
     name: "Свічка з вощини тонка",
     time: "~4",
     mass: 60,
@@ -170,8 +165,8 @@ const CATALOG = [
     img: [
       "../bees-candles/images/product-img/rick-bird-fromt-view.jpg",
       "../bees-candles/images/product-img/rick-bird-left-view.jpg",
-      "../bees-candles/images/product-img/rick-bird-back- view.jpg",
-      "../bees-candles/images/product-img/rick-bird-right- view.jpg",
+      "../bees-candles/images/product-img/rick-bird-back-view.jpg",
+      "../bees-candles/images/product-img/rick-bird-right-view.jpg",
     ],
     name: "Свічка Пташка Рік",
     time: "",
