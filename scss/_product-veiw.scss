@@ -211,11 +211,10 @@
 .saturation-name {
   font-size: 14px;
 }
-.saturation-item {
-  width: 28px;
+.saturation-price {
+  width: auto;
+  font-size: 14px;
   height: 20px;
-  border: $border;
-  border-radius: $smoll-radius;
 }
 
 .select.select-is-active .color-options,
@@ -224,6 +223,9 @@
   top: 30px;
   background-color: #ffffff;
   z-index: 2;
+}
+.select.select-is-active .color-options {
+  z-index: 3;
 }
 .checkbox {
   position: relative;

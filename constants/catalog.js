@@ -1,41 +1,46 @@
 const COLOR_OPTIONS = [
   {
     name: "Натуральний віск",
-    color: "#F1A213",
+    color: "#f1a213",
     select_saturation: false,
   },
   {
     name: "Айворі",
-    color: "#F1A213",
+    color: "#fff2cc",
     select_saturation: true,
   },
   {
     name: "Зелений",
-    color: "#00ff00",
+    color: "#3a5109",
+    select_saturation: true,
+  },
+  {
+    name: "Червоний",
+    color: "#790700",
     select_saturation: true,
   },
   {
     name: "Темний шоколад",
-    color: "#00ff00",
+    color: "#271003",
     select_saturation: true,
   },
   {
     name: "Інший колір",
-    color: "#00ff00",
-    select_saturation: true,
+    color: "#f5f5f5",
+    select_saturation: false,
   },
 ];
 const SATURATION = [
   {
-    name: "light",
+    name: "Пастельний",
     price: 10,
   },
   {
-    name: "medium",
+    name: "Середньої насиченості",
     price: 15,
   },
   {
-    name: "hue",
+    name: "Насичений",
     price: 20,
   },
 ];

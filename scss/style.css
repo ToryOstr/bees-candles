@@ -80,19 +80,6 @@ header .basket-btn:hover {
   cursor: pointer;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .hero {
   width: 100%;
   height: 100vh;
@@ -158,6 +145,19 @@ footer .contact-links a[href*="tel:"] {
   margin-top: 0px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .catalog {
@@ -451,11 +451,10 @@ footer .contact-links a[href*="tel:"] {
   font-size: 14px;
 }
 
-.saturation-item {
-  width: 28px;
+.saturation-price {
+  width: auto;
+  font-size: 14px;
   height: 20px;
-  border: 1px solid rgb(39, 9, 53);
-  border-radius: 5px;
 }
 
 .select.select-is-active .color-options,
@@ -464,6 +463,10 @@ footer .contact-links a[href*="tel:"] {
   top: 30px;
   background-color: #ffffff;
   z-index: 2;
+}
+
+.select.select-is-active .color-options {
+  z-index: 3;
 }
 
 .checkbox {

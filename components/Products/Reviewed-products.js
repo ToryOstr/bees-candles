@@ -73,49 +73,7 @@ const generatedCardContent = ({
           </div>
         </div>
         <div class="color-options">
-          <div class="option">
-            <span class="color-name">Натуральний віск</span>
-            <span
-              class="color-item"
-              style="background-color: rgb(241, 162, 19)"></span>
-          </div>
-
-          <div class="option">
-            <span class="color-name">Айворі</span>
-            <span
-              class="color-item"
-              style="background-color: rgb(255, 242, 204)"></span>
-          </div>
-
-          <div class="option">
-            <span class="color-name">Червоний</span>
-            <span
-              class="color-item"
-              style="background-color: rgb(120, 7, 0)"></span>
-          </div>
-
-          <div class="option">
-            <span class="color-name">Темний шоколад</span>
-            <span
-              class="color-item"
-              style="background-color: rgb(40, 15, 3)"></span>
-          </div>
-
-          <div class="option">
-            <span class="color-name">Зелений</span>
-            <span
-              class="color-item"
-              style="background-color: rgb(58, 81, 9)"
-            ></span>
-          </div>
-
-          <div class="option">
-            <span class="color-name">Хочу інший колір</span>
-            <span
-              class="color-item"
-              style="background-color: rgb(255, 255, 255)"
-            ></span>
-          </div>
+          
         </div>
       </div>
 
@@ -128,26 +86,8 @@ const generatedCardContent = ({
         </div>
         <div class="saturation-options">
           <div class="option">
-            <span class="saturation-name">Пастельний</span>
-            <span
-              class="saturation-item"
-              style="background-color: rgb(224 242 125)"
-            ></span>
-          </div>
-
-          <div class="option">
-            <span class="saturation-name">Середньої яскравості</span>
-            <span
-              class="saturation-item"
-              style="background-color: rgb(133, 160, 26)"
-            ></span>
-          </div>
-          <div class="option">
-            <span class="saturation-name">Насичений</span>
-            <span
-              class="saturation-item"
-              style="background-color: rgb(68, 85, 2)"
-            ></span>
+            <span class="saturation-name">Для цього кольору вибір насиченості не можливий</span>
+            <span class="saturation-price">+0грн</span>
           </div>
         </div>
       </div>
@@ -194,6 +134,7 @@ const generatedCardContent = ({
   `;
   return cardHtml;
 };
+
 cardBody.innerHTML = generatedCardContent(currentProduct);
 
 //Photo gallery
@@ -222,9 +163,34 @@ sliderImgs.forEach((elem) => {
   elem.addEventListener("click", toggleSliderImg);
 });
 
-//Custom HTML selest
+//Custom HTML select
 let selectHeaders = document.querySelectorAll(".select-header");
-let selectOptions = document.querySelectorAll(".option");
+
+let selectColorOptions = document.querySelector(".color-options");
+
+let selectSaturationOptions = document.querySelector(".saturation-options");
+
+let isUnLockedSaturationSelect = "false"; //для блокування вибору насиченості
+
+selectColorOptions.innerHTML = COLOR_OPTIONS.map((elem) => {
+  return `
+          <div class="option">
+            <span data-saturation=${elem.select_saturation} class="color-name">${elem.name}</span>
+            <span class="color-item"
+              style="background-color: ${elem.color}"></span>
+          </div>`;
+}).join("");
+
+selectSaturationOptions.innerHTML += SATURATION.map((elem) => {
+  return `
+      <div class="option visually-hidden">
+        <span class="saturation-name">${elem.name}</span>
+        <span class="saturation-price">+${elem.price}грн</span>
+      </div>
+      `;
+}).join("");
+
+let options = document.querySelectorAll(".option");
 
 function selectClassToogle(e) {
   this.parentElement.classList.toggle("select-is-active");
@@ -232,19 +198,56 @@ function selectClassToogle(e) {
 
 function selectOption() {
   let selectedOption = this.innerHTML;
-  let currentOption = this.closest(".select");
-  currentOption.querySelector(".select-header").innerHTML = `${selectedOption}`;
-  currentOption.classList.remove("select-is-active");
+  let currentSelect = this.closest(".select");
+  currentSelect.querySelector(".select-header").innerHTML = `${selectedOption}`;
+  currentSelect.classList.remove("select-is-active");
+
+  if (this.firstElementChild.hasAttribute("data-saturation")) {
+    isUnLockedSaturationSelect = currentSelect
+      .querySelector(".select-header")
+      .querySelector(".color-name").dataset.saturation;
+  }
+  isLockedOptions();
+}
+
+let saturationOptions = selectSaturationOptions.querySelectorAll(".option");
+
+function isLockedOptions() {
+  if (isUnLockedSaturationSelect === "true") {
+    saturationOptions.forEach((elem) => {
+      elem.classList.remove("visually-hidden");
+    });
+    saturationOptions[0].classList.add("visually-hidden");
+  } else {
+    saturationOptions.forEach((elem) => {
+      elem.classList.add("visually-hidden");
+    });
+    saturationOptions[0].classList.remove("visually-hidden");
+  }
+  console.log(isUnLockedSaturationSelect);
+  console.log(saturationOptions);
 }
 
 selectHeaders.forEach((element) => {
   element.addEventListener("click", selectClassToogle);
 });
 
-selectOptions.forEach((element) => {
+selectHeaders[0].addEventListener("click", function () {
+  selectHeaders[1].parentElement.classList.remove("select-is-active");
+  selectHeaders[1].innerHTML = `
+          <span class="select-current">Насиченість</span>
+          <div class="select-icon">
+            <img src="../bees-candles/images/icons/arrow.svg" alt="">
+          </div>
+          `;
+});
+selectHeaders[1].addEventListener("click", selectClassToogle);
+
+options.forEach((element) => {
   element.addEventListener("click", selectOption);
 });
 
-//Button
+
+
 const btn = document.querySelector(".add-to-cart");
 btn.addEventListener("click", (e) => {});
