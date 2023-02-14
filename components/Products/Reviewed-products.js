@@ -224,8 +224,6 @@ function isLockedOptions() {
     });
     saturationOptions[0].classList.remove("visually-hidden");
   }
-  console.log(isUnLockedSaturationSelect);
-  console.log(saturationOptions);
 }
 
 selectHeaders.forEach((element) => {
