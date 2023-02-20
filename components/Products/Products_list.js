@@ -25,7 +25,7 @@ const generateProductCard = (img, name, id, time, mass, price) => {
           src="../bees-candles/images/icons/entypo_price-tag.svg"
           alt=""
         />
-        <span class="price">${price}см</span>
+        <span class="price">${price}грн</span>
       </div>
     </div>
       <button class="more-about" id="${id}">Детальніше</button>

@@ -85,10 +85,7 @@ const generatedCardContent = ({
           </div>
         </div>
         <div class="saturation-options">
-          <div class="option">
-            <span class="saturation-name">Для цього кольору вибір насиченості не можливий</span>
-            <span class="saturation-price">+0грн</span>
-          </div>
+
         </div>
       </div>
 
@@ -170,25 +167,16 @@ let selectColorOptions = document.querySelector(".color-options");
 
 let selectSaturationOptions = document.querySelector(".saturation-options");
 
-let isUnLockedSaturationSelect = "false"; //для блокування вибору насиченості
-
-selectColorOptions.innerHTML = COLOR_OPTIONS.map((elem) => {
-  return `
+selectColorOptions.innerHTML = currentProduct.color
+  .map((elem) => {
+    return `
           <div class="option">
-            <span data-saturation=${elem.select_saturation} class="color-name">${elem.name}</span>
+            <span class="color-name">${elem.name}</span>
             <span class="color-item"
               style="background-color: ${elem.color}"></span>
           </div>`;
-}).join("");
-
-selectSaturationOptions.innerHTML += SATURATION.map((elem) => {
-  return `
-      <div class="option visually-hidden">
-        <span class="saturation-name">${elem.name}</span>
-        <span class="saturation-price">+${elem.price}грн</span>
-      </div>
-      `;
-}).join("");
+  })
+  .join("");
 
 let options = document.querySelectorAll(".option");
 
@@ -196,34 +184,32 @@ function selectClassToogle(e) {
   this.parentElement.classList.toggle("select-is-active");
 }
 
+let currentProductColor = "";
+
 function selectOption() {
   let selectedOption = this.innerHTML;
+  currentProductColor = this.firstElementChild.innerText;
   let currentSelect = this.closest(".select");
   currentSelect.querySelector(".select-header").innerHTML = `${selectedOption}`;
   currentSelect.classList.remove("select-is-active");
-
-  if (this.firstElementChild.hasAttribute("data-saturation")) {
-    isUnLockedSaturationSelect = currentSelect
-      .querySelector(".select-header")
-      .querySelector(".color-name").dataset.saturation;
-  }
-  isLockedOptions();
+  generatedSelectSaturation();
 }
 
-let saturationOptions = selectSaturationOptions.querySelectorAll(".option");
-
-function isLockedOptions() {
-  if (isUnLockedSaturationSelect === "true") {
-    saturationOptions.forEach((elem) => {
-      elem.classList.remove("visually-hidden");
-    });
-    saturationOptions[0].classList.add("visually-hidden");
-  } else {
-    saturationOptions.forEach((elem) => {
-      elem.classList.add("visually-hidden");
-    });
-    saturationOptions[0].classList.remove("visually-hidden");
-  }
+function generatedSelectSaturation() {
+  currentProduct.color.map(function (elem) {
+    if (elem.name === currentProductColor) {
+      selectSaturationOptions.innerHTML = elem.saturation
+        .map((elem) => {
+          return `
+      <div class="option">
+        <span class="saturation-name">${elem.name}</span>
+        <span class="saturation-price">+${elem.price}грн</span>
+      </div>
+      `;
+        })
+        .join("");
+    }
+  });
 }
 
 selectHeaders.forEach((element) => {
@@ -241,10 +227,23 @@ selectHeaders[0].addEventListener("click", function () {
 });
 selectHeaders[1].addEventListener("click", selectClassToogle);
 
-options.forEach((element) => {
+options.forEach(function (element) {
   element.addEventListener("click", selectOption);
 });
 
+let saturationOptions = selectSaturationOptions.querySelectorAll(".option");
+
+function selectSaturation() {
+  let selectedOption = this.innerHTML;
+  let currentSelect = this.closest(".select");
+  currentSelect.querySelector(".select-header").innerHTML = `${selectedOption}`;
+  currentSelect.classList.remove("select-is-active");
+  console.log(selectedOption);
+}
+
+saturationOptions.forEach(function (element) {
+  element.addEventListener("click", selectSaturation);
+});
 
 
 const btn = document.querySelector(".add-to-cart");

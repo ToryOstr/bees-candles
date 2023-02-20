@@ -1,50 +1,3 @@
-const COLOR_OPTIONS = [
-  {
-    name: "Натуральний віск",
-    color: "#f1a213",
-    select_saturation: false,
-  },
-  {
-    name: "Айворі",
-    color: "#fff2cc",
-    select_saturation: true,
-  },
-  {
-    name: "Зелений",
-    color: "#3a5109",
-    select_saturation: true,
-  },
-  {
-    name: "Червоний",
-    color: "#790700",
-    select_saturation: true,
-  },
-  {
-    name: "Темний шоколад",
-    color: "#271003",
-    select_saturation: true,
-  },
-  {
-    name: "Інший колір",
-    color: "#f5f5f5",
-    select_saturation: false,
-  },
-];
-const SATURATION = [
-  {
-    name: "Пастельний",
-    price: 10,
-  },
-  {
-    name: "Середньої насиченості",
-    price: 15,
-  },
-  {
-    name: "Насичений",
-    price: 20,
-  },
-];
-
 const CATALOG = [
   {
     id: "003",
@@ -59,8 +12,101 @@ const CATALOG = [
     mass: 60,
     height: 10,
     diameter: 0,
-    select_color: true,
     price: 50,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "002",
@@ -75,8 +121,101 @@ const CATALOG = [
     mass: 100,
     height: 10,
     diameter: 0,
-    select_color: true,
     price: 80,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "001",
@@ -86,8 +225,101 @@ const CATALOG = [
     mass: 40,
     height: 2,
     diameter: 5,
-    select_color: true,
     price: 30,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "004",
@@ -101,8 +333,101 @@ const CATALOG = [
     mass: 60,
     height: 9,
     diameter: 0,
-    select_color: true,
     price: 50,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "005",
@@ -117,8 +442,101 @@ const CATALOG = [
     mass: 60,
     height: 10,
     diameter: 0,
-    select_color: true,
     price: 70,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "006",
@@ -133,8 +551,101 @@ const CATALOG = [
     mass: 60,
     height: 10,
     diameter: 0,
-    select_color: true,
     price: 60,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "007",
@@ -147,8 +658,19 @@ const CATALOG = [
     mass: 60,
     height: 12,
     diameter: 4.5,
-    select_color: false,
     price: 70,
+    color: [
+      {
+        name: "Для цьої свічки вибір кольору не можливий",
+        color: "#ffffff",
+        saturation: [
+          {
+            name: "Для цьої свічки вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "008",
@@ -158,8 +680,19 @@ const CATALOG = [
     mass: 60,
     height: 12,
     diameter: 2.5,
-    select_color: false,
     price: 35,
+    color: [
+      {
+        name: "Для цьої свічки вибір кольору не можливий",
+        color: "#ffffff",
+        saturation: [
+          {
+            name: "Для цьої свічки вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "009",
@@ -174,8 +707,101 @@ const CATALOG = [
     mass: 60,
     height: 10,
     diameter: 0,
-    select_color: true,
     price: 80,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "010",
@@ -190,8 +816,101 @@ const CATALOG = [
     mass: 60,
     height: 10,
     diameter: 4,
-    select_color: true,
     price: 80,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
   {
     id: "011",
@@ -206,7 +925,100 @@ const CATALOG = [
     mass: 60,
     height: 4.5,
     diameter: 4,
-    select_color: true,
     price: 25,
+    color: [
+      {
+        name: "Натуральний віск",
+        color: "#f1a213",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 0,
+          },
+        ],
+      },
+      {
+        name: "Айворі",
+        color: "#fff2cc",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Зелений",
+        color: "#3a5109",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Червоний",
+        color: "#790700",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Темний шоколад",
+        color: "#271003",
+        saturation: [
+          {
+            name: "Пастельний",
+            price: 10,
+          },
+          {
+            name: "Середньої насиченості",
+            price: 15,
+          },
+          {
+            name: "Насичений",
+            price: 20,
+          },
+        ],
+      },
+      {
+        name: "Інший колір",
+        color: "#f5f5f5",
+        saturation: [
+          {
+            name: "Для цього кольору вибір насиченості не можливий",
+            price: 20,
+          },
+        ],
+      },
+    ],
   },
 ];
