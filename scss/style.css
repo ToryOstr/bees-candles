@@ -679,20 +679,76 @@ footer .contact-links a[href*="tel:"] {
   transition: 1s;
   margin: 0 auto;
 }
-.basket-opened .t-head .number, .basket-opened .t-head .remove-product {
-  width: 5%;
+.basket-opened caption {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.basket-opened table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(39, 9, 53, 0.2);
+}
+.basket-opened tbody tr:nth-child(odd) {
+  background-color: rgba(199, 181, 207, 0.15);
+}
+.basket-opened .t-head .number {
+  width: 3%;
 }
 .basket-opened .t-head .product-name {
-  width: 20%;
+  width: 22%;
 }
 .basket-opened .t-head .saturation {
   width: 20%;
 }
-.basket-opened .t-head .color, .basket-opened .t-head .packaging, .basket-opened .t-head .price, .basket-opened .t-head .summ {
+.basket-opened .t-head .color {
+  width: 15%;
+}
+.basket-opened .t-head .packaging, .basket-opened .t-head .price, .basket-opened .t-head .summ {
   width: 10%;
 }
-.basket-opened .t-head .quantity {
-  width: 10%;
+.basket-opened .t-head .quantity, .basket-opened .t-head .remove-product {
+  width: 5%;
+}
+.basket-opened th {
+  display: table-cell;
+  padding: 5px 2px;
+  font-family: "Playfair Display", serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  border: 1px solid rgba(39, 9, 53, 0.2);
+}
+.basket-opened td {
+  display: table-cell;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  padding: 4px 2px;
+  border: 1px solid rgba(39, 9, 53, 0.2);
+}
+.basket-opened .remove-product-btn {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+.basket-opened .remove-product-btn img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.basket-opened tfoot {
+  border: none;
+}
+.basket-opened .order-amount {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: start;
+  padding: 5px 20px;
 }
 
 .active-message {
@@ -705,4 +761,20 @@ footer .contact-links a[href*="tel:"] {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  padding: 10px 50px;
+}
+.order-wrapper .user-data {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */

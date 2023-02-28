@@ -17,6 +17,7 @@
     />
     <link rel="stylesheet" href="./scss/reset.css" />
     <link rel="stylesheet" href="./scss/style.css" />
+
     <title></title>
   </head>
   <body>
@@ -48,7 +49,21 @@
           <span class="products-counter"></span>
         </div>
       </header>
-      <div class="card-body"></div>
+      <div class="order-wrapper">
+        <form action="#" method="get">
+          <div class="user-data">
+            <label
+              >*Телефон
+              <input type="tel" name="tel" id="" />
+            </label>
+            <label
+              >*Ім'я та Призвіще:
+              <input type="text" name="name" id="" />
+            </label>
+          </div>
+          <p class="order-text"></p>
+        </form>
+      </div>
       <footer>
         <div id="contacts" class="contact-links">
           <a href="tel:+380639385672">
@@ -73,19 +88,16 @@
           </a>
         </div>
       </footer>
-
-      <div class="modal-message">
-
-      </div>
     </div>
 
     <!-- Constants -->
     <script src="../bees-candles/constants/catalog.js"></script>
     <script src="../bees-candles/constants/root.js"></script>
-    <script src="../bees-candles/components/Products/Reviewed-products.js"></script>
 
     <!-- Component Header-->
     <script src="../bees-candles/components/Header/Header.js"></script>
 
+    <!-- Component Bascet-card-->
+    <!-- <script src="../bees-candles/components/Basket-card/Basket-card.js"></script> -->
   </body>
 </html>
