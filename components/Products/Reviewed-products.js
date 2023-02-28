@@ -1,9 +1,9 @@
 const cardBody = document.querySelector(".card-body");
-const currentProductId = [JSON.parse(localStorage.getItem("id"))];
+const currentProductId = JSON.parse(localStorage.getItem("id"));
 
 const title = document.querySelector("title");
 const currentProduct = CATALOG.find(
-  (product) => product.id === currentProductId[currentProductId.length - 1]
+  (product) => product.id === currentProductId
 );
 
 const generatedCardContent = ({
@@ -84,9 +84,7 @@ const generatedCardContent = ({
             <img src="../bees-candles/images/icons/arrow.svg" alt="" />
           </div>
         </div>
-        <div class="saturation-options">
 
-        </div>
       </div>
 
       <div class="checkbox">
@@ -103,7 +101,7 @@ const generatedCardContent = ({
 
       <div class="price">
         <p>Ціна:</p>
-        <span class="price-value">${price}₴</span>
+        <span><span class="price-value">${price}</span>₴</span>
       </div>
 
       <div class="quantity">
@@ -115,7 +113,7 @@ const generatedCardContent = ({
               alt="зменшити кількість"
             />
           </div>
-          <span id="counter_value">1</span>
+          <span id="counter-value">1</span>
           <div class="counter-btn" id="plus">
             <img
               src="../bees-candles/images/icons/plus.svg"
@@ -124,6 +122,7 @@ const generatedCardContent = ({
           </div>
         </div>
       </div>
+      <div class="count-message prevention-message"></div>
       <button id="${id}" class="add-to-cart">
         <span>До кошика</span>
       </button>
@@ -162,10 +161,7 @@ sliderImgs.forEach((elem) => {
 
 //Custom HTML select
 let selectHeaders = document.querySelectorAll(".select-header");
-
 let selectColorOptions = document.querySelector(".color-options");
-
-let selectSaturationOptions = document.querySelector(".saturation-options");
 
 selectColorOptions.innerHTML = currentProduct.color
   .map((elem) => {
@@ -192,10 +188,27 @@ function selectOption() {
   let currentSelect = this.closest(".select");
   currentSelect.querySelector(".select-header").innerHTML = `${selectedOption}`;
   currentSelect.classList.remove("select-is-active");
+
   generatedSelectSaturation();
+  calcPrice();
 }
 
 function generatedSelectSaturation() {
+  if (
+    !document
+      .querySelectorAll(".select")[1]
+      .innerHTML.includes(`<div class="saturation-options">`)
+  ) {
+    document
+      .querySelectorAll(".select")[1]
+      .insertAdjacentHTML(
+        "beforeend",
+        `<div class="saturation-options"></div>`
+      );
+  }
+
+  let selectSaturationOptions = document.querySelector(".saturation-options");
+
   currentProduct.color.map(function (elem) {
     if (elem.name === currentProductColor) {
       selectSaturationOptions.innerHTML = elem.saturation
@@ -203,12 +216,17 @@ function generatedSelectSaturation() {
           return `
       <div class="option">
         <span class="saturation-name">${elem.name}</span>
-        <span class="saturation-price">+${elem.price}грн</span>
+        <span class="saturation-price">+<span class="saturation-value">${elem.price}</span>грн</span>
       </div>
       `;
         })
         .join("");
     }
+  });
+  let saturationOptions = selectSaturationOptions.querySelectorAll(".option");
+
+  saturationOptions.forEach(function (element) {
+    element.addEventListener("click", selectSaturation);
   });
 }
 
@@ -231,20 +249,165 @@ options.forEach(function (element) {
   element.addEventListener("click", selectOption);
 });
 
-let saturationOptions = selectSaturationOptions.querySelectorAll(".option");
+options.forEach(function (element) {
+  element.addEventListener("click", calcPrice);
+});
 
 function selectSaturation() {
   let selectedOption = this.innerHTML;
   let currentSelect = this.closest(".select");
   currentSelect.querySelector(".select-header").innerHTML = `${selectedOption}`;
   currentSelect.classList.remove("select-is-active");
-  console.log(selectedOption);
+
+  calcPrice();
 }
 
-saturationOptions.forEach(function (element) {
-  element.addEventListener("click", selectSaturation);
+//Calculator
+
+let packaging = document.querySelector(".packaging-checkbox");
+let priceOutput = document.querySelector(".price-value");
+
+function calcPrice() {
+  let saturationValue = selectHeaders[1].querySelector(".saturation-value");
+
+  if (currentProductColor === "Натуральний віск" && saturationValue === null) {
+    saturationValue = 0;
+  } else if (
+    currentProductColor === "Інший колір" &&
+    saturationValue === null
+  ) {
+    saturationValue = 20;
+  } else {
+    saturationValue = saturationValue ? Number(saturationValue.innerText) : 0;
+  }
+
+  let productPrice = currentProduct.price;
+
+  if (packaging.checked) {
+    productPrice += 10 + saturationValue;
+  } else {
+    productPrice = currentProduct.price + saturationValue;
+  }
+
+  priceOutput.innerText = productPrice;
+}
+
+packaging.addEventListener("click", calcPrice);
+
+//Quantity products
+
+let counterMinus = document.querySelector("#minus");
+let counterPlus = document.querySelector("#plus");
+let counterValue = document.querySelector("#counter-value");
+let count = Number(counterValue.innerText);
+let countMessage = document.querySelector(".count-message");
+counterMinus.addEventListener("click", (e) => {
+  if (count > 1) {
+    count--;
+    countMessage.innerText = "";
+  } else {
+    count = 1;
+    countMessage.innerText = `${count} - це мінімальна кількість замовлення.`;
+  }
+
+  counterValue.innerText = count;
+});
+counterPlus.addEventListener("click", (e) => {
+  if (count < 10) {
+    count++;
+    countMessage.innerText = "";
+  } else {
+    count = 10;
+    countMessage.innerText = `${count} - це максимальна кількість замовлення.`;
+  }
+  counterValue.innerText = count;
 });
 
+let basket =
+  JSON.parse(localStorage.getItem("basket")) === null
+    ? []
+    : JSON.parse(localStorage.getItem("basket"));
 
 const btn = document.querySelector(".add-to-cart");
-btn.addEventListener("click", (e) => {});
+
+function blockedBtn() {
+  btn.innerText = "Оберіть колір та насиченість";
+  setTimeout(() => {
+    btn.innerText = "До кошика";
+  }, 2000);
+  btn.classList.add("blocked-btn");
+  setTimeout(() => {
+    btn.classList.remove("blocked-btn");
+  }, 2000);
+}
+
+function addToBascket() {
+  let selectedProduct = {
+    "product name": document.querySelector(".product-name").innerText,
+    "product color":
+      currentProduct.color.name !== "Вибір не можливий"
+        ? currentProductColor
+        : "Вибір не можливий",
+    "color saturation":
+      currentProductColor === "Натуральний віск" ||
+      currentProductColor === "Інший колір" ||
+      selectHeaders[1].querySelector(".saturation-name") === null
+        ? "Вибір не можливий"
+        : selectHeaders[1].querySelector(".saturation-name").innerText,
+    packaging: packaging.checked ? "Так" : "Ні",
+    "product price": priceOutput.innerText,
+    "quantity products": count,
+    sum: Number(priceOutput.innerText) * count,
+  };
+
+  if (
+    document
+      .querySelector(".color-options")
+      .querySelector(".option")
+      .querySelector(".color-name").innerText === "Вибір не можливий"
+  ) {
+    basket.push(selectedProduct);
+    localStorage.setItem("basket", JSON.stringify(basket));
+    generatedModalMessage(selectedProduct);
+    toggleActiveClass();
+    setTimeout(toggleActiveClass, 3000);
+  } else {
+    if (
+      currentProductColor !== "Натуральний віск" &&
+      currentProductColor !== "Інший колір" &&
+      selectHeaders[1].querySelector(".saturation-name") === null
+    ) {
+      blockedBtn();
+    } else {
+      basket.push(selectedProduct);
+      localStorage.setItem("basket", JSON.stringify(basket));
+      generatedModalMessage(selectedProduct);
+      toggleActiveClass();
+      setTimeout(toggleActiveClass, 3000);
+    }
+  }
+}
+let messageModal = document.querySelector(".basket-card");
+
+function toggleActiveClass() {
+  messageModal.classList.toggle("active-basket");
+}
+function generatedModalMessage(elem) {
+  messageModal.innerHTML = `
+    <div class="success-message">
+      <p>${elem["product name"]},</p>
+      <p>колір ${elem["product color"].toLowerCase()},</p>
+      <p>в кількості ${elem["quantity products"]}шт</p>
+      <p>додана до кошика.</p>
+    </div> `;
+}
+
+btn.addEventListener("click", addToBascket);
+
+let basketBtn = document.querySelector(".basket-btn");
+
+function openBasket() {
+  window.open("basket.html", "_self");
+}
+
+basketBtn.addEventListener("click", openBasket);

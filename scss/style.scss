@@ -9,9 +9,17 @@ $nav-text-color: #eeeeee;
 $accent-color: rgba(255, 210, 51, 1);
 $select-active-background: rgb(255, 235, 163);
 
+$table_border: 1px solid rgba(39, 9, 53, 0.2);
 $border: 1px solid $main-text-color;
 $large-radius: 10px;
 $smoll-radius: 5px;
+
+%user-select-vendor {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
 
 %btn-style {
   display: flex;
@@ -42,7 +50,7 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.2;
-
+  overflow-x: hidden;
   color: $main-text-color;
 }
 .wrapper {
@@ -177,4 +185,5 @@ footer {
 }
 
 @import "products-list";
-@import "product-veiw";
+@import "reviewed-products";
+@import "basket-card";

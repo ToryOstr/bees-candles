@@ -19,7 +19,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -101,7 +101,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],
@@ -128,7 +128,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -210,7 +210,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],
@@ -232,7 +232,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -314,7 +314,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],
@@ -340,7 +340,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -422,7 +422,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],
@@ -449,7 +449,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -531,7 +531,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],
@@ -558,7 +558,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -640,7 +640,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],
@@ -661,11 +661,11 @@ const CATALOG = [
     price: 70,
     color: [
       {
-        name: "Для цьої свічки вибір кольору не можливий",
+        name: "Вибір не можливий",
         color: "#ffffff",
         saturation: [
           {
-            name: "Для цьої свічки вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -683,11 +683,11 @@ const CATALOG = [
     price: 35,
     color: [
       {
-        name: "Для цьої свічки вибір кольору не можливий",
+        name: "Вибір не можливий",
         color: "#ffffff",
         saturation: [
           {
-            name: "Для цьої свічки вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -714,7 +714,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -796,7 +796,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],
@@ -811,7 +811,7 @@ const CATALOG = [
       "../bees-candles/images/product-img/chick-bird-back-view.jpg",
       "../bees-candles/images/product-img/chick-bird-right-view.jpg",
     ],
-    name: "Свічка Пташка Чік",
+    name: "Свічка Пташка Вжик",
     time: "~7",
     mass: 60,
     height: 10,
@@ -823,7 +823,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -905,7 +905,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],
@@ -932,7 +932,7 @@ const CATALOG = [
         color: "#f1a213",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 0,
           },
         ],
@@ -1014,7 +1014,7 @@ const CATALOG = [
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Для цього кольору вибір насиченості не можливий",
+            name: "Вибір не можливий",
             price: 20,
           },
         ],

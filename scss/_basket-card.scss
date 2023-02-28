@@ -1,0 +1,133 @@
+.basket-card {
+  position: absolute;
+  z-index: 3;
+  top: 80px;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: auto;
+  border: $table_border;
+  border-radius: $large-radius;
+  box-shadow: -4px 4px 8px rgba(39, 9, 53, 0.5);
+  padding: 10px;
+  background-color: #ffffff;
+  transition: 1s;
+}
+.basket-opened {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border: $table_border;
+  border-radius: $large-radius;
+  box-shadow: -4px 4px 8px rgba(39, 9, 53, 0.5);
+  padding: 10px;
+  background-color: #ffffff;
+  transition: 1s;
+  margin: 0 auto;
+
+    .t-head {
+    & .number,
+    & .remove-product {
+      width: 5%;
+    }
+    & .product-name {
+      width: 20%;
+    }
+    & .saturation {
+      width: 20%;
+    }
+    & .color,
+    & .packaging,
+    & .price,
+    & .summ {
+      width: 10%;
+    }
+    & .quantity {
+      width: 10%;
+    }
+  }
+}
+.active-basket {
+  right: 0;
+}
+// .close-btn {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+//   transition: 0.2s;
+
+//   &:hover {
+//     cursor: pointer;
+//     scale: 1.1;
+//   }
+// }
+.basket-card {
+  .success-message {
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-family: $main-font;
+    font-weight: 700;
+  }
+  // caption {
+  //   font-family: $header-font;
+  //   font-size: 24px;
+  //   line-height: 1.33;
+  //   text-align: center;
+  //   margin-bottom: 10px;
+  // }
+  // table {
+  //   table-layout: fixed;
+  //   width: 100%;
+  //   border-collapse: collapse;
+  //   border: $table_border;
+  // }
+  // tbody tr:nth-child(odd) {
+  //   background-color: rgb(199, 181, 207, 0.15);
+  // }
+  // .t-head {
+  //   & .product-name {
+  //     width: 20%;
+  //   }
+  //   & .saturation {
+  //     width: 20%;
+  //   }
+  //   & .color,
+  //   & .packaging,
+  //   & .summ {
+  //     width: 10%;
+  //   }
+  //   & .quantity {
+  //     width: 10%;
+  //   }
+  // }
+
+  // th {
+  //   padding: 5px 2px;
+  //   font-family: $header-font;
+  //   font-size: 12px;
+  //   font-weight: 500;
+  //   line-height: 1.2;
+  //   border: $table_border;
+  // }
+  // td {
+  //   font-size: 14px;
+  //   padding: 4px 2px;
+  //   border: $table_border;
+  // }
+  // .remove-product-btn {
+  //   display: flex;
+  //   justify-content: center;
+  //   background-color: transparent;
+  //   img {
+  //     display: block;
+  //     width: 100%;
+  //     height: auto;
+  //   }
+  // }
+  // .order-amount {
+  // }
+  // .amount-value {
+  // }
+}

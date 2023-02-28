@@ -16,6 +16,12 @@
   background-color: #ffffff;
   border: $border;
   border-radius: $smoll-radius;
+  transition: 0.3s;
+  &:hover{
+    cursor: pointer;
+    scale: 1.05;
+    box-shadow: 4px 4px 8px rgba(39, 9, 53, 0.5);
+  }
 }
 .product-photo {
   width: 268px;

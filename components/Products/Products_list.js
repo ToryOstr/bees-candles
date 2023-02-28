@@ -1,6 +1,6 @@
 const generateProductCard = (img, name, id, time, mass, price) => {
   return `
-  <li class="product-preview">
+  <li id="${id}" class="product-preview">
     <div class="product-photo">
       <img
         src="${img[0]}"
@@ -28,7 +28,7 @@ const generateProductCard = (img, name, id, time, mass, price) => {
         <span class="price">${price}грн</span>
       </div>
     </div>
-      <button class="more-about" id="${id}">Детальніше</button>
+      <button class="more-about">Детальніше</button>
   </li>
   `;
 };
@@ -45,7 +45,7 @@ const catalogHtml = CATALOG.map((candel) => {
 
 ROOT_CATALOG.innerHTML = catalogHtml;
 
-const viewBtns = document.querySelectorAll(".more-about");
+const viewBtns = document.querySelectorAll(".product-preview");
 
 function openCard(e) {
   localStorage.setItem("id", JSON.stringify(e.currentTarget.id));
@@ -54,4 +54,8 @@ function openCard(e) {
 
 viewBtns.forEach((button) => {
   button.addEventListener("click", openCard);
+});
+
+document.querySelector(".basket-btn").addEventListener("click", function () {
+  window.open("basket.html", "_self");
 });
