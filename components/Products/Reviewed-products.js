@@ -18,6 +18,49 @@ const generatedCardContent = ({
 }) => {
   title.innerText = `${name}`;
 
+  let massHtml =
+    mass !== "" && mass !== 0
+      ? `
+        <div class="elem-about">
+          <img
+            src="../bees-candles/images/icons/ri_scales-3-fill.svg"
+            alt=""
+          />
+          <span class="mass">${mass}г</span>
+        </div>`
+      : "";
+
+  let timeHtml =
+    time !== "" && time !== 0
+      ? `
+    <div class="elem-about">
+      <img src="../bees-candles/images/icons/Vector.svg" alt="" />
+      <span class="time">${time}год</span>
+    </div>`
+      : "";
+
+  let heightHtml =
+    height !== "" && height !== 0
+      ? `
+      <div class="elem-about">
+          <img
+            src="../bees-candles/images/icons/ruler.svg"
+            alt=""/>
+          <span class="height">${height}см</span>
+        </div>`
+      : "";
+
+  let diameterHtml =
+    diameter !== "" && diameter !== 0
+      ? `
+    <div class="elem-about">
+          <img
+            src="../bees-candles/images/icons/diameter_icon.svg"
+            alt=""/>
+          <span class="diameter">${diameter}см</span>
+        </div>`
+      : "";
+
   let cardHtml = `
     <div class="slider-section">
       <div class="slider-wrapp">
@@ -38,29 +81,12 @@ const generatedCardContent = ({
     </div>
     <div class="information-and-price">
       <h3 class="product-name">${name}</h3>
-      <span class="product-id visually-hidden"></span>
+
       <div class="about-product">
-        <div class="elem-about">
-          <img
-            src="../bees-candles/images/icons/ri_scales-3-fill.svg"
-            alt=""
-          />
-          <span class="mass">${mass}г</span>
-        </div>
-        <div class="elem-about">
-          <img src="../bees-candles/images/icons/Vector.svg" alt="" />
-          <span class="time">${time}год</span>
-        </div>
-        <div class="elem-about">
-          <img src="../bees-candles/images/icons/ruler.svg" alt="" />
-          <span class="height">${height}см</span>
-        </div>
-        <div class="elem-about">
-          <img
-            src="../bees-candles/images/icons/diameter_icon.svg"
-            alt=""/>
-          <span class="diameter">${diameter}см</span>
-        </div>
+        ${massHtml}
+        ${timeHtml}
+        ${heightHtml}
+        ${diameterHtml}
       </div>
 
       <div class="select">
@@ -340,9 +366,10 @@ function blockedBtn() {
     btn.classList.remove("blocked-btn");
   }, 2000);
 }
+let selectedProduct;
 
-function addToBascket() {
-  let selectedProduct = {
+function generatedSelectedProduct() {
+  selectedProduct = {
     "product name": document.querySelector(".product-name").innerText,
     "product color":
       currentProduct.color.name !== "Вибір не можливий"
@@ -352,22 +379,28 @@ function addToBascket() {
       currentProductColor === "Натуральний віск" ||
       currentProductColor === "Інший колір" ||
       selectHeaders[1].querySelector(".saturation-name") === null
-        ? "Вибір не можливий"
+        ? ""
         : selectHeaders[1].querySelector(".saturation-name").innerText,
     packaging: packaging.checked ? "Так" : "Ні",
     "product price": priceOutput.innerText,
     "quantity products": count,
     sum: Number(priceOutput.innerText) * count,
   };
+}
+function setProductsToLocalStorage() {
+  basket.push(selectedProduct);
+  localStorage.setItem("basket", JSON.stringify(basket));
+}
 
+function addToBascket() {
+  generatedSelectedProduct();
   if (
     document
       .querySelector(".color-options")
       .querySelector(".option")
       .querySelector(".color-name").innerText === "Вибір не можливий"
   ) {
-    basket.push(selectedProduct);
-    localStorage.setItem("basket", JSON.stringify(basket));
+    setProductsToLocalStorage();
     generatedModalMessage(selectedProduct);
     toggleActiveClass();
     setTimeout(toggleActiveClass, 3000);
@@ -379,26 +412,28 @@ function addToBascket() {
     ) {
       blockedBtn();
     } else {
-      basket.push(selectedProduct);
-      localStorage.setItem("basket", JSON.stringify(basket));
+      setProductsToLocalStorage();
       generatedModalMessage(selectedProduct);
       toggleActiveClass();
       setTimeout(toggleActiveClass, 3000);
     }
   }
+  recountProductsCounter();
 }
-let messageModal = document.querySelector(".basket-card");
+let messageModal = document.querySelector(".modal-message");
 
 function toggleActiveClass() {
-  messageModal.classList.toggle("active-basket");
+  messageModal.classList.toggle("active-message");
 }
 function generatedModalMessage(elem) {
   messageModal.innerHTML = `
     <div class="success-message">
+    <p>Додано до кошика:</p>
       <p>${elem["product name"]},</p>
-      <p>колір ${elem["product color"].toLowerCase()},</p>
+      <p>колір ${elem["product color"].toLowerCase()}, ${elem[
+    "color saturation"
+  ].toLowerCase()}</p>
       <p>в кількості ${elem["quantity products"]}шт</p>
-      <p>додана до кошика.</p>
     </div> `;
 }
 

@@ -59,3 +59,4 @@ viewBtns.forEach((button) => {
 document.querySelector(".basket-btn").addEventListener("click", function () {
   window.open("basket.html", "_self");
 });
+recountProductsCounter();

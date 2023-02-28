@@ -62,3 +62,4 @@ function generatedBasket(array) {
   }
 }
 generatedBasket(mainBasket);
+recountProductsCounter();
