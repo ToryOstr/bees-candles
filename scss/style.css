@@ -459,6 +459,17 @@ footer .contact-links a[href*="tel:"] {
   .catalog {
     padding: 0px;
   }
+  .catalog .name {
+    height: calc(24px + 24 * (100vw - 320px) / 1120);
+    margin: 5px 0;
+  }
+  .catalog .product-preview {
+    height: 420px;
+  }
+  .catalog .about-product .elem-about img {
+    width: 24px;
+    height: 24px;
+  }
 }
 .card-body {
   display: flex;
@@ -872,6 +883,13 @@ footer .contact-links a[href*="tel:"] {
   .slider-wrapp {
     max-width: 270px;
     margin-top: 65px;
+  }
+  .information-and-price {
+    max-width: 270px;
+    margin: 0 auto;
+  }
+  .add-to-cart {
+    padding: 10px 60px;
   }
 }
 .modal-message {

@@ -17,7 +17,7 @@
   border: $border;
   border-radius: $smoll-radius;
   transition: 0.3s;
-  &:hover{
+  &:hover {
     cursor: pointer;
     scale: 1.05;
     box-shadow: 4px 4px 8px rgba(39, 9, 53, 0.5);
@@ -25,7 +25,7 @@
 }
 .product-photo {
   max-width: 268px;
-    max-height: 268px;
+  max-height: 268px;
   border: $border;
   border-radius: $smoll-radius;
   overflow: hidden;
@@ -70,7 +70,20 @@
   @extend %btn-style;
 }
 @media (max-width: 767px) {
-  .catalog{
+  .catalog {
     padding: 0px;
+    .name {
+      height: calc(24px + 24 * (100vw - 320px) / 1120);
+      margin: 5px 0;
+    }
+    .product-preview {
+      height: 420px;
+    }
+    .about-product {
+      .elem-about img {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }
