@@ -10,7 +10,7 @@
 .product-preview {
   display: flex;
   flex-direction: column;
-  width: 280px;
+  max-width: 280px;
   height: 468px;
   padding: 5px 5px 5px 5px;
   background-color: #ffffff;
@@ -24,8 +24,8 @@
   }
 }
 .product-photo {
-  width: 268px;
-  height: 268px;
+  max-width: 268px;
+    max-height: 268px;
   border: $border;
   border-radius: $smoll-radius;
   overflow: hidden;
@@ -40,9 +40,9 @@
 .name {
   height: 48px;
   margin: 15px 0;
-  font-family: $header-font;
+  font-family: $header-font_700;
   font-weight: 700;
-  font-size: 20px;
+  font-size: calc(14px + 6 * ((100vw - 320px) / (1440 - 320)));
   line-height: 1.2;
   text-align: center;
 }
@@ -59,7 +59,7 @@
   }
 
   & > span {
-    font-family: $number-font;
+    font-family: $number-font_400_500_700;
     font-size: 16px;
     font-weight: 700;
     text-align: center;
@@ -68,4 +68,9 @@
 }
 .more-about {
   @extend %btn-style;
+}
+@media (max-width: 767px) {
+  .catalog{
+    padding: 0px;
+  }
 }

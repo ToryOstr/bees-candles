@@ -7,6 +7,7 @@ let mainBasketCard = document.querySelector(".basket-opened");
 let thead = mainBasketCard.querySelector("thead");
 let tbody = mainBasketCard.querySelector("tbody");
 let tfoot = mainBasketCard.querySelector("tfoot");
+let orderBtn = document.querySelector(".order-btn");
 let amountValue = 0;
 let countingProducts = 0;
 
@@ -26,6 +27,7 @@ function generatedBasket(array) {
             </tr>`;
     tbody.innerHTML = "";
     tfoot.innerHTML = "";
+    orderBtn.classList.add("visually-hidden");
   } else {
     thead.innerHTML = `
             <tr class="t-head">
@@ -50,12 +52,12 @@ function generatedBasket(array) {
               <td class="saturation">${elem["color saturation"]}</td>
               <td class="quantity">${elem["quantity products"]}</td>
               <td class="packaging">${elem["packaging"]}</td>
-              <td class="price">${elem["product price"]}грн</td>
+              <td class="price">${elem["product price"]}₴</td>
               <td class="summ">${
                 elem["product price"] * elem["quantity products"]
-              }грн</td>
+              }₴</td>
               <td>
-                <button class="remove-product">
+                <button class="remove-product-btn">
                   <img
                     src="../bees-candles/images/icons/ri_delete-bin-2-line.svg"
                     alt="Видалити товар з корзини"
@@ -71,21 +73,17 @@ function generatedBasket(array) {
       <th scope="row" colspan="9" class="order-amount">Сума замовлення: ${amountValue}грн</th>
     </tr>
     <tr>
-      <th scope="row" colspan="9" class="order-amount">Кількість товару в кошику: ${countingProducts}</th>
+      <th scope="row" colspan="9" class="order-amount">Кількість товару в кошику: ${countingProducts}шт</th>
     </tr>
 
     `;
-    mainBasketCard.insertAdjacentHTML(
-      "beforeend",
-      `
-      <button class="order-btn">Перейти до оформлення замовлення</button>`
-    );
+    orderBtn.classList.remove("visually-hidden");
   }
   let removeProductBtns = document.querySelectorAll(".remove-product");
   removeProductBtns.forEach(function (btn) {
     btn.addEventListener("click", removeProduct);
   });
-  let orderBtn = document.querySelector(".order-btn");
+
   orderBtn.addEventListener("click", function () {
     window.open("order-form.html", "_self");
   });

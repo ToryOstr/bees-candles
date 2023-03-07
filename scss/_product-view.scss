@@ -1,7 +1,7 @@
 .card-body {
   display: flex;
   justify-content: center;
-  height: auto;
+  min-height: 100%;
   padding: 20px;
   margin: 10px auto;
   background-color: #ffffff;
@@ -12,13 +12,13 @@
 .slider-section {
   display: flex;
   flex-direction: column;
-  width: 358px;
+  max-width: 358px;
   height: auto;
   align-items: center;
 }
 .slider-wrapp {
   display: flex;
-  width: 358px;
+  max-width: 358px;
   height: auto;
   justify-content: center;
   align-items: center;
@@ -100,16 +100,16 @@
     text-align: center;
   }
   .quantity {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  font-family: $header-font;
-  font-weight: 700;
-  font-size: 16px;
-  @extend %user-select-vendor;
-}
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-family: $header-font_700;
+    font-weight: 700;
+    font-size: 16px;
+    @extend %user-select-vendor;
+  }
 }
 .about-product {
   display: flex;
@@ -125,7 +125,7 @@
     }
     span {
       margin-top: 5px;
-      font-family: $number-font;
+      font-family: $number-font_400_500_700;
       font-weight: 700;
       font-size: 16px;
       text-align: center;
@@ -151,13 +151,13 @@
 
   .color-name,
   .saturation-name {
-    font-family: $header-font;
+    font-family: $header-font_700;
     font-size: 16px;
     font-weight: 700;
   }
 }
 .select-current {
-  font-family: $header-font;
+  font-family: $header-font_700;
   font-weight: 700;
   font-size: 16px;
 }
@@ -257,7 +257,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: $header-font;
+  font-family: $header-font_700;
   font-size: 16px;
   cursor: pointer;
   &::before {
@@ -295,12 +295,12 @@
   align-items: center;
   width: 100%;
   margin: 20px 0 0;
-  font-family: $header-font;
+  font-family: $header-font_700;
   font-size: 20px;
   @extend %user-select-vendor;
 
   .price-value {
-    font-family: $number-font;
+    font-family: $number-font_400_500_700;
     font-weight: 700;
     font-size: 20px;
     line-height: 1;
@@ -339,7 +339,7 @@
   }
   #counter-value {
     display: flex;
-    font-family: $number-font;
+    font-family: $number-font_400_500_700;
     font-size: 20px;
     padding: 2px 6px;
     border-left: $border;
@@ -369,12 +369,40 @@
   border: $border;
 }
 .blocked-btn {
-  background-color:rgba(155, 3, 3, 0.9);
+  background-color: rgba(155, 3, 3, 0.9);
   font-size: 14px;
   color: rgb(255, 255, 255);
   &:hover {
-    background-color:rgb(155, 3, 3, 0.9);
+    background-color: rgb(155, 3, 3, 0.9);
     color: rgb(255, 255, 255);
   }
 }
-
+@media (max-width: 900px) {
+  .card-body{
+    margin: 60px auto 10px;
+  }
+}
+@media (max-width: 767px) {
+  .card-body {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px auto 10px;
+    padding: 10px;
+    .product-name {
+      position: absolute;
+      top: 10px;
+      padding: 10px;
+    }
+    .about-product {
+      position: absolute;
+      top: 75px;
+      justify-content: space-evenly;
+    }
+  }
+  .slider-section,
+  .slider-wrapp {
+    max-width: 270px;
+    margin-top: 65px;
+  }
+}

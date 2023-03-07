@@ -44,38 +44,117 @@
             </li>
           </ul>
         </nav>
-        <div class="basket-btn">
-          <img src="./images/icons/basket.svg" alt="зображення корзини" />
-          <span class="products-counter"></span>
+        <div class="header-burger">
+          <span></span>
         </div>
       </header>
-      <div class="order-wrapper">
-        <form action="#" method="get">
-          <div class="user-data">
-            <label
-              >*Телефон
-              <input type="tel" name="tel" id="" />
-            </label>
-            <label
-              >*Ім'я та Призвіще:
-              <input type="text" name="name" id="" />
-            </label>
-          </div>
-          <p class="order-text"></p>
-        </form>
-      </div>
+      <main>
+        <h1>Оформлення замовлення</h1>
+        <div class="order-wrapper">
+          <form name="order-form" class="order-form" action="#" method="get">
+            <div class="container_row">
+              <div class="container">
+                <div class="user-data">
+                  <label
+                    >* Ім'я
+                    <input
+                      type="text"
+                      required
+                      name="user-name"
+                      class="user-name"
+                    />
+                  </label>
+                  <label
+                    >* Призвіще:
+                    <input
+                      type="text"
+                      required
+                      name="user-surname"
+                      class="user-surname"
+                    />
+                  </label>
+                  <label
+                    >* Телефон:
+                    <input
+                      type="tel"
+                      required
+                      name="user-tel"
+                      class="user-tel"
+                    />
+                  </label>
+                </div>
+                <div class="contact-whith">
+                  <p>Оберіть зручний для Вас спосіб зв'язку:</p>
+                  <label>
+                    <input
+                      type="radio"
+                      name="contact-whith" checked
+                    />Зателефонувати
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="contact-whith"
+                    />Написати в Telegram
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="contact-whith"
+                    />Написати в Viber
+                  </label>
+                </div>
+                <div class="delivery">
+                  <p>Оберіть транспортну компанію:</p>
+                  <label>
+                    <input
+                      type="radio"
+                      class="delivery-company"
+                      name="delivery-company" checked
+                    />Нова Пошта
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      class="delivery-company"
+                      name="delivery-company"
+                    />Укр Пошта
+                  </label>
+                  <label
+                    >* Адреса доставки
+                    <textarea
+                      type="text"
+                      required
+                      name="delivery-address"
+                      class="delivery-address"
+                    ></textarea>
+                  </label>
+                </div>
+              </div>
+              <div class="container">
+                <h2>Ваше замовлення:</h2>
+              <p class="order-text"></p>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">
+              Відправити замовлення
+            </button>
+          </form>
+        </div>
+      </main>
       <footer>
         <div id="contacts" class="contact-links">
           <a href="tel:+380639385672">
-            <img src="./images/icons/bytesize_telephone.svg" alt="" />+380 63
-            938 56 72</a
+            <img src="./images/icons/bytesize_telephone.svg" alt="" /><span>+380 63
+            938 56 72</span></a
           >
 
-          <a href="">
+          <a href="https://www.instagram.com/beeswax_candles_shop/?hl=uk" target="_blank
+          " rel="noreferrer noopener">
             <img
               src="./images/icons/typcn_social-instagram.svg"
               alt=""
-            />beeswax_candles_shop
+            /><span>beeswax_candles_shop</span>
           </a>
 
           <a href="">
@@ -97,7 +176,7 @@
     <!-- Component Header-->
     <script src="../bees-candles/components/Header/Header.js"></script>
 
-    <!-- Component Bascet-card-->
-    <!-- <script src="../bees-candles/components/Basket-card/Basket-card.js"></script> -->
+    <!-- Component Order form-->
+    <script src="../bees-candles/components/Basket-card/Order-form.js"></script>
   </body>
 </html>

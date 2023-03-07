@@ -1,5 +1,5 @@
 .modal-message {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   top: 80px;
   right: -100%;
@@ -34,7 +34,7 @@
   transition: 1s;
   margin: 0 auto;
   caption {
-    font-family: $header-font;
+    font-family: $header-font_700;
     font-size: 24px;
     line-height: 1.33;
     text-align: center;
@@ -76,7 +76,7 @@
   th {
     display: table-cell;
     padding: 5px 2px;
-    font-family: $header-font;
+    font-family: $header-font_700;
     font-size: 12px;
     font-weight: 500;
     line-height: 1.2;
@@ -85,7 +85,7 @@
   td {
     display: table-cell;
     text-align: center;
-    font-family: $number-font;
+    font-family: $number-font_400_500_700;
     font-size: 14px;
     padding: 4px 2px;
     border: $table_border;
@@ -93,6 +93,7 @@
   .remove-product-btn {
     display: flex;
     justify-content: center;
+    margin: auto;
     background-color: transparent;
     img {
       display: block;
@@ -101,18 +102,18 @@
     }
   }
   tfoot {
-
     border: none;
   }
   .order-amount {
-    font-family: $number-font;
+    font-family: $number-font_400_500_700;
     font-size: 18px;
     font-weight: 700;
     text-align: start;
     padding: 5px 20px;
   }
-  // .amount-value {
-  // }
+  .order-btn {
+    @extend %btn-style;
+  }
 }
 .active-message {
   right: 0;
@@ -122,11 +123,21 @@
     padding: 20px;
     text-align: center;
     font-size: 16px;
-    font-family: $main-font;
+    font-family: $main-font_400_700;
     font-weight: 700;
   }
 }
-form{
-  display: flex;
-  flex-direction: column;
+@media (max-width: 900px) {
+  .basket-opened {
+    margin: 50px auto 0px;
+  }
+  .basket-opened td {
+    font-size: calc(8px + 6 * ((100vw - 320px) / (900 - 320)));
+  }
+  .basket-opened th {
+    font-size: calc(8px + 4 * ((100vw - 320px) / (900 - 320)));
+  }
+  .basket-opened .t-head .remove-product {
+    width: 10vw;
+  }
 }
