@@ -31,7 +31,7 @@ $smoll-radius: 5px;
   border: $border;
   border-radius: $large-radius;
   font-family: $header-font_700;
-  font-size: calc(14px + 2 * ((100vw - 320px) / (1440 - 320)));
+  font-size: calc(14px + 6 * ((100vw - 320px) / (1440 - 320)));
   font-weight: 700;
   color: $main-text-color;
   transition: 0.3s;

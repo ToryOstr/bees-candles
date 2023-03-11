@@ -79,7 +79,8 @@ function generatedBasket(array) {
     `;
     orderBtn.classList.remove("visually-hidden");
   }
-  let removeProductBtns = document.querySelectorAll(".remove-product");
+  let removeProductBtns = document.querySelectorAll(".remove-product-btn");
+
   removeProductBtns.forEach(function (btn) {
     btn.addEventListener("click", removeProduct);
   });

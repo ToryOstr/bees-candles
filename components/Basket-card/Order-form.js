@@ -4,8 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function sendForm(e) {
     e.preventDefault();
-    let error = formValidate(orderForm);
   }
+
+  let mainForm = document.forms.order_form;
+
+  let userName = mainForm.user_name;
+  let userSurname = mainForm.user_surname;
+  let userTel = mainForm.user_tel;
+
+  function getUserData() {
+    return console.log(`Замовник:
+    ${userName.value} ${userSurname.value}
+    tel: ${userTel}`);
+  }
+  userSurname.addEventListener("change", getUserData);
+
+  function numberVerification() {}
   function formValidate() {
     let error = 0;
     let requiredInputs = document.querySelectorAll("[required]");
@@ -46,4 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `
   <span>Сума замовлення: ${amountValue}грн</span>
   `;
+
+
+
 });

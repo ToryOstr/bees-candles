@@ -15,7 +15,7 @@
   border: 1px solid rgb(39, 9, 53);
   border-radius: 10px;
   font-family: "Playfair Display", serif;
-  font-size: calc(14px + 2 * (100vw - 320px) / 1120);
+  font-size: calc(14px + 6 * (100vw - 320px) / 1120);
   font-weight: 700;
   color: rgb(39, 9, 53);
   transition: 0.3s;
