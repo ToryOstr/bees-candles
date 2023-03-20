@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const TOKEN = "6096308743:AAEVTXS_lW8ag8H0m-HdU9iQeI2Kw6PeyAg";
-  const CHAT_ID = " -1001792925745";
+  const CHAT_ID = "-1001792925745";
   const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
   let finalMessage = document.querySelector(".final-messaage");
