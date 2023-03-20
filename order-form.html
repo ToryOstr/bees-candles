@@ -51,7 +51,7 @@
       <main>
         <h1>Оформлення замовлення</h1>
         <div class="order-wrapper">
-          <form name="order_form" class="order-form" action="#" method="get">
+          <form name="order_form" class="order-form" action="#" method="post">
             <div class="container_row">
               <div class="container">
                 <div class="user-data">
@@ -74,7 +74,7 @@
                     />
                   </label>
                   <label
-                    >* Телефон:
+                    >* Номер мобільного телефону:
                     <input
                       type="tel"
                       required
@@ -82,26 +82,31 @@
                       class="user-tel"
                       placeholder="в форматі +380ХХХХХХХХХ"
                     />
+                    <span class="error-message"></span>
                   </label>
                 </div>
                 <div class="contact-whith">
                   <p>Оберіть зручний для Вас спосіб зв'язку:</p>
                   <label>
                     <input
+                      checked
                       type="radio"
-                      name="contact-whith" checked
+                      name="contact_whith"
+                      value="Зателефонувати"
                     />Зателефонувати
                   </label>
                   <label>
                     <input
                       type="radio"
-                      name="contact-whith"
+                      name="contact_whith"
+                      value="Написати в Telegram"
                     />Написати в Telegram
                   </label>
                   <label>
                     <input
                       type="radio"
-                      name="contact-whith"
+                      name="contact_whith"
+                      value="Написати в Viber"
                     />Написати в Viber
                   </label>
                 </div>
@@ -109,16 +114,19 @@
                   <p>Оберіть транспортну компанію:</p>
                   <label>
                     <input
+                      checked
                       type="radio"
                       class="delivery-company"
-                      name="delivery-company" checked
+                      name="delivery_company"
+                      value="Нова Пошта"
                     />Нова Пошта
                   </label>
                   <label>
                     <input
                       type="radio"
                       class="delivery-company"
-                      name="delivery-company"
+                      name="delivery_company"
+                      value="Укр Пошта"
                     />Укр Пошта
                   </label>
                   <label
@@ -126,7 +134,7 @@
                     <textarea
                       type="text"
                       required
-                      name="delivery-address"
+                      name="delivery_address"
                       class="delivery-address"
                     ></textarea>
                   </label>
@@ -147,8 +155,8 @@
         <div id="contacts" class="contact-links">
           <a href="tel:+380639385672">
             <img src="./images/icons/bytesize_telephone.svg" alt="" /><span>+380 63
-            938 56 72</span></a
-          >
+              938 56 72</span></a
+              >
 
           <a href="https://www.instagram.com/beeswax_candles_shop/?hl=uk" target="_blank
           " rel="noreferrer noopener">
@@ -169,7 +177,7 @@
         </div>
       </footer>
     </div>
-
+    <div class="final-messaage"></div>
     <!-- Constants -->
     <script src="../bees-candles/constants/catalog.js"></script>
     <script src="../bees-candles/constants/root.js"></script>
@@ -178,6 +186,7 @@
     <script src="../bees-candles/components/Header/Header.js"></script>
 
     <!-- Component Order form-->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="../bees-candles/components/Basket-card/Order-form.js"></script>
   </body>
 </html>

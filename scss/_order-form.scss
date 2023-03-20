@@ -105,11 +105,42 @@ h1 {
       font-family: $main-font_400_700;
       font-weight: 400;
     }
+    .error-border {
+      border: 1px solid rgb(150, 0, 0);
+      box-shadow: 0px 0px 2px rgba(150, 0, 0);
+    }
+    .success-border {
+      border: 1px solid rgb(66, 163, 1);
+    }
+    .error-message {
+      color: rgb(150, 0, 0);
+    }
   }
   .submit-btn {
     @extend %btn-style;
   }
 }
+.final-messaage {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: $background-color;
+  transition: 0.3s;
+  p {
+    margin: auto;
+    width: 75%;
+    background-color: #ffffff;
+    border-radius: $smoll-radius;
+    padding: 20px;
+  }
+}
+.active-message {
+top: 0;
+}
+
 @media (max-width: 900px) {
   main {
     margin: 50px auto 10px;
