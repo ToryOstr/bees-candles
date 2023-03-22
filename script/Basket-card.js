@@ -59,7 +59,7 @@ function generatedBasket(array) {
               <td>
                 <button class="remove-product-btn">
                   <img
-                    src="../bees-candles/images/icons/ri_delete-bin-2-line.svg"
+                    src="./images/icons/ri_delete-bin-2-line.svg"
                     alt="Видалити товар з корзини"
                   />
                 </button>
