@@ -105,99 +105,99 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let btns_deliveryCompany = mainForm.delivery_company;
 
-  function createMessage() {
-    let contactWhith = "";
-    for (let i = 0; i < btns_contactWith.length; i++) {
-      if (btns_contactWith[i].checked) {
-        contactWhith = btns_contactWith[i].value;
-      } else {
-        continue;
-      }
-    }
+  // function createMessage() {
+  //   let contactWhith = "";
+  //   for (let i = 0; i < btns_contactWith.length; i++) {
+  //     if (btns_contactWith[i].checked) {
+  //       contactWhith = btns_contactWith[i].value;
+  //     } else {
+  //       continue;
+  //     }
+  //   }
 
-    let deliveryCompany = "";
-    for (let i = 0; i < btns_deliveryCompany.length; i++) {
-      if (btns_deliveryCompany[i].checked) {
-        deliveryCompany = btns_deliveryCompany[i].value;
-      } else {
-        continue;
-      }
-    }
+  //   let deliveryCompany = "";
+  //   for (let i = 0; i < btns_deliveryCompany.length; i++) {
+  //     if (btns_deliveryCompany[i].checked) {
+  //       deliveryCompany = btns_deliveryCompany[i].value;
+  //     } else {
+  //       continue;
+  //     }
+  //   }
 
-    return `
-    <b>НОВЕ ЗАМОВЛЕННЯ!</b>
+  //   return `
+  //   <b>НОВЕ ЗАМОВЛЕННЯ!</b>
 
-    <strong>Замовник:
-    ${userName.value} ${userSurname.value}</strong>
-    <strong>Телефон: ${userTel.value}</strong>
-    Спосіб зв'язку: ${contactWhith}
+  //   <strong>Замовник:
+  //   ${userName.value} ${userSurname.value}</strong>
+  //   <strong>Телефон: ${userTel.value}</strong>
+  //   Спосіб зв'язку: ${contactWhith}
 
-    Транспортна компанія: ${deliveryCompany}
-    Адреса доставки: ${deliveryAddress.value}
-    
-    Замовлення: 
-    ${order
-      .map((elem, index) => {
-        let packText =
-          elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
-        return `
-              <b>${index + 1}. ${elem["product name"]} ${
-          elem["product color"]
-        } ${elem["color saturation"]} ${packText} ${
-          elem["quantity products"]
-        }шт,</b>
-              <b>ціна за шт: ${elem["product price"]}₴,</b>
-              <b>на суму ${
-                elem["product price"] * elem["quantity products"]
-              }₴</b>
+  //   Транспортна компанія: ${deliveryCompany}
+  //   Адреса доставки: ${deliveryAddress.value}
 
-  `;
-      })
-      .join("")}
+  //   Замовлення:
+  //   ${order
+  //     .map((elem, index) => {
+  //       let packText =
+  //         elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
+  //       return `
+  //             <b>${index + 1}. ${elem["product name"]} ${
+  //         elem["product color"]
+  //       } ${elem["color saturation"]} ${packText} ${
+  //         elem["quantity products"]
+  //       }шт,</b>
+  //             <b>ціна за шт: ${elem["product price"]}₴,</b>
+  //             <b>на суму ${
+  //               elem["product price"] * elem["quantity products"]
+  //             }₴</b>
 
-    <b>Сума замовлення: ${amountValue}₴</b>
-  `;
-  }
+  // `;
+  //     })
+  //     .join("")}
 
-  const TOKEN = "6096308743:AAEVTXS_lW8ag8H0m-HdU9iQeI2Kw6PeyAg";
-  const CHAT_ID = "-1001792925745";
-  const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+  //   <b>Сума замовлення: ${amountValue}₴</b>
+  // `;
+  // }
 
-  let finalMessage = document.querySelector(".final-messaage");
-  function endOrder() {
-    userName.value = "";
-    userSurname.value = "";
-    deliveryAddress.value = "";
-    userTel.value = "";
+  // const TOKEN = "6096308743:AAEVTXS_lW8ag8H0m-HdU9iQeI2Kw6PeyAg";
+  // const CHAT_ID = "-1001792925745";
+  // const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-    localStorage.removeItem("basket");
-  }
-  function endSession() {
-    finalMessage.innerHTML = "";
-    finalMessage.classList.remove("active-message");
-    setTimeout(window.open("index.html", "_self"), 3000);
-  }
-  function orderSubmit(e) {
-    e.preventDefault();
-    axios
-      .post(URI_API, {
-        chat_id: CHAT_ID,
-        parse_mode: "html",
-        text: createMessage,
-      })
-      .then(() => {
-        endOrder();
-        finalMessage.innerHTML = `
-        <p>Дякуємо за замовлення! З Вами зв'яжуться найближчим часом!</p>`;
-        finalMessage.classList.add("active-message");
-      })
-      .catch((err) => {
-        finalMessage.innerHTML = `
-        <p>Упс, виникла помилка ${err}. Спробуйте ще раз!</p>`;
-        finalMessage.classList.add("active-message");
-        // setTimeout((finalMessage.innerHTML = ""), 2000);
-      })
-      .finally(setTimeout(endSession, 3000));
-  }
+  // let finalMessage = document.querySelector(".final-messaage");
+  // function endOrder() {
+  //   userName.value = "";
+  //   userSurname.value = "";
+  //   deliveryAddress.value = "";
+  //   userTel.value = "";
+
+  //   localStorage.removeItem("basket");
+  // }
+  // function endSession() {
+  //   finalMessage.innerHTML = "";
+  //   finalMessage.classList.remove("active-message");
+  //   setTimeout(window.open("index.html", "_self"), 3000);
+  // }
+  // function orderSubmit(e) {
+  //   e.preventDefault();
+  //   axios
+  //     .post(URI_API, {
+  //       chat_id: CHAT_ID,
+  //       parse_mode: "html",
+  //       text: createMessage,
+  //     })
+  //     .then(() => {
+  //       endOrder();
+  //       finalMessage.innerHTML = `
+  //       <p>Дякуємо за замовлення! З Вами зв'яжуться найближчим часом!</p>`;
+  //       finalMessage.classList.add("active-message");
+  //     })
+  //     .catch((err) => {
+  //       finalMessage.innerHTML = `
+  //       <p>Упс, виникла помилка ${err}. Спробуйте ще раз!</p>`;
+  //       finalMessage.classList.add("active-message");
+  //       // setTimeout((finalMessage.innerHTML = ""), 2000);
+  //     })
+  //     .finally(setTimeout(endSession, 3000));
+  // }
   // submitBtn.addEventListener("click", orderSubmit);
 });
