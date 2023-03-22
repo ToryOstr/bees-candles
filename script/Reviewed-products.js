@@ -23,7 +23,7 @@ const generatedCardContent = ({
       ? `
         <div class="elem-about">
           <img
-            src="../bees-candles/images/icons/ri_scales-3-fill.svg"
+            src="./images/icons/ri_scales-3-fill.svg"
             alt=""
           />
           <span class="mass">${mass}г</span>
@@ -34,7 +34,7 @@ const generatedCardContent = ({
     time !== "" && time !== 0
       ? `
     <div class="elem-about">
-      <img src="../bees-candles/images/icons/Vector.svg" alt="" />
+      <img src="./images/icons/Vector.svg" alt="" />
       <span class="time">${time}год</span>
     </div>`
       : "";
@@ -44,7 +44,7 @@ const generatedCardContent = ({
       ? `
       <div class="elem-about">
           <img
-            src="../bees-candles/images/icons/ruler.svg"
+            src="./images/icons/ruler.svg"
             alt=""/>
           <span class="height">${height}см</span>
         </div>`
@@ -55,7 +55,7 @@ const generatedCardContent = ({
       ? `
     <div class="elem-about">
           <img
-            src="../bees-candles/images/icons/diameter_icon.svg"
+            src="./images/icons/diameter_icon.svg"
             alt=""/>
           <span class="diameter">${diameter}см</span>
         </div>`
@@ -94,7 +94,7 @@ const generatedCardContent = ({
           <span class="select-current">Колір</span>
           <div class="select-icon">
             <img
-              src="../bees-candles/images/icons/arrow.svg"
+              src="./images/icons/arrow.svg"
               alt="відкрити вибір кольору"/>
           </div>
         </div>
@@ -107,7 +107,7 @@ const generatedCardContent = ({
         <div class="select-header">
           <span class="select-current">Насиченість</span>
           <div class="select-icon">
-            <img src="../bees-candles/images/icons/arrow.svg" alt="" />
+            <img src="./images/icons/arrow.svg" alt="" />
           </div>
         </div>
 
@@ -135,14 +135,14 @@ const generatedCardContent = ({
         <div class="counter">
           <div class="counter-btn" id="minus">
             <img
-              src="../bees-candles/images/icons/minus.svg"
+              src="./images/icons/minus.svg"
               alt="зменшити кількість"
             />
           </div>
           <span id="counter-value">1</span>
           <div class="counter-btn" id="plus">
             <img
-              src="../bees-candles/images/icons/plus.svg"
+              src="./images/icons/plus.svg"
               alt="збільшити кількість"
             />
           </div>
@@ -265,7 +265,7 @@ selectHeaders[0].addEventListener("click", function () {
   selectHeaders[1].innerHTML = `
           <span class="select-current">Насиченість</span>
           <div class="select-icon">
-            <img src="../bees-candles/images/icons/arrow.svg" alt="">
+            <img src="./images/icons/arrow.svg" alt="">
           </div>
           `;
 });

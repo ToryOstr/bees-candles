@@ -11,18 +11,18 @@ const generateProductCard = (img, name, id, time, mass, price) => {
     <div class="about-product">
       <div class="elem-about">
         <img
-          src="../bees-candles/images/icons/ri_scales-3-fill.svg"
+          src="./images/icons/ri_scales-3-fill.svg"
           alt=""
         />
         <span class="mass">${mass}г</span>
       </div>
       <div class="elem-about">
-        <img src="../bees-candles/images/icons/Vector.svg" alt="" />
+        <img src="./images/icons/Vector.svg" alt="" />
         <span class="time">${time}год</span>
       </div>
       <div class="elem-about">
         <img
-          src="../bees-candles/images/icons/entypo_price-tag.svg"
+          src="./images/icons/entypo_price-tag.svg"
           alt=""
         />
         <span class="price">${price}грн</span>
