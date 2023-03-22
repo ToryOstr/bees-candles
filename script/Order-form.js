@@ -129,42 +129,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     return `
-    <b>НОВЕ ЗАМОВЛЕННЯ!</b>
+    **НОВЕ ЗАМОВЛЕННЯ!**\n
 
-    <strong>Замовник:
-    ${userName.value} ${userSurname.value}</strong>
-    <strong>Телефон: ${userTel.value}</strong>
-    Спосіб зв'язку: ${contactWhith}
+    **>Замовник:
+    ${userName.value} ${userSurname.value}**\n
+    **Телефон: ${userTel.value}**\n
+    **Спосіб зв'язку: ${contactWhith}**\n\n
 
     Транспортна компанія: ${deliveryCompany}
-    Адреса доставки: ${deliveryAddress.value}
+    Адреса доставки: ${deliveryAddress.value}\n\n
 
-    Замовлення:
+    **Замовлення:**\n
     ${order
       .map((elem, index) => {
         let packText =
           elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
         return `
-              <b>${index + 1}. ${elem["product name"]} ${
-          elem["product color"]
-        } ${elem["color saturation"]} ${packText} ${
-          elem["quantity products"]
-        }шт,</b>
-              <b>ціна за шт: ${elem["product price"]}₴,</b>
-              <b>на суму ${
-                elem["product price"] * elem["quantity products"]
-              }₴</b>
+              ${index + 1}. ${elem["product name"]} ${elem["product color"]} ${
+          elem["color saturation"]
+        } ${packText} ${elem["quantity products"]}шт,
+              ціна за шт: ${elem["product price"]}₴,
+              на суму ${elem["product price"] * elem["quantity products"]}₴\n
 
   `;
       })
       .join("")}
 
-    <b>Сума замовлення: ${amountValue}₴</b>
+    **Сума замовлення: ${amountValue}₴**
   `;
   }
-  let hiddenMessage = document.querySelector('input["name=order-description"]');
+  let hiddenMessage = document.querySelector(".order-description");
   hiddenMessage.value = createMessage();
-
+  console.log(hiddenMessage.value);
   // const TOKEN = "6096308743:AAEVTXS_lW8ag8H0m-HdU9iQeI2Kw6PeyAg";
   // const CHAT_ID = "-1001792925745";
   // const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;

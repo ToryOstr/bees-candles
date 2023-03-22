@@ -1105,20 +1105,15 @@ h1 {
   display: block;
   font-size: calc(14px + 2 * (100vw - 320px) / 1120);
   margin: 5px;
+  font-weight: 400;
   cursor: pointer;
 }
 .order-wrapper .order-form .delivery label input,
 .order-wrapper .order-form .contact-whith label input {
   margin-right: 5px;
 }
-.order-wrapper .order-form .delivery label:last-child,
-.order-wrapper .order-form .contact-whith label:last-child {
+.order-wrapper .order-form .delivery label:nth-last-child(2) {
   font-weight: 700;
-  margin: 10px 0;
-}
-.order-wrapper .order-form .contact-whith label:last-child {
-  font-weight: 400;
-  margin: 5px 5px;
 }
 .order-wrapper .order-form .user-name,
 .order-wrapper .order-form .user-surname,
