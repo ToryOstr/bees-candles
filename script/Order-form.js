@@ -199,5 +199,5 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .finally(setTimeout(endSession, 3000));
   }
-  submitBtn.addEventListener("click", orderSubmit);
+  // submitBtn.addEventListener("click", orderSubmit);
 });
