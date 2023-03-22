@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   }
   let hiddenMessage = document.querySelector(".order-description");
-  hiddenMessage.value = createMessage();
+  hiddenMessage.innerText = createMessage();
   console.log(hiddenMessage.value);
   // const TOKEN = "6096308743:AAEVTXS_lW8ag8H0m-HdU9iQeI2Kw6PeyAg";
   // const CHAT_ID = "-1001792925745";
