@@ -74,6 +74,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let amountValue = 0;
 
+  function createOrderText() {
+    return (
+      order
+        .map((elem, index) => {
+          let packText =
+            elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
+
+          return `
+    <span>${index + 1}. ${elem["product name"]} </br> Kолір ${elem[
+            "product color"
+          ].toLowerCase()} ${elem["color saturation"].toLowerCase()},</br> ${
+            elem["quantity products"]
+          }шт, ${packText} - ${
+            elem["product price"] * elem["quantity products"]
+          }грн;</span>`;
+        })
+        .join("") +
+      `
+  <span>Сума замовлення: ${amountValue}грн</span>
+  `
+    );
+  }
   function calcOrderAmount() {
     order.forEach((el) => {
       amountValue += el["sum"];
@@ -81,83 +103,67 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   calcOrderAmount();
 
-  orderText.innerHTML =
-    order
-      .map((elem, index) => {
-        let packText =
-          elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
-
-        return `
-    <span>${index + 1}. ${elem["product name"]} </br> Kолір ${elem[
-          "product color"
-        ].toLowerCase()} ${elem["color saturation"].toLowerCase()},</br> ${
-          elem["quantity products"]
-        }шт, ${packText} - ${
-          elem["product price"] * elem["quantity products"]
-        }грн;</span>`;
-      })
-      .join("") +
-    `
-  <span>Сума замовлення: ${amountValue}грн</span>
-  `;
+  orderText.innerHTML = createOrderText();
 
   let btns_contactWith = mainForm.contact_whith;
 
   let btns_deliveryCompany = mainForm.delivery_company;
 
-  // function createMessage() {
-  //   let contactWhith = "";
-  //   for (let i = 0; i < btns_contactWith.length; i++) {
-  //     if (btns_contactWith[i].checked) {
-  //       contactWhith = btns_contactWith[i].value;
-  //     } else {
-  //       continue;
-  //     }
-  //   }
+  function createMessage() {
+    let contactWhith = "";
+    for (let i = 0; i < btns_contactWith.length; i++) {
+      if (btns_contactWith[i].checked) {
+        contactWhith = btns_contactWith[i].value;
+      } else {
+        continue;
+      }
+    }
 
-  //   let deliveryCompany = "";
-  //   for (let i = 0; i < btns_deliveryCompany.length; i++) {
-  //     if (btns_deliveryCompany[i].checked) {
-  //       deliveryCompany = btns_deliveryCompany[i].value;
-  //     } else {
-  //       continue;
-  //     }
-  //   }
+    let deliveryCompany = "";
+    for (let i = 0; i < btns_deliveryCompany.length; i++) {
+      if (btns_deliveryCompany[i].checked) {
+        deliveryCompany = btns_deliveryCompany[i].value;
+      } else {
+        continue;
+      }
+    }
 
-  //   return `
-  //   <b>НОВЕ ЗАМОВЛЕННЯ!</b>
+    return `
+    <b>НОВЕ ЗАМОВЛЕННЯ!</b>
 
-  //   <strong>Замовник:
-  //   ${userName.value} ${userSurname.value}</strong>
-  //   <strong>Телефон: ${userTel.value}</strong>
-  //   Спосіб зв'язку: ${contactWhith}
+    <strong>Замовник:
+    ${userName.value} ${userSurname.value}</strong>
+    <strong>Телефон: ${userTel.value}</strong>
+    Спосіб зв'язку: ${contactWhith}
 
-  //   Транспортна компанія: ${deliveryCompany}
-  //   Адреса доставки: ${deliveryAddress.value}
+    Транспортна компанія: ${deliveryCompany}
+    Адреса доставки: ${deliveryAddress.value}
 
-  //   Замовлення:
-  //   ${order
-  //     .map((elem, index) => {
-  //       let packText =
-  //         elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
-  //       return `
-  //             <b>${index + 1}. ${elem["product name"]} ${
-  //         elem["product color"]
-  //       } ${elem["color saturation"]} ${packText} ${
-  //         elem["quantity products"]
-  //       }шт,</b>
-  //             <b>ціна за шт: ${elem["product price"]}₴,</b>
-  //             <b>на суму ${
-  //               elem["product price"] * elem["quantity products"]
-  //             }₴</b>
+    Замовлення:
+    ${order
+      .map((elem, index) => {
+        let packText =
+          elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
+        return `
+              <b>${index + 1}. ${elem["product name"]} ${
+          elem["product color"]
+        } ${elem["color saturation"]} ${packText} ${
+          elem["quantity products"]
+        }шт,</b>
+              <b>ціна за шт: ${elem["product price"]}₴,</b>
+              <b>на суму ${
+                elem["product price"] * elem["quantity products"]
+              }₴</b>
 
-  // `;
-  //     })
-  //     .join("")}
+  `;
+      })
+      .join("")}
 
-  //   <b>Сума замовлення: ${amountValue}₴</b>
-  // `;
-  // }
+    <b>Сума замовлення: ${amountValue}₴</b>
+  `;
+  }
+  let hiddenMessage = document.querySelector('input["name=order-description"]');
+  hiddenMessage.value = createMessage();
 
   // const TOKEN = "6096308743:AAEVTXS_lW8ag8H0m-HdU9iQeI2Kw6PeyAg";
   // const CHAT_ID = "-1001792925745";
