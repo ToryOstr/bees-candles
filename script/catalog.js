@@ -2,10 +2,10 @@ const CATALOG = [
   {
     id: "003",
     img: [
-      "../bees-candles/images/product-img/christmas-tree-orange.jpg",
-      "../bees-candles/images/product-img/christmas-tree-green.jpg",
-      "../bees-candles/images/product-img/christmas-tree-green-in-snow.jpg",
-      "../bees-candles/images/product-img/christmas-tree-green+blue-beads.jpg",
+      "./images/product-img/christmas-tree-orange.jpg",
+      "./images/product-img/christmas-tree-green.jpg",
+      "./images/product-img/christmas-tree-green-in-snow.jpg",
+      "./images/product-img/christmas-tree-green+blue-beads.jpg",
     ],
     name: "Свічка Ялинка",
     time: "7-8",
@@ -111,10 +111,10 @@ const CATALOG = [
   {
     id: "002",
     img: [
-      "../bees-candles/images/product-img/sheep-natural-wax-front-view.jpg",
-      "../bees-candles/images/product-img/sheep-natural-wax-left-view.jpg",
-      "../bees-candles/images/product-img/sheep-white-right-view.jpg",
-      "../bees-candles/images/product-img/sheep-natural-wax-back-view.jpg",
+      "./images/product-img/sheep-natural-wax-front-view.jpg",
+      "./images/product-img/sheep-natural-wax-left-view.jpg",
+      "./images/product-img/sheep-white-right-view.jpg",
+      "./images/product-img/sheep-natural-wax-back-view.jpg",
     ],
     name: "Свічка Ягнятко",
     time: "7-8",
@@ -219,7 +219,7 @@ const CATALOG = [
   },
   {
     id: "001",
-    img: ["../bees-candles/images/product-img/bee-on-honeycombs.jpg"],
+    img: ["./images/product-img/bee-on-honeycombs.jpg"],
     name: "Свічка Бджілка",
     time: "~3",
     mass: 40,
@@ -324,9 +324,9 @@ const CATALOG = [
   {
     id: "004",
     img: [
-      "../bees-candles/images/product-img/beehive.jpg",
-      "../bees-candles/images/product-img/beehive-v2.jpg",
-      "../bees-candles/images/product-img/beehive-trio.jpg",
+      "./images/product-img/beehive.jpg",
+      "./images/product-img/beehive-v2.jpg",
+      "./images/product-img/beehive-trio.jpg",
     ],
     name: "Свічка Бджолиний будиночок",
     time: "~5",
@@ -432,10 +432,10 @@ const CATALOG = [
   {
     id: "005",
     img: [
-      "../bees-candles/images/product-img/luck-bird-front-view.jpg",
-      "../bees-candles/images/product-img/luck-bird-left-view.jpg",
-      "../bees-candles/images/product-img/luck-bird-back-view.jpg",
-      "../bees-candles/images/product-img/luck-bird-right-view.jpg",
+      "./images/product-img/luck-bird-front-view.jpg",
+      "./images/product-img/luck-bird-left-view.jpg",
+      "./images/product-img/luck-bird-back-view.jpg",
+      "./images/product-img/luck-bird-right-view.jpg",
     ],
     name: "Свічка Пташка Люк",
     time: "",
@@ -541,10 +541,10 @@ const CATALOG = [
   {
     id: "006",
     img: [
-      "../bees-candles/images/product-img/snowman-front-view.jpg",
-      "../bees-candles/images/product-img/snowman-left-view.jpg",
-      "../bees-candles/images/product-img/snowman-back-view.jpg",
-      "../bees-candles/images/product-img/snowman-right-view.jpg",
+      "./images/product-img/snowman-front-view.jpg",
+      "./images/product-img/snowman-left-view.jpg",
+      "./images/product-img/snowman-back-view.jpg",
+      "./images/product-img/snowman-right-view.jpg",
     ],
     name: "Свічка Сніговик",
     time: "~7",
@@ -649,10 +649,7 @@ const CATALOG = [
   },
   {
     id: "007",
-    img: [
-      "../bees-candles/images/product-img/2.jpg",
-      "../bees-candles/images/product-img/wax-candle.jpg",
-    ],
+    img: ["./images/product-img/2.jpg", "./images/product-img/wax-candle.jpg"],
     name: "Свічка з вощини товста",
     time: "~4",
     mass: 60,
@@ -674,7 +671,7 @@ const CATALOG = [
   },
   {
     id: "008",
-    img: ["../bees-candles/images/product-img/wax-candle.jpg"],
+    img: ["./images/product-img/wax-candle.jpg"],
     name: "Свічка з вощини тонка",
     time: "~4",
     mass: 60,
@@ -697,10 +694,10 @@ const CATALOG = [
   {
     id: "009",
     img: [
-      "../bees-candles/images/product-img/rick-bird-fromt-view.jpg",
-      "../bees-candles/images/product-img/rick-bird-left-view.jpg",
-      "../bees-candles/images/product-img/rick-bird-back-view.jpg",
-      "../bees-candles/images/product-img/rick-bird-right-view.jpg",
+      "./images/product-img/rick-bird-fromt-view.jpg",
+      "./images/product-img/rick-bird-left-view.jpg",
+      "./images/product-img/rick-bird-back-view.jpg",
+      "./images/product-img/rick-bird-right-view.jpg",
     ],
     name: "Свічка Пташка Рік",
     time: "",
@@ -806,10 +803,10 @@ const CATALOG = [
   {
     id: "010",
     img: [
-      "../bees-candles/images/product-img/chick-bird-front-view.jpg",
-      "../bees-candles/images/product-img/chick-bird-left-view.jpg",
-      "../bees-candles/images/product-img/chick-bird-back-view.jpg",
-      "../bees-candles/images/product-img/chick-bird-right-view.jpg",
+      "./images/product-img/chick-bird-front-view.jpg",
+      "./images/product-img/chick-bird-left-view.jpg",
+      "./images/product-img/chick-bird-back-view.jpg",
+      "./images/product-img/chick-bird-right-view.jpg",
     ],
     name: "Свічка Пташка Вжик",
     time: "~7",
@@ -915,10 +912,10 @@ const CATALOG = [
   {
     id: "011",
     img: [
-      "../bees-candles/images/product-img/owl-natural-wax-front-veiw.jpg",
-      "../bees-candles/images/product-img/owl-natural-wax-left-veiw.jpg",
-      "../bees-candles/images/product-img/owl-natural-wax-back-veiw.jpg",
-      "../bees-candles/images/product-img/owl-natural-wax-right-veiw.jpg",
+      "./images/product-img/owl-natural-wax-front-veiw.jpg",
+      "./images/product-img/owl-natural-wax-left-veiw.jpg",
+      "./images/product-img/owl-natural-wax-back-veiw.jpg",
+      "./images/product-img/owl-natural-wax-right-veiw.jpg",
     ],
     name: "Свічка Совушка",
     time: "~2",
