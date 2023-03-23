@@ -421,6 +421,27 @@ footer {
     }
   }
 }
+.final-messaage {
+  display: flex;
+  flex-direction: column;
+  margin: 15vh auto;
+  max-width: 400px;
+  height: min-content;
+  padding: 10px;
+  p {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: $smoll-radius;
+    span{
+      display: block;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+  }
+}
 @import "products-list";
 @import "product-view";
 @import "basket-card";

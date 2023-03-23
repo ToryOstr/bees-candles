@@ -383,6 +383,28 @@ footer .contact-links a[href*="tel:"] {
     scale: 1.1;
   }
 }
+.final-messaage {
+  display: flex;
+  flex-direction: column;
+  margin: 15vh auto;
+  max-width: 400px;
+  height: min-content;
+  padding: 10px;
+}
+.final-messaage p {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.final-messaage p span {
+  display: block;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
 .catalog {
   display: flex;
   justify-content: center;
@@ -1139,28 +1161,6 @@ h1 {
 .order-wrapper .order-form .error-message {
   color: rgb(150, 0, 0);
 }
-.final-messaage {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: -100%;
-  left: 0;
-  background-color: rgba(63, 4, 91, 0.3);
-  transition: 0.3s;
-}
-.final-messaage p {
-  margin: auto;
-  width: 75%;
-  background-color: #ffffff;
-  border-radius: 5px;
-  padding: 20px;
-}
-
-.active-message {
-  top: 0;
-}
-
 @media (max-width: 900px) {
   main {
     margin: 50px auto 10px;

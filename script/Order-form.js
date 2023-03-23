@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const mainForm = document.forms.order_form;
+  const mainForm = document.forms.new_order;
   const submitBtn = document.querySelector(".submit-btn");
 
   let userName = mainForm.user_name;
@@ -129,16 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     return `
-    **НОВЕ ЗАМОВЛЕННЯ!**\n
-
-    **>Замовник:
-    ${userName.value} ${userSurname.value}**\n
-    **Телефон: ${userTel.value}**\n
-    **Спосіб зв'язку: ${contactWhith}**\n\n
-
-    Транспортна компанія: ${deliveryCompany}
-    Адреса доставки: ${deliveryAddress.value}\n\n
-
     **Замовлення:**\n
     ${order
       .map((elem, index) => {
@@ -161,45 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let hiddenMessage = document.querySelector(".order-description");
   hiddenMessage.innerText = createMessage();
   console.log(hiddenMessage.value);
-  // const TOKEN = "6096308743:AAEVTXS_lW8ag8H0m-HdU9iQeI2Kw6PeyAg";
-  // const CHAT_ID = "-1001792925745";
-  // const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-  // let finalMessage = document.querySelector(".final-messaage");
-  // function endOrder() {
-  //   userName.value = "";
-  //   userSurname.value = "";
-  //   deliveryAddress.value = "";
-  //   userTel.value = "";
-
-  //   localStorage.removeItem("basket");
-  // }
-  // function endSession() {
-  //   finalMessage.innerHTML = "";
-  //   finalMessage.classList.remove("active-message");
-  //   setTimeout(window.open("index.html", "_self"), 3000);
-  // }
-  // function orderSubmit(e) {
-  //   e.preventDefault();
-  //   axios
-  //     .post(URI_API, {
-  //       chat_id: CHAT_ID,
-  //       parse_mode: "html",
-  //       text: createMessage,
-  //     })
-  //     .then(() => {
-  //       endOrder();
-  //       finalMessage.innerHTML = `
-  //       <p>Дякуємо за замовлення! З Вами зв'яжуться найближчим часом!</p>`;
-  //       finalMessage.classList.add("active-message");
-  //     })
-  //     .catch((err) => {
-  //       finalMessage.innerHTML = `
-  //       <p>Упс, виникла помилка ${err}. Спробуйте ще раз!</p>`;
-  //       finalMessage.classList.add("active-message");
-  //       // setTimeout((finalMessage.innerHTML = ""), 2000);
-  //     })
-  //     .finally(setTimeout(endSession, 3000));
-  // }
   // submitBtn.addEventListener("click", orderSubmit);
 });

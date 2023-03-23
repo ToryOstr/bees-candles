@@ -119,26 +119,6 @@ h1 {
     @extend %btn-style;
   }
 }
-.final-messaage {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: -100%;
-  left: 0;
-  background-color: $background-color;
-  transition: 0.3s;
-  p {
-    margin: auto;
-    width: 75%;
-    background-color: #ffffff;
-    border-radius: $smoll-radius;
-    padding: 20px;
-  }
-}
-.active-message {
-  top: 0;
-}
 @media (max-width: 900px) {
   main {
     margin: 50px auto 10px;
