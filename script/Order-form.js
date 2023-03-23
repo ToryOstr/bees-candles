@@ -129,24 +129,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     return `
-    **Замовлення:**\n
-    ${order
-      .map((elem, index) => {
-        let packText =
-          elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
-        return `
-              ${index + 1}. ${elem["product name"]} ${elem["product color"]} ${
-          elem["color saturation"]
-        } ${packText} ${elem["quantity products"]}шт,
-              ціна за шт: ${elem["product price"]}₴,
-              на суму ${elem["product price"] * elem["quantity products"]}₴\n
+    <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Замовлення</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th scope="col" class="number">№</th>
+        <th scope="col" class="product-name">Назва товару</th>
+        <th scope="col" class="color">Колір</th>
+        <th scope="col" class="saturation">Насиченість</th>
+        <th scope="col" class="quantity">Шт</th>
+        <th scope="col" class="packaging">Пак</th>
+        <th scope="col" class="price">Ціна</th>
+        <th scope="col" class="summ">Сума</th>
+        <th scope="col" class="remove-product"></th>
+      </tr>
+      ${order
+        .map((elem, index) => {
+          return `<tr>
+              <td scope="row" class="number">${index + 1}</td>
+              <td class="product-name">${elem["product name"]}</td>
+              <td class="color">${elem["product color"]}</td>
+              <td class="saturation">${elem["color saturation"]}</td>
+              <td class="quantity">${elem["quantity products"]}</td>
+              <td class="packaging">${elem["packaging"]}</td>
+              <td class="price">${elem["product price"]}₴</td>
+              <td class="summ">${
+                elem["product price"] * elem["quantity products"]
+              }₴</td>
+            </tr>`;
+        })
+        .join("")}
 
-  `;
-      })
-      .join("")}
-
-    **Сума замовлення: ${amountValue}₴**
-  `;
+      <tr>
+        <td>Сума замовлення:</td>
+        <td>${amountValue}₴</td>
+      </tr>
+    </table>
+  </body>
+</html>`;
   }
   let hiddenMessage = document.querySelector(".order-description");
   hiddenMessage.innerText = createMessage();
