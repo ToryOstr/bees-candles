@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
           elem["color saturation"]
         } ${packText} ${elem["quantity products"]}шт,
               ціна за шт: ${elem["product price"]}₴,
-              на суму ${elem["product price"] * elem["quantity products"]}₴\n
+              на суму ${elem["product price"] * elem["quantity products"]}₴\n\n
 
   `;
       })
