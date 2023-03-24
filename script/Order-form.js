@@ -135,16 +135,21 @@ document.addEventListener("DOMContentLoaded", function () {
         .map((elem, index) => {
           let packText =
             elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
-          return `${index + 1}. ${elem["product name"]} ${elem[
+          return `
+          ${index + 1}. ${elem["product name"]} ${elem[
             "product color"
-          ].toLowerCase()} ${elem["color saturation"].toLowerCase()} ${
-            elem["quantity products"]
-          }шт ${packText},\n
-            Ціна ${elem["product price"]}₴/шт,
-            Сума ${elem["product price"] * elem["quantity products"]}₴>\n`;
+          ].toLowerCase()} ${elem["color saturation"].toLowerCase()}
+          
+          ${elem["quantity products"]}шт ${packText},\n
+          
+          Ціна ${elem["product price"]}₴/шт,
+
+          Сума ${elem["product price"] * elem["quantity products"]}₴>\n`;
         })
         .join("")}
-        СУМА ЗАМОВЛЕННЯ: ${amountValue}₴`;
+        
+        СУМА ЗАМОВЛЕННЯ: ${amountValue}₴
+        `;
   }
   let hiddenMessage = document.querySelector(".order-description");
   hiddenMessage.innerText = createMessage();
