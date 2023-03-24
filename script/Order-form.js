@@ -127,10 +127,9 @@ document.addEventListener("DOMContentLoaded", function () {
         continue;
       }
     }
-    
+
     return `
     ЗАМОВЛЕННЯ:
-
       ${order
         .map((elem, index) => {
           let packText =
@@ -138,13 +137,10 @@ document.addEventListener("DOMContentLoaded", function () {
           return `
           ${index + 1}. ${elem["product name"]} ${elem[
             "product color"
-          ].toLowerCase()} ${elem["color saturation"].toLowerCase()}
-          
-          ${elem["quantity products"]}шт ${packText},\n
-          
-          Ціна ${elem["product price"]}₴/шт,
-
-          Сума ${elem["product price"] * elem["quantity products"]}₴>\n`;
+          ].toLowerCase()} ${elem["color saturation"].toLowerCase()} ${
+            elem["quantity products"]
+          }шт ${packText}, ціна ${elem["product price"]}₴/шт </br>
+          `;
         })
         .join("")}
         
