@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "product color"
           ].toLowerCase()} ${elem["color saturation"].toLowerCase()} ${
             elem["quantity products"]
-          }шт ${packText}, ціна ${elem["product price"]}₴/шт </br>
+          }шт ${packText}, ціна ${elem["product price"]}₴/шт
           `;
         })
         .join("")}
