@@ -277,7 +277,8 @@ footer {
       align-items: center;
       margin: 10px 0 0;
 
-      font-family: $accent-font_700;
+      font-family: $number-font_400_500_700;
+      font-weight: 500;
       font-size: calc(14px + 2 * ((100vw - 390px) / (1440 - 390)));
       line-height: 1.2;
 
@@ -290,8 +291,6 @@ footer {
     }
     a[href*="tel:"] {
       margin-top: 0px;
-      font-family: $number-font_400_500_700;
-      font-weight: 500;
     }
   }
 }

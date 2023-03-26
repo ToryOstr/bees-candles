@@ -244,7 +244,8 @@ footer .contact-links a {
   display: flex;
   align-items: center;
   margin: 10px 0 0;
-  font-family: "Irish Grover", cursive;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
   font-size: calc(14px + 2 * (100vw - 390px) / 1050);
   line-height: 1.2;
   color: rgb(39, 9, 53);
@@ -256,8 +257,6 @@ footer .contact-links a:hover {
 }
 footer .contact-links a[href*="tel:"] {
   margin-top: 0px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
 }
 
 .visually-hidden {
