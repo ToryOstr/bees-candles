@@ -7,7 +7,8 @@ const CATALOG = [
       "./images/product-img/christmas-tree-green-in-snow.jpg",
       "./images/product-img/christmas-tree-green+blue-beads.jpg",
     ],
-    name: "Свічка Ялинка",
+    name_ua: "Свічка Ялинка",
+    name_ru: "Свеча Ёлочка",
     time: "~5",
     mass: 60,
     height: 10,
@@ -15,93 +16,113 @@ const CATALOG = [
     price: 50,
     color: [
       {
-        name: "Натуральний віск",
+        name_ua: "Натуральний віск",
+        name_ru: "Натуральный воск",
         color: "#f1a213",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 0,
           },
         ],
       },
       {
-        name: "Айворі",
+        name_ua: "Айворі",
+        name_ru: "Айвори",
         color: "#fff2cc",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Зелений",
+        name_ua: "Зелений",
+        name_ru: "Зелёный",
         color: "#3a5109",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Червоний",
+        name_ua: "Червоний",
+        name_ru: "Красный",
         color: "#790700",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Темний шоколад",
+        name_ua: "Темний шоколад",
+        name_ru: "Тёмный шоколад",
         color: "#271003",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Інший колір",
+        name_ua: "Інший колір",
+        name_ru: "Другой цвет",
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 20,
           },
         ],
@@ -116,7 +137,8 @@ const CATALOG = [
       "./images/product-img/sheep-white-right-view.jpg",
       "./images/product-img/sheep-natural-wax-back-view.jpg",
     ],
-    name: "Свічка Ягнятко",
+    name_ua: "Свічка Ягнятко",
+    name_ru: "Свеча Овечка",
     time: "7-8",
     mass: 100,
     height: 8,
@@ -124,93 +146,113 @@ const CATALOG = [
     price: 80,
     color: [
       {
-        name: "Натуральний віск",
+        name_ua: "Натуральний віск",
+        name_ru: "Натуральный воск",
         color: "#f1a213",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 0,
           },
         ],
       },
       {
-        name: "Айворі",
+        name_ua: "Айворі",
+        name_ru: "Айвори",
         color: "#fff2cc",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Зелений",
+        name_ua: "Зелений",
+        name_ru: "Зелёный",
         color: "#3a5109",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Червоний",
+        name_ua: "Червоний",
+        name_ru: "Красный",
         color: "#790700",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Темний шоколад",
+        name_ua: "Темний шоколад",
+        name_ru: "Тёмный шоколад",
         color: "#271003",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Інший колір",
+        name_ua: "Інший колір",
+        name_ru: "Другой цвет",
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 20,
           },
         ],
@@ -220,7 +262,8 @@ const CATALOG = [
   {
     id: "001",
     img: ["./images/product-img/bee-on-honeycombs.jpg"],
-    name: "Свічка Бджілка",
+    name_ua: "Свічка Бджілка",
+    name_ru: "Свечка Пчёлка",
     time: "~3",
     mass: 40,
     height: 2,
@@ -228,93 +271,113 @@ const CATALOG = [
     price: 30,
     color: [
       {
-        name: "Натуральний віск",
+        name_ua: "Натуральний віск",
+        name_ru: "Натуральный воск",
         color: "#f1a213",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 0,
           },
         ],
       },
       {
-        name: "Айворі",
+        name_ua: "Айворі",
+        name_ru: "Айвори",
         color: "#fff2cc",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Зелений",
+        name_ua: "Зелений",
+        name_ru: "Зелёный",
         color: "#3a5109",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Червоний",
+        name_ua: "Червоний",
+        name_ru: "Красный",
         color: "#790700",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Темний шоколад",
+        name_ua: "Темний шоколад",
+        name_ru: "Тёмный шоколад",
         color: "#271003",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Інший колір",
+        name_ua: "Інший колір",
+        name_ru: "Другой цвет",
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 20,
           },
         ],
@@ -328,7 +391,8 @@ const CATALOG = [
       "./images/product-img/beehive-v2.jpg",
       "./images/product-img/beehive-trio.jpg",
     ],
-    name: "Свічка Бджолиний будиночок",
+    name_ua: "Свічка Бджолиний будиночок",
+    name_ru: "Свеча Пчелиный домик",
     time: "~5",
     mass: 60,
     height: 9,
@@ -336,93 +400,113 @@ const CATALOG = [
     price: 50,
     color: [
       {
-        name: "Натуральний віск",
+        name_ua: "Натуральний віск",
+        name_ru: "Натуральный воск",
         color: "#f1a213",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 0,
           },
         ],
       },
       {
-        name: "Айворі",
+        name_ua: "Айворі",
+        name_ru: "Айвори",
         color: "#fff2cc",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Зелений",
+        name_ua: "Зелений",
+        name_ru: "Зелёный",
         color: "#3a5109",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Червоний",
+        name_ua: "Червоний",
+        name_ru: "Красный",
         color: "#790700",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Темний шоколад",
+        name_ua: "Темний шоколад",
+        name_ru: "Тёмный шоколад",
         color: "#271003",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Інший колір",
+        name_ua: "Інший колір",
+        name_ru: "Другой цвет",
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 20,
           },
         ],
@@ -437,7 +521,7 @@ const CATALOG = [
       "./images/product-img/luck-bird-back-view.jpg",
       "./images/product-img/luck-bird-right-view.jpg",
     ],
-    name: "Свічка Пташка Люк",
+    name: "Свеча Птичка Люк",
     time: "~5-6",
     mass: 80,
     height: 7,
@@ -445,93 +529,113 @@ const CATALOG = [
     price: 70,
     color: [
       {
-        name: "Натуральний віск",
+        name_ua: "Натуральний віск",
+        name_ru: "Натуральный воск",
         color: "#f1a213",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 0,
           },
         ],
       },
       {
-        name: "Айворі",
+        name_ua: "Айворі",
+        name_ru: "Айвори",
         color: "#fff2cc",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Зелений",
+        name_ua: "Зелений",
+        name_ru: "Зелёный",
         color: "#3a5109",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Червоний",
+        name_ua: "Червоний",
+        name_ru: "Красный",
         color: "#790700",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Темний шоколад",
+        name_ua: "Темний шоколад",
+        name_ru: "Тёмный шоколад",
         color: "#271003",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Інший колір",
+        name_ua: "Інший колір",
+        name_ru: "Другой цвет",
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 20,
           },
         ],
@@ -546,7 +650,7 @@ const CATALOG = [
       "./images/product-img/snowman-back-view.jpg",
       "./images/product-img/snowman-right-view.jpg",
     ],
-    name: "Свічка Сніговик",
+    name: "Свеча Снеговик",
     time: "~5",
     mass: 60,
     height: 9.5,
@@ -554,93 +658,113 @@ const CATALOG = [
     price: 50,
     color: [
       {
-        name: "Натуральний віск",
+        name_ua: "Натуральний віск",
+        name_ru: "Натуральный воск",
         color: "#f1a213",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 0,
           },
         ],
       },
       {
-        name: "Айворі",
+        name_ua: "Айворі",
+        name_ru: "Айвори",
         color: "#fff2cc",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Зелений",
+        name_ua: "Зелений",
+        name_ru: "Зелёный",
         color: "#3a5109",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Червоний",
+        name_ua: "Червоний",
+        name_ru: "Красный",
         color: "#790700",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Темний шоколад",
+        name_ua: "Темний шоколад",
+        name_ru: "Тёмный шоколад",
         color: "#271003",
         saturation: [
           {
-            name: "Пастельний",
+            name_ua: "Пастельний",
+            name_ru: "Пастельный",
             price: 10,
           },
           {
-            name: "Середньої насиченості",
+            name_ua: "Середньої насиченості",
+            name_ru: "Средней насыщенности",
             price: 15,
           },
           {
-            name: "Насичений",
+            name_ua: "Насичений",
+            name_ru: "Насыщенный",
             price: 20,
           },
         ],
       },
       {
-        name: "Інший колір",
+        name_ua: "Інший колір",
+        name_ru: "Другой цвет",
         color: "#f5f5f5",
         saturation: [
           {
-            name: "Вибір не можливий",
+            name_ua: "Вибір не можливий",
+            name_ru: "Выбор не возможен",
             price: 20,
           },
         ],
