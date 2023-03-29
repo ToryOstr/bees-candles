@@ -66,78 +66,102 @@ body {
 }
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 100vw;
+  height: 104px;
+  padding: 10px 50px;
+  background-color: $background-color;
   position: relative;
   z-index: 1;
-  padding: 18px 50px;
-  height: 80px;
-  background-color: $background-color;
-
-  .logo {
-    width: 68px;
-    height: auto;
-    transition: 0.3s;
-    img {
-      width: auto;
-      height: 100%;
+  .toggle-lang {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    a {
+      font-family: $number-font_400_500_700;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 700;
+      padding: 5px;
+      margin-left: 10px;
     }
-    &:hover {
-      scale: 1.1;
+
+    .active-lang {
+      color: $accent-color;
     }
   }
-  nav {
+  .header_container {
     display: flex;
-    align-items: center;
-    transition: 0.3s;
-    ul {
-      width: 645px;
+    justify-content: space-between;
+    padding: 8px 0px;
+    height: 60px;
+
+    .logo {
+      width: 68px;
+      height: auto;
+      transition: 0.3s;
+      img {
+        width: auto;
+        height: 100%;
+      }
+      &:hover {
+        scale: 1.1;
+      }
+    }
+    nav {
       display: flex;
-      justify-content: space-between;
-      a {
-        font-family: $header-font_700;
-        color: $nav-text-color;
-        font-size: 18px;
-        transition: 0.3s;
-        &:hover {
-          font-size: 22px;
-          line-height: 0.9;
-          scale: 1.1;
-          color: $accent-color;
+      align-items: center;
+      transition: 0.3s;
+      ul {
+        width: 645px;
+        display: flex;
+        justify-content: space-between;
+        a {
+          font-family: $header-font_700;
+          color: $nav-text-color;
+          font-size: 18px;
+          transition: 0.3s;
+          &:hover {
+            font-size: 22px;
+            line-height: 0.9;
+            scale: 1.1;
+            color: $accent-color;
+          }
         }
       }
     }
-  }
 
-  .header-burger {
-    display: none;
-    transition: 0.3s;
-    span::before {
-      content: "";
-      position: absolute;
-      display: block;
-      bottom: 0;
+    .header-burger {
+      display: none;
+      transition: 0.3s;
+      span::before {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: 0;
+      }
+      span::after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+      }
+      span {
+        margin: auto 0;
+      }
+      span,
+      span::before,
+      span::after {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: $accent-color;
+        transition: 0.3s;
+      }
     }
-    span::after {
-      content: "";
-      position: absolute;
-      display: block;
+    .active-nav {
       top: 0;
     }
-    span {
-      margin: auto 0;
-    }
-    span,
-    span::before,
-    span::after {
-      display: block;
-      width: 40px;
-      height: 3px;
-      background-color: $accent-color;
-      transition: 0.3s;
-    }
-  }
-  .active-nav {
-    top: 0;
   }
 }
 
@@ -224,7 +248,7 @@ main {
   background-repeat: no-repeat;
   background-size: 100% auto;
   position: relative;
-  top: -80px;
+  top: -104px;
   left: 0;
   z-index: 0;
   padding: 200px 50px;
@@ -310,75 +334,83 @@ footer {
   header {
     position: fixed;
     width: 100vw;
-    height: 50px;
+    height: 90px;
     padding: 5px 20px;
     background-color: rgb(157, 126, 170);
-    .logo {
-      width: 40px;
-      height: auto;
+    .toggle-lang {
+      a{
+        font-size: 12px;
+      }
     }
-
-    nav {
-      position: absolute;
-      top: -186px;
-      left: 0;
-      padding: 20px 0;
-      z-index: 3;
-      text-align: center;
-      display: block;
-      width: 100%;
-      height: auto;
-      overflow: hidden;
-      background-color: rgb(205 165 114);
-      transition: 0.3s;
-      ul {
+    .header_container {
+      padding: 0px;
+      height: 50px;
+      .logo {
+        width: 40px;
+        height: auto;
+      }
+      nav {
+        position: absolute;
+        top: -186px;
+        left: 0;
+        padding: 20px 0;
+        z-index: 3;
+        text-align: center;
         display: block;
         width: 100%;
-        padding-bottom: 10px;
-        li {
-          padding: 5px 0;
+        height: auto;
+        overflow: hidden;
+        background-color: rgb(205 165 114);
+        transition: 0.3s;
+        ul {
+          display: block;
+          width: 100%;
+          padding-bottom: 10px;
+          li {
+            padding: 5px 0;
+          }
         }
       }
-    }
-    .header-burger {
-      position: relative;
-      display: block;
-      width: 40px;
-      height: 21px;
-      margin: auto;
-      padding: 9px 0;
-      transition: 0.3s;
-      z-index: 4;
-      &:hover {
-        cursor: pointer;
+      .header-burger {
+        position: relative;
+        display: block;
+        width: 40px;
+        height: 21px;
+        margin: auto;
+        padding: 9px 0;
+        transition: 0.3s;
+        z-index: 4;
+        &:hover {
+          cursor: pointer;
+        }
       }
-    }
-    .basket-btn {
-      width: auto;
-      height: 40px;
-      .products-counter {
-        top: 20px;
-        left: 20px;
+      .basket-btn {
+        width: auto;
+        height: 40px;
+        .products-counter {
+          top: 20px;
+          left: 20px;
+        }
       }
-    }
-    .active-nav + .header-burger {
-      margin: 155px auto 0;
-      background-color: #cda572;
-      border-radius: 0 0 10px 10px;
-      span::before {
-        rotate: -45deg;
-        width: 20px;
-        left: 4px;
-        bottom: 10px;
-      }
-      span::after {
-        rotate: 45deg;
-        width: 20px;
-        right: 4px;
-        top: 8px;
-      }
-      span {
-        background-color: transparent;
+      .active-nav + .header-burger {
+        margin: 110px auto 0;
+        background-color: #cda572;
+        border-radius: 0 0 10px 10px;
+        span::before {
+          rotate: -45deg;
+          width: 20px;
+          left: 4px;
+          bottom: 10px;
+        }
+        span::after {
+          rotate: 45deg;
+          width: 20px;
+          right: 4px;
+          top: 8px;
+        }
+        span {
+          background-color: transparent;
+        }
       }
     }
   }
@@ -414,7 +446,7 @@ footer {
     }
     .logo img {
       width: 68px;
-      &:hover{
+      &:hover {
         scale: 1.1;
       }
     }
@@ -434,7 +466,7 @@ footer {
     text-align: center;
     background-color: #ffffff;
     border-radius: $smoll-radius;
-    span{
+    span {
       display: block;
       font-weight: 400;
       margin-top: 10px;
