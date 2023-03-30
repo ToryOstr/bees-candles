@@ -11,6 +11,9 @@ let orderBtn = document.querySelector(".order-btn");
 let amountValue = 0;
 let countingProducts = 0;
 
+let currantLang = document.querySelector(".active-lang");
+let isUA = currantLang.innerText === "UA";
+
 function calcOrderAmount() {
   mainBasket.forEach((el) => {
     amountValue += el["sum"];
@@ -20,16 +23,17 @@ function calcOrderAmount() {
 
 function generatedBasket(array) {
   calcOrderAmount();
-  if (mainBasket.length === 0) {
-    thead.innerHTML = `
+  if (isUA) {
+    if (mainBasket.length === 0) {
+      thead.innerHTML = `
             <tr class="t-head">
               <th colspan="9">Ви ще не обрали жодного товару</th>
             </tr>`;
-    tbody.innerHTML = "";
-    tfoot.innerHTML = "";
-    orderBtn.classList.add("visually-hidden");
-  } else {
-    thead.innerHTML = `
+      tbody.innerHTML = "";
+      tfoot.innerHTML = "";
+      orderBtn.classList.add("visually-hidden");
+    } else {
+      thead.innerHTML = `
             <tr class="t-head">
               <th scope="col" class="number">№</th>
               <th scope="col" class="product-name">Назва товару</th>
@@ -42,9 +46,9 @@ function generatedBasket(array) {
               <th scope="col" class="remove-product"></th>
             </tr>
             `;
-    tbody.innerHTML = mainBasket
-      .map((elem, index) => {
-        return `
+      tbody.innerHTML = mainBasket
+        .map((elem, index) => {
+          return `
             <tr>
               <td scope="row" class="number">${index + 1}</td>
               <td class="product-name">${elem["product name"]}</td>
@@ -60,15 +64,14 @@ function generatedBasket(array) {
                 <button class="remove-product-btn">
                   <img
                     src="./images/icons/ri_delete-bin-2-line.svg"
-                    alt="Видалити товар з корзини"
-                  />
+                    alt="Видалити товар з кошика"/>
                 </button>
               </td>
             </tr>
   `;
-      })
-      .join("");
-    tfoot.innerHTML = `
+        })
+        .join("");
+      tfoot.innerHTML = `
     <tr>
       <th scope="row" colspan="9" class="order-amount">Сума замовлення: ${amountValue}грн</th>
     </tr>
@@ -77,7 +80,78 @@ function generatedBasket(array) {
     </tr>
 
     `;
-    orderBtn.classList.remove("visually-hidden");
+      orderBtn.classList.remove("visually-hidden");
+    }
+  } else {
+    if (mainBasket.length === 0) {
+      thead.innerHTML = `
+            <tr class="t-head">
+              <th colspan="9">Вы еще не выбрали ни одного товара</th>
+            </tr>`;
+      tbody.innerHTML = "";
+      tfoot.innerHTML = "";
+      orderBtn.classList.add("visually-hidden");
+    } else {
+      thead.innerHTML = `
+            <tr class="t-head">
+              <th scope="col" class="number">№</th>
+              <th scope="col" class="product-name">Название товара</th>
+              <th scope="col" class="color">Цвет</th>
+              <th scope="col" class="saturation">Насыщенность</th>
+              <th scope="col" class="quantity">Шт</th>
+              <th scope="col" class="packaging">Упак</th>
+              <th scope="col" class="price">Цена</th>
+              <th scope="col" class="summ">Сумма</th>
+              <th scope="col" class="remove-product"></th>
+            </tr>
+            `;
+      tbody.innerHTML = mainBasket
+        .map((elem, index) => {
+          return `
+            <tr>
+              <td scope="row" class="number">${index + 1}</td>
+              <td class="product-name">${elem["product name"]}</td>
+              <td class="color">${elem["product color"]}</td>
+              <td class="saturation">${elem["color saturation"]}</td>
+              <td class="quantity">${elem["quantity products"]}</td>
+              <td class="packaging">${elem["packaging"]}</td>
+              <td class="price">${elem["product price"]}₴</td>
+              <td class="summ">${
+                elem["product price"] * elem["quantity products"]
+              }₴</td>
+              <td>
+                <button class="remove-product-btn">
+                  <img
+                    src="../images/icons/ri_delete-bin-2-line.svg"
+                    alt="Удалить товар с корзини"
+                  />
+                </button>
+              </td>
+            </tr>
+  `;
+        })
+        .join("");
+      tfoot.innerHTML = isUA
+        ? `
+    <tr>
+      <th scope="row" colspan="9" class="order-amount">Сума замовлення: ${amountValue}грн</th>
+    </tr>
+    <tr>
+      <th scope="row" colspan="9" class="order-amount">Кількість товару в кошику: ${countingProducts}шт</th>
+    </tr>
+
+    `
+        : `
+    <tr>
+      <th scope="row" colspan="9" class="order-amount">Сумма заказа: ${amountValue}грн</th>
+    </tr>
+    <tr>
+      <th scope="row" colspan="9" class="order-amount">Количество товара в корзине: ${countingProducts}шт</th>
+    </tr>
+
+    `;
+      orderBtn.classList.remove("visually-hidden");
+    }
   }
   let removeProductBtns = document.querySelectorAll(".remove-product-btn");
 

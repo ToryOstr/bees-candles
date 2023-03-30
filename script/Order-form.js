@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
   const mainForm = document.forms.new_order;
   const submitBtn = document.querySelector(".submit-btn");
 
@@ -7,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let deliveryAddress = mainForm.delivery_address;
   let userTel = mainForm.user_tel;
   let errorMessage = document.querySelector(".error-message");
+
+  let currantLang = document.querySelector(".active-lang");
+  let isUA = currantLang.innerText === "UA";
+  document.title.innerText = isUA
+    ? "Оформлення замовлення"
+    : "Оформление заказа";
 
   function userDataValidate(userData) {
     userData = this.value;
@@ -78,22 +85,40 @@ document.addEventListener("DOMContentLoaded", function () {
     return (
       order
         .map((elem, index) => {
-          let packText =
-            elem["packaging"] === "Так" ? "з пакуванням" : "без пакування";
-
-          return `
+          let packText = isUA
+            ? elem["packaging"] === "Так"
+              ? "з пакуванням"
+              : "без пакування"
+            : elem["packaging"] === "Так"
+            ? "с упаковкой"
+            : "без упаковки";
+          return isUA
+            ? `
     <span>${index + 1}. ${elem["product name"]} </br> Kолір ${elem[
-            "product color"
-          ].toLowerCase()} ${elem["color saturation"].toLowerCase()},</br> ${
-            elem["quantity products"]
-          }шт, ${packText} - ${
-            elem["product price"] * elem["quantity products"]
-          }грн;</span>`;
+                "product color"
+              ].toLowerCase()} ${elem[
+                "color saturation"
+              ].toLowerCase()},</br> ${
+                elem["quantity products"]
+              }шт, ${packText} - ${
+                elem["product price"] * elem["quantity products"]
+              }грн;</span>`
+            : `
+    <span>${index + 1}. ${elem["product name"]} </br> Цвет ${elem[
+                "product color"
+              ].toLowerCase()} ${elem[
+                "color saturation"
+              ].toLowerCase()},</br> ${
+                elem["quantity products"]
+              }шт, ${packText} - ${
+                elem["product price"] * elem["quantity products"]
+              }грн;</span>`;
         })
         .join("") +
-      `
-  <span>Сума замовлення: ${amountValue}грн</span>
-  `
+      (isUA
+        ? `
+          <span>Сума замовлення: ${amountValue}грн</span>`
+        : `<span>Сумма заказа: ${amountValue}грн</span>`)
     );
   }
   function calcOrderAmount() {
@@ -128,7 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    return `
+    return isUA
+      ? `
     ЗАМОВЛЕННЯ:
       ${order
         .map((elem, index) => {
@@ -145,11 +171,27 @@ document.addEventListener("DOMContentLoaded", function () {
         .join("")}
         
         СУМА ЗАМОВЛЕННЯ: ${amountValue}₴
+        `
+      : `
+    ЗАКАЗ:
+      ${order
+        .map((elem, index) => {
+          let packText =
+            elem["packaging"] === "Так" ? "с упаковкой" : "без упаковки";
+          return `
+          ${index + 1}. ${elem["product name"]} ${elem[
+            "product color"
+          ].toLowerCase()} ${elem["color saturation"].toLowerCase()} ${
+            elem["quantity products"]
+          }шт ${packText}, цена ${elem["product price"]}₴/шт
+          `;
+        })
+        .join("")}
+        
+        СУММА ЗАКАЗА: ${amountValue}₴
         `;
   }
   let hiddenMessage = document.querySelector(".order-description");
   hiddenMessage.innerText = createMessage();
-  console.log(hiddenMessage.value);
 
-  // submitBtn.addEventListener("click", orderSubmit);
 });

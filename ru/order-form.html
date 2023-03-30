@@ -12,11 +12,11 @@
     />
     <link
       rel="shortcut icon"
-      href="./images/icons/logo.ico"
+      href="../images/icons/logo.ico"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./scss/reset.css" />
-    <link rel="stylesheet" href="./scss/style.css" />
+    <link rel="stylesheet" href="../scss/reset.css" />
+    <link rel="stylesheet" href="../scss/style.css" />
 
     <title></title>
   </head>
@@ -24,28 +24,28 @@
     <div class="wrapper">
       <header>
         <div class="toggle-lang">
-          <a class="active-lang" href="./index.html">UA</a>
-          <a href="./ru/index-ru.html">RU</a>
+          <a href="../index.html">UA</a>
+          <a class="active-lang" href="./index-ru.html">RU</a>
         </div>
         <div class="header_container">
           <div class="logo">
-            <a href="./index.html">
-              <img src="./images/icons/logo.svg" alt="логотип" />
+            <a href="./index-ru.html">
+              <img src="../images/icons/logo.svg" alt="логотип" />
             </a>
           </div>
           <nav>
             <ul>
               <li>
-                <a href="#catalog">Каталог</a>
+                <a href="./index-ru.html#catalog">Каталог</a>
               </li>
               <li>
-                <a href="#contacts">Контакти</a>
+                <a href="#contacts">Контакты</a>
               </li>
               <li>
                 <a href="#">Блог</a>
               </li>
               <li>
-                <a href="#">Про нас</a>
+                <a href="#">О нас</a>
               </li>
             </ul>
           </nav>
@@ -55,14 +55,14 @@
         </div>
       </header>
       <main>
-        <h1>Оформлення замовлення</h1>
+        <h1>Оформление заказа</h1>
         <div class="order-wrapper">
           <form name="new_order" class="order-form" action="/result.html" method="post" netlify>
             <div class="container_row">
               <div class="container">
                 <div class="user-data">
                   <label
-                    >* Ім'я
+                    >* Имя
                     <input
                       type="text"
                       required
@@ -71,7 +71,7 @@
                     />
                   </label>
                   <label
-                    >* Призвіще:
+                    >* Фамилия:
                     <input
                       type="text"
                       required
@@ -80,44 +80,44 @@
                     />
                   </label>
                   <label
-                    >* Номер мобільного телефону:
+                    >* Мобильный елефон:
                     <input
                       type="tel"
                       required
                       name="user_tel"
                       class="user-tel"
-                      placeholder="в форматі +380ХХХХХХХХХ"
+                      placeholder="в формате +380ХХХХХХХХХ"
                     />
                     <span class="error-message"></span>
                   </label>
                 </div>
                 <div class="contact-whith">
-                  <p>Оберіть зручний для Вас спосіб зв'язку:</p>
+                  <p>Выберите удобный для Вас способ связи:</p>
                   <label>
                     <input
                       checked
                       type="radio"
                       name="contact_whith"
-                      value="Зателефонувати"
-                    />Зателефонувати
+                      value="Позвонить"
+                    />Позвонить
                   </label>
                   <label>
                     <input
                       type="radio"
                       name="contact_whith"
-                      value="Написати в Telegram"
-                    />Написати в Telegram
+                      value="Написать в Telegram"
+                    />Написать в Telegram
                   </label>
                   <label>
                     <input
                       type="radio"
                       name="contact_whith"
-                      value="Написати в Viber"
-                    />Написати в Viber
+                      value="Написать в Viber"
+                    />Написать в Viber
                   </label>
                 </div>
                 <div class="delivery">
-                  <p>Оберіть транспортну компанію:</p>
+                  <p>Выберите транспортную компанию:</p>
                   <label>
                     <input
                       checked
@@ -136,7 +136,7 @@
                     />Укр Пошта
                   </label>
                   <label
-                    >* Адреса доставки
+                    >* Адресс доставки
                     <textarea
                       type="text"
                       required
@@ -148,12 +148,12 @@
                 </div>
               </div>
               <div class="container">
-                <h2>Ваше замовлення:</h2>
+                <h2>Ваш заказ:</h2>
               <p class="order-text" name="order-text"></p>
               </div>
             </div>
             <button type="submit" class="submit-btn">
-              Відправити замовлення
+              Отправить заказ
             </button>
           </form>
         </div>
@@ -161,37 +161,37 @@
       <footer>
         <div id="contacts" class="contact-links">
           <a href="tel:+380639385672">
-            <img src="./images/icons/bytesize_telephone.svg" alt="" /><span>+380 63
+            <img src="../images/icons/bytesize_telephone.svg" alt="" /><span>+380 63
               938 56 72</span></a
               >
 
           <a href="https://www.instagram.com/beeswax_candles_shop/?hl=uk" target="_blank
           " rel="noreferrer noopener">
             <img
-              src="./images/icons/typcn_social-instagram.svg"
+              src="../images/icons/typcn_social-instagram.svg"
               alt=""
             /><span>beeswax_candles_shop</span>
           </a>
 
           <a target="_blank" rel="noreferrer noopener" href="https://t.me/beescandles">
-            <img src="./images/icons/line-md_telegram.svg" alt="" /><span>Bees candles Telegram group</span>
+            <img src="../images/icons/line-md_telegram.svg" alt="" /><span>Bees candles Telegram group</span>
           </a>
         </div>
         <div class="logo">
-          <a href="./index.html">
-            <img src="./images/icons/logo.svg" alt="логотип" />
+          <a href="./index-ru.html">
+            <img src="../images/icons/logo.svg" alt="логотип" />
           </a>
         </div>
       </footer>
     </div>
     <!-- Constants -->
-    <script src="./script/catalog.js"></script>
-    <script src="./script/root.js"></script>
+    <script src="../script/catalog.js"></script>
+    <script src="../script/root.js"></script>
 
     <!-- Component Header-->
-    <script src="./script/Header.js"></script>
+    <script src="../script/Header.js"></script>
 
     <!-- Component Order form-->
-    <script src="./script/Order-form.js"></script>
+    <script src="../script/Order-form.js"></script>
   </body>
 </html>

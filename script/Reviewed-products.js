@@ -5,10 +5,12 @@ const title = document.querySelector("title");
 const currentProduct = CATALOG.find(
   (product) => product.id === currentProductId
 );
-
+let currantLang = document.querySelector(".active-lang");
+let isUA = currantLang.innerText === "UA";
 const generatedCardContent = ({
   img,
-  name,
+  name_ua,
+  name_ru,
   height,
   id,
   diameter,
@@ -16,11 +18,13 @@ const generatedCardContent = ({
   mass,
   price,
 }) => {
-  title.innerText = `${name}`;
-
-  let massHtml =
-    mass !== "" && mass !== 0
-      ? `
+  let massHtml, timeHtml, heightHtml, diameterHtml, cardHtml;
+  let name = isUA ? name_ua : name_ru;
+  if (isUA) {
+    title.innerText = `${[name]}`;
+    massHtml =
+      mass !== "" && mass !== 0
+        ? `
         <div class="elem-about">
           <img
             src="./images/icons/ri_scales-3-fill.svg"
@@ -28,40 +32,36 @@ const generatedCardContent = ({
           />
           <span class="mass">${mass}г</span>
         </div>`
-      : "";
-
-  let timeHtml =
-    time !== "" && time !== 0
-      ? `
+        : "";
+    timeHtml =
+      time !== "" && time !== 0
+        ? `
     <div class="elem-about">
       <img src="./images/icons/Vector.svg" alt="" />
       <span class="time">${time}год</span>
     </div>`
-      : "";
-
-  let heightHtml =
-    height !== "" && height !== 0
-      ? `
+        : "";
+    heightHtml =
+      height !== "" && height !== 0
+        ? `
       <div class="elem-about">
           <img
             src="./images/icons/ruler.svg"
             alt=""/>
           <span class="height">${height}см</span>
         </div>`
-      : "";
-
-  let diameterHtml =
-    diameter !== "" && diameter !== 0
-      ? `
+        : "";
+    diameterHtml =
+      diameter !== "" && diameter !== 0
+        ? `
     <div class="elem-about">
           <img
             src="./images/icons/diameter_icon.svg"
             alt=""/>
           <span class="diameter">${diameter}см</span>
         </div>`
-      : "";
-
-  let cardHtml = `
+        : "";
+    cardHtml = `
     <div class="slider-section">
       <div class="slider-wrapp">
         <div class="slider">
@@ -80,7 +80,7 @@ const generatedCardContent = ({
       </div>
     </div>
     <div class="information-and-price">
-      <h3 class="product-name">${name}</h3>
+      <h3 class="product-name">${[name]}</h3>
 
       <div class="about-product">
         ${massHtml}
@@ -154,6 +154,141 @@ const generatedCardContent = ({
       </button>
     </div>
   `;
+  } else {
+    title.innerText = `${[name]}`;
+    massHtml =
+      mass !== "" && mass !== 0
+        ? `
+        <div class="elem-about">
+          <img
+            src="../images/icons/ri_scales-3-fill.svg"
+            alt=""
+          />
+          <span class="mass">${mass}г</span>
+        </div>`
+        : "";
+    timeHtml =
+      time !== "" && time !== 0
+        ? `
+    <div class="elem-about">
+      <img src="../images/icons/Vector.svg" alt="" />
+      <span class="time">${time}ч</span>
+    </div>`
+        : "";
+    heightHtml =
+      height !== "" && height !== 0
+        ? `
+      <div class="elem-about">
+          <img
+            src="../images/icons/ruler.svg"
+            alt=""/>
+          <span class="height">${height}см</span>
+        </div>`
+        : "";
+    diameterHtml =
+      diameter !== "" && diameter !== 0
+        ? `
+    <div class="elem-about">
+          <img
+            src="../images/icons/diameter_icon.svg"
+            alt=""/>
+          <span class="diameter">${diameter}см</span>
+        </div>`
+        : "";
+    cardHtml = `
+    <div class="slider-section">
+      <div class="slider-wrapp">
+        <div class="slider">
+          <img src=".${img[0]}" alt="фото свечи" />
+        </div>
+      </div>
+      <div class="photo-gallery">
+
+      </div>
+      <div class="prevention-message">
+        <p>*цена зависит от выбранного Вами цвета и насыщенности изделия</p>
+        <p>
+          *по факту цвет и насыщенность изделия могут немного отличаться от тех, что представленны на фото.
+        </p>
+      </div>
+    </div>
+    <div class="information-and-price">
+      <h3 class="product-name">${[name]}</h3>
+
+      <div class="about-product">
+        ${massHtml}
+        ${timeHtml}
+        ${heightHtml}
+        ${diameterHtml}
+      </div>
+
+      <div class="select">
+        <div class="select-header">
+          <span class="select-current">Цвет</span>
+          <div class="select-icon">
+            <img
+              src="../images/icons/arrow.svg"
+              alt="открыть выбор цвета"/>
+          </div>
+        </div>
+        <div class="color-options">
+          
+        </div>
+      </div>
+
+      <div class="select">
+        <div class="select-header">
+          <span class="select-current">Насыщенность</span>
+          <div class="select-icon">
+            <img src="../images/icons/arrow.svg" alt="" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="checkbox">
+        <input
+          class="packaging-checkbox"
+          type="checkbox"
+          name="add_packaging"
+          id="add_packaging"
+        />
+        <label class="packing-label" for="add_packaging">
+          Подарочная упаковка
+        </label>
+      </div>
+
+      <div class="price">
+        <p>Цена:</p>
+        <span><span class="price-value">${price}</span>₴</span>
+      </div>
+
+      <div class="quantity">
+        <p>Количество</p>
+        <div class="counter">
+          <div class="counter-btn" id="minus">
+            <img
+              src="../images/icons/minus.svg"
+              alt="уменьшить количество"
+            />
+          </div>
+          <span id="counter-value">1</span>
+          <div class="counter-btn" id="plus">
+            <img
+              src="../images/icons/plus.svg"
+              alt="увеличить количество"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="count-message prevention-message"></div>
+      <button id="${id}" class="add-to-cart">
+        <span>В корзину</span>
+      </button>
+    </div>
+  `;
+  }
+
   return cardHtml;
 };
 
@@ -163,11 +298,19 @@ cardBody.innerHTML = generatedCardContent(currentProduct);
 let gallery = document.querySelector(".photo-gallery");
 let photosHtml = currentProduct.img
   .map((element) => {
-    return `
+    if (isUA) {
+      return `
               <div class="slider-images">
                 <img src="${element}" alt="фото свічки"/>
               </div>
             `;
+    } else {
+      return `
+              <div class="slider-images">
+                <img src=".${element}" alt="фото свечи"/>
+              </div>
+            `;
+    }
   })
   .join("");
 gallery.innerHTML = photosHtml;
@@ -191,9 +334,10 @@ let selectColorOptions = document.querySelector(".color-options");
 
 selectColorOptions.innerHTML = currentProduct.color
   .map((elem) => {
+    let name = isUA ? "name_ua" : "name_ru";
     return `
           <div class="option">
-            <span class="color-name">${elem.name}</span>
+            <span class="color-name">${elem[name]}</span>
             <span class="color-item"
               style="background-color: ${elem.color}"></span>
           </div>`;
@@ -234,14 +378,14 @@ function generatedSelectSaturation() {
   }
 
   let selectSaturationOptions = document.querySelector(".saturation-options");
-
   currentProduct.color.map(function (elem) {
-    if (elem.name === currentProductColor) {
+    let name = isUA ? "name_ua" : "name_ru";
+    if (elem[name] === currentProductColor) {
       selectSaturationOptions.innerHTML = elem.saturation
         .map((elem) => {
           return `
       <div class="option">
-        <span class="saturation-name">${elem.name}</span>
+        <span class="saturation-name">${elem[name]}</span>
         <span class="saturation-price">+<span class="saturation-value">${elem.price}</span>грн</span>
       </div>
       `;
@@ -262,10 +406,17 @@ selectHeaders.forEach((element) => {
 
 selectHeaders[0].addEventListener("click", function () {
   selectHeaders[1].parentElement.classList.remove("select-is-active");
-  selectHeaders[1].innerHTML = `
+  selectHeaders[1].innerHTML = isUA
+    ? `
           <span class="select-current">Насиченість</span>
           <div class="select-icon">
             <img src="./images/icons/arrow.svg" alt="">
+          </div>
+          `
+    : `
+          <span class="select-current">Насыщенность</span>
+          <div class="select-icon">
+            <img src="../images/icons/arrow.svg" alt="">
           </div>
           `;
 });
@@ -296,10 +447,13 @@ let priceOutput = document.querySelector(".price-value");
 function calcPrice() {
   let saturationValue = selectHeaders[1].querySelector(".saturation-value");
 
-  if (currentProductColor === "Натуральний віск" && saturationValue === null) {
+  if (
+    currentProductColor === ("Натуральний віск" || "Натуральный воск") &&
+    saturationValue === null
+  ) {
     saturationValue = 0;
   } else if (
-    currentProductColor === "Інший колір" &&
+    currentProductColor === ("Інший колір" || "Другой цвет") &&
     saturationValue === null
   ) {
     saturationValue = 20;
@@ -333,7 +487,9 @@ counterMinus.addEventListener("click", (e) => {
     countMessage.innerText = "";
   } else {
     count = 1;
-    countMessage.innerText = `${count} - це мінімальна кількість замовлення.`;
+    countMessage.innerText = isUA
+      ? `${count} - це мінімальна кількість замовлення.`
+      : `${count} - это минимальное количество.`;
   }
 
   counterValue.innerText = count;
@@ -344,7 +500,9 @@ counterPlus.addEventListener("click", (e) => {
     countMessage.innerText = "";
   } else {
     count = 10;
-    countMessage.innerText = `${count} - це максимальна кількість замовлення.`;
+    countMessage.innerText = isUA
+      ? `${count} - це максимальна кількість замовлення.`
+      : `${count} - это максимальное количество.`;
   }
   counterValue.innerText = count;
 });
@@ -357,9 +515,11 @@ let basket =
 const btn = document.querySelector(".add-to-cart");
 
 function blockedBtn() {
-  btn.innerText = "Оберіть колір та насиченість";
+  btn.innerText = isUA
+    ? "Оберіть колір та насиченість"
+    : "Выберите цвет и насыщенность";
   setTimeout(() => {
-    btn.innerText = "До кошика";
+    btn.innerText = isUA ? "До кошика" : "В корзину";
   }, 2000);
   btn.classList.add("blocked-btn");
   setTimeout(() => {
@@ -372,12 +532,15 @@ function generatedSelectedProduct() {
   selectedProduct = {
     "product name": document.querySelector(".product-name").innerText,
     "product color":
-      currentProduct.color.name !== "Вибір не можливий"
+      currentProduct.color[name] !== "Вибір не можливий" ||
+      currentProduct.color[name] !== "Выбор не возможен"
         ? currentProductColor
         : "Вибір не можливий",
     "color saturation":
       currentProductColor === "Натуральний віск" ||
+      currentProductColor === "Натуральный воск" ||
       currentProductColor === "Інший колір" ||
+      currentProductColor === "Другой цвет" ||
       selectHeaders[1].querySelector(".saturation-name") === null
         ? ""
         : selectHeaders[1].querySelector(".saturation-name").innerText,
@@ -398,7 +561,11 @@ function addToBascket() {
     document
       .querySelector(".color-options")
       .querySelector(".option")
-      .querySelector(".color-name").innerText === "Вибір не можливий"
+      .querySelector(".color-name").innerText === "Вибір не можливий" ||
+    document
+      .querySelector(".color-options")
+      .querySelector(".option")
+      .querySelector(".color-name").innerText === "Выбор не возможен"
   ) {
     setProductsToLocalStorage();
     generatedModalMessage(selectedProduct);
@@ -406,8 +573,10 @@ function addToBascket() {
     setTimeout(toggleActiveClass, 3000);
   } else {
     if (
-      currentProductColor !== "Натуральний віск" &&
-      currentProductColor !== "Інший колір" &&
+      (currentProductColor !== "Натуральний віск" ||
+        currentProductColor !== "Натуральный воск") &&
+      (currentProductColor !== "Інший колір" ||
+        currentProductColor !== "Другой цвет") &&
       selectHeaders[1].querySelector(".saturation-name") === null
     ) {
       blockedBtn();
@@ -426,14 +595,23 @@ function toggleActiveClass() {
   messageModal.classList.toggle("active-message");
 }
 function generatedModalMessage(elem) {
-  messageModal.innerHTML = `
+  messageModal.innerHTML = isUA
+    ? `
     <div class="success-message">
     <p>Додано до кошика:</p>
       <p>${elem["product name"]},</p>
       <p>колір ${elem["product color"].toLowerCase()}, ${elem[
-    "color saturation"
-  ].toLowerCase()}</p>
+        "color saturation"
+      ].toLowerCase()}</p>
       <p>в кількості ${elem["quantity products"]}шт</p>
+    </div> `
+    : `<div class="success-message">
+    <p>Добавлено в корзину:</p>
+      <p>${elem["product name"]},</p>
+      <p>колір ${elem["product color"].toLowerCase()}, ${elem[
+        "color saturation"
+      ].toLowerCase()}</p>
+      <p>в количестве ${elem["quantity products"]}шт</p>
     </div> `;
 }
 
