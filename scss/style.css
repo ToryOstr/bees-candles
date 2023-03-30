@@ -358,7 +358,7 @@ footer .contact-links a[href*="tel:"] {
     left: 20px;
   }
   header .header_container .active-nav + .header-burger {
-    margin: 110px auto 0;
+    margin: 130px auto 0;
     background-color: #cda572;
     border-radius: 0 0 10px 10px;
   }
@@ -1065,13 +1065,17 @@ footer .contact-links a[href*="tel:"] {
 
 @media (max-width: 900px) {
   .basket-opened {
-    margin: 50px auto 0px;
+    margin: 90px auto 0px;
   }
   .basket-opened td {
     font-size: calc(8px + 6 * (100vw - 320px) / 580);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   .basket-opened th {
     font-size: calc(8px + 4 * (100vw - 320px) / 580);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   .basket-opened .t-head .remove-product {
     width: 10vw;

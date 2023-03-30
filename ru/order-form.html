@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../images/icons/logo.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../scss/reset.css" />
+    <link rel="stylesheet" href="../scss/style.css" />
+
+    <title></title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="toggle-lang">
+          <a href="../index.html">UA</a>
+          <a class="active-lang" href="./index-ru.html">RU</a>
+        </div>
+        <div class="header_container">
+          <div class="logo">
+            <a href="./index-ru.html">
+              <img src="../images/icons/logo.svg" alt="логотип" />
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="./index-ru.html#catalog">Каталог</a>
+              </li>
+              <li>
+                <a href="#contacts">Контакты</a>
+              </li>
+              <li>
+                <a href="#">Блог</a>
+              </li>
+              <li>
+                <a href="#">О нас</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header-burger">
+            <span></span>
+          </div>
+        </div>
+      </header>
+      <main>
+        <h1>Оформление заказа</h1>
+        <div class="order-wrapper">
+          <form name="new_order" class="order-form" action="/result.html" method="post" netlify>
+            <div class="container_row">
+              <div class="container">
+                <div class="user-data">
+                  <label
+                    >* Имя
+                    <input
+                      type="text"
+                      required
+                      name="user_name"
+                      class="user-name"
+                    />
+                  </label>
+                  <label
+                    >* Фамилия:
+                    <input
+                      type="text"
+                      required
+                      name="user_surname"
+                      class="user-surname"
+                    />
+                  </label>
+                  <label
+                    >* Мобильный елефон:
+                    <input
+                      type="tel"
+                      required
+                      name="user_tel"
+                      class="user-tel"
+                      placeholder="в формате +380ХХХХХХХХХ"
+                    />
+                    <span class="error-message"></span>
+                  </label>
+                </div>
+                <div class="contact-whith">
+                  <p>Выберите удобный для Вас способ связи:</p>
+                  <label>
+                    <input
+                      checked
+                      type="radio"
+                      name="contact_whith"
+                      value="Позвонить"
+                    />Позвонить
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="contact_whith"
+                      value="Написать в Telegram"
+                    />Написать в Telegram
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="contact_whith"
+                      value="Написать в Viber"
+                    />Написать в Viber
+                  </label>
+                </div>
+                <div class="delivery">
+                  <p>Выберите транспортную компанию:</p>
+                  <label>
+                    <input
+                      checked
+                      type="radio"
+                      class="delivery-company"
+                      name="delivery_company"
+                      value="Нова Пошта"
+                    />Нова Пошта
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      class="delivery-company"
+                      name="delivery_company"
+                      value="Укр Пошта"
+                    />Укр Пошта
+                  </label>
+                  <label
+                    >* Адресс доставки
+                    <textarea
+                      type="text"
+                      required
+                      name="delivery_address"
+                      class="delivery-address"
+                    ></textarea>
+                  </label>
+                  <textarea type="text" class="visually-hidden order-description" name="order"></textarea>
+                </div>
+              </div>
+              <div class="container">
+                <h2>Ваш заказ:</h2>
+              <p class="order-text" name="order-text"></p>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">
+              Отправить заказ
+            </button>
+          </form>
+        </div>
+      </main>
+      <footer>
+        <div id="contacts" class="contact-links">
+          <a href="tel:+380639385672">
+            <img src="../images/icons/bytesize_telephone.svg" alt="" /><span>+380 63
+              938 56 72</span></a
+              >
+
+          <a href="https://www.instagram.com/beeswax_candles_shop/?hl=uk" target="_blank
+          " rel="noreferrer noopener">
+            <img
+              src="../images/icons/typcn_social-instagram.svg"
+              alt=""
+            /><span>beeswax_candles_shop</span>
+          </a>
+
+          <a target="_blank" rel="noreferrer noopener" href="https://t.me/beescandles">
+            <img src="../images/icons/line-md_telegram.svg" alt="" /><span>Bees candles Telegram group</span>
+          </a>
+        </div>
+        <div class="logo">
+          <a href="./index-ru.html">
+            <img src="../images/icons/logo.svg" alt="логотип" />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <!-- Constants -->
+    <script src="../script/catalog.js"></script>
+    <script src="../script/root.js"></script>
+
+    <!-- Component Header-->
+    <script src="../script/Header.js"></script>
+
+    <!-- Component Order form-->
+    <script src="../script/Order-form.js"></script>
+  </body>
+</html>
