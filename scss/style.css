@@ -274,12 +274,16 @@ footer .contact-links a {
   color: rgb(39, 9, 53);
   transition: 0.3s;
 }
+footer .contact-links a img {
+  width: 24px;
+  height: auto;
+}
 footer .contact-links a:hover {
   scale: 1.1;
   color: rgb(255, 210, 51);
 }
-footer .contact-links a[href*="tel:"] {
-  margin-top: 0px;
+footer .contact-links a span {
+  margin-left: 5px;
 }
 
 .visually-hidden {
@@ -404,6 +408,14 @@ footer .contact-links a[href*="tel:"] {
   }
   footer .contact-links a span {
     display: none;
+  }
+  footer .contact-links a img {
+    width: 24px;
+    height: auto;
+  }
+  footer .contact-links a img:hover {
+    box-shadow: inset 0 0 20px rgb(255, 210, 51);
+    border-radius: 25%;
   }
   footer .logo img {
     width: 68px;
