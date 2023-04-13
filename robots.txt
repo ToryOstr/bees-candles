@@ -11,4 +11,4 @@ Disallow: /script/
 Allow: /index/
 Allow: /ru/index-ru/
 Allow: /images/product-img/
-Sitemap: https://beeswax-candles-shop.netlify.app/sitemap.xml
+Sitemap: https://beeswax-candles-shop.netlify.app/Sitemap.xml
