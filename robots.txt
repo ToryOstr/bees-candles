@@ -6,8 +6,6 @@ Disallow: /ru/product-view/
 Disallow: /result/
 Disallow: /basket/
 Disallow: /ru/basket/
-Disallow: /scss/
-Disallow: /script/
 Allow: /index/
 Allow: /ru/index-ru/
 Allow: /images/product-img/
