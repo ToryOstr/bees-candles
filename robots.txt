@@ -7,6 +7,8 @@ Disallow: /result/
 Disallow: /basket/
 Disallow: /ru/basket/
 Allow: /index/
+Allow: /blog/
+Allow: /ru/blog/
 Allow: /ru/index-ru/
 Allow: /images/product-img/
 Sitemap: https://beeswax-candles-shop.netlify.app/Sitemap.xml
