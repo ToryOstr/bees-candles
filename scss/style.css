@@ -1239,4 +1239,46 @@ h1 {
     margin-top: 0px;
     margin-bottom: 10px;
   }
+}
+.posts-wrapp {
+  padding: 10px 50px;
+}
+
+.posts-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1180px;
+  margin-top: 20px;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.posts-list li {
+  max-width: 450px;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(39, 9, 53);
+  border-radius: 5px;
+  padding: 10px;
+  transition: 0.3s;
+}
+.posts-list li:hover {
+  box-shadow: 4px 4px 8px rgba(39, 9, 53, 0.5);
+  cursor: pointer;
+  scale: 1.01;
+}
+
+.post-head-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 10px;
+  font-weight: 700;
+}
+.post-head-container h2 {
+  color: rgb(255, 210, 51);
+}
+.post-head-container .publish-date {
+  font-size: 16px;
+  align-self: center;
+  color: rgba(39, 9, 53, 0.5);
 }/*# sourceMappingURL=style.css.map */
