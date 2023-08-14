@@ -1,0 +1,17 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  
+  max-width: 450px;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  border: $border;
+  border-radius: $smoll-radius;
+  padding: 10px;
+  
+  p {
+    text-align: center;
+    line-height: 1.5;
+  }
+}

@@ -1,8 +1,22 @@
+const formatDate = (date) => {
+  let tmp;
+  return (
+    ((tmp = date.getDate()) < 10 ? "0" + tmp : tmp) +
+    "." +
+    ((tmp = date.getMonth() + 1) < 10 ? "0" + tmp : tmp) +
+    "." +
+    ((tmp = date.getFullYear() % 100) < 10 ? "0" + tmp : tmp)
+  );
+};
+
+let day = new Date();
+let anonsDate = formatDate(day);
+
 const POSTS = [
   {
     title_ua: "Анонс!",
     title_ru: "Анонс!",
-    publishDate: "11.05.2023",
+    publishDate: anonsDate,
     text_ua: "Нова стаття незабаром буде розміщена",
     text_ru: "Новая статья в скором времени будет размещена",
   },
@@ -44,3 +58,7 @@ postsList.innerHTML = POSTS.map((post) => {
     post.text_ru
   );
 }).join("");
+
+document.querySelector(".basket-btn").addEventListener("click", function () {
+  window.open("basket.html", "_self");
+});

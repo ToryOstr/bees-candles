@@ -153,8 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    return isUA
-      ? `
+    return (isUA ? `
     ЗАМОВЛЕННЯ:
       ${order
         .map((elem, index) => {
@@ -171,8 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .join("")}
         
         СУМА ЗАМОВЛЕННЯ: ${amountValue}₴
-        `
-      : `
+        ` : `
     ЗАКАЗ:
       ${order
         .map((elem, index) => {
@@ -189,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .join("")}
         
         СУММА ЗАКАЗА: ${amountValue}₴
-        `;
+        `);
   }
   let hiddenMessage = document.querySelector(".order-description");
   hiddenMessage.innerText = createMessage();
